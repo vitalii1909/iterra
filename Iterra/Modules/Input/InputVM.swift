@@ -24,7 +24,14 @@ class InputVM: ObservableObject {
         
         let task = TaskModel(id: UUID().uuidString, type: type, date: selectedDate, text: text)
         
-        if type == .patience2 {
+        switch type {
+        case .willpower:
+            task.date = selectedDate
+            task.deadline = selectedDate
+        case .patience:
+            task.date = Date()
+            task.deadline = Date()
+        case .cleanTime:
             task.date = Date()
             task.deadline = selectedDate
         }

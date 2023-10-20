@@ -12,7 +12,7 @@ struct BioView: View {
     @EnvironmentObject var taskStore: TaskStore
     
     private var tasks: [TaskModel] {
-        return (taskStore.stopwatchArray + taskStore.timersArray + taskStore.patience2Array).filter({$0.finished == true}).sorted(by: {$0.date > $1.date})
+        return (taskStore.cleanTimeArray + taskStore.timersArray + taskStore.patienceArray).filter({$0.finished == true}).sorted(by: {$0.date > $1.date})
     }
     
     var body: some View {
@@ -34,22 +34,22 @@ struct BioView: View {
                 Spacer()
                 
                 switch taskModel.type {
-                case .timer:
+                case .willpower:
                     Circle()
                         .foregroundColor(taskModel.accepted ? .green : .red)
                         .frame(width: 40)
-                case .stopwatch:
+                case .patience:
                     let date = (taskModel.stopDate ?? Date()).timeIntervalSince(taskModel.date)
                     Text(date.stringFromTimeInterval().dropLast(4))
                         .font(.title.bold())
-                case .patience2:
+                case .cleanTime:
                     HStack(content: {
                         let date = (taskModel.stopDate ?? Date()).timeIntervalSince(taskModel.date)
                         Text(date.stringFromTimeInterval().dropLast(4))
                             .font(.title.bold())
                         
                         Circle()
-                            .foregroundColor(taskModel.stopDate == taskModel.deadline ? .green : .red)
+                            .foregroundColor(taskModel.accepted ? .green : .red)
                             .frame(width: 40)
                     })
                 }
@@ -66,14 +66,14 @@ struct BioView: View {
 
 #Preview {
     let taskStore = TaskStore()
-    taskStore.timersArray = TaskModel.mocArray(type: .timer)
-    taskStore.stopwatchArray = TaskModel.mocArray(type: .stopwatch)
-    taskStore.patience2Array = TaskModel.mocArray(type: .patience2)
+    taskStore.timersArray = TaskModel.mocArray(type: .willpower)
+    taskStore.cleanTimeArray = TaskModel.mocArray(type: .patience)
+    taskStore.patienceArray = TaskModel.mocArray(type: .cleanTime)
     
-    for i in taskStore.stopwatchArray {
+    for i in taskStore.cleanTimeArray {
         i.finished = true
     }
-    for i in taskStore.patience2Array {
+    for i in taskStore.patienceArray {
         i.finished = true
     }
     return BioView()

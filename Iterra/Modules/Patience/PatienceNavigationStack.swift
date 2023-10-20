@@ -13,8 +13,8 @@ struct PatienceNavigationStack: View {
     
     var body: some View {
         NavigationView(content: {
-            PatienceView()
-                .navigationTitle("Patience2")
+            PatienceView(vm: .init())
+                .navigationTitle("Patience")
                 .toolbar {
                     Button(action: {
                         showInput = true
@@ -23,7 +23,7 @@ struct PatienceNavigationStack: View {
                     })
                 }
                 .sheet(isPresented: $showInput, content: {
-                    InputView(vm: InputVM(type: .patience2))
+                    InputView(vm: InputVM(type: .cleanTime))
                 })
         })
     }
@@ -31,7 +31,7 @@ struct PatienceNavigationStack: View {
 
 #Preview {
     let taskStore = TaskStore()
-    taskStore.timersArray = TaskModel.mocArray(type: .patience2)
+    taskStore.patienceArray = TaskModel.mocArray(type: .cleanTime)
     return PatienceNavigationStack()
         .environmentObject(taskStore)
 }

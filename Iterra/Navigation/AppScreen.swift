@@ -9,8 +9,8 @@ import SwiftUI
 
 enum AppScreen: Codable, Hashable, Identifiable, CaseIterable {
     case timer
-    case stopwatch
-    case patience2
+    case patience
+    case clean
     case bio
     
     var id: AppScreen { self }
@@ -23,10 +23,10 @@ extension AppScreen {
         switch self {
         case .timer:
             Label("Willpower", systemImage: "timer")
-        case .stopwatch:
+        case .clean:
+            Label("Clean", systemImage: "clear")
+        case .patience:
             Label("Patience", systemImage: "stopwatch")
-        case .patience2:
-            Label("Patience2", systemImage: "stopwatch")
         case .bio:
             Label("BIO", systemImage: "person")
         }
@@ -37,10 +37,10 @@ extension AppScreen {
     var destination: some View {
         switch self {
         case .timer:
-            TimersNavigationStack()
-        case .stopwatch:
-            StopwatchsNavigationStack()
-        case .patience2:
+            WillpowerNavigationStack()
+        case .clean:
+            CleanTimeNavigationStack()
+        case .patience:
             PatienceNavigationStack()
         case .bio:
             BioNavigationStack()

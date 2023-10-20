@@ -1,33 +1,33 @@
 //
-//  Patience2View.swift
+//  CleanTimeView.swift
 //  Iterra
 //
-//  Created by mikhey on 2023-10-16.
+//  Created by mikhey on 2023-10-13.
 //
 
 import SwiftUI
 
-struct PatienceView: View {
+struct CleanTimeView: View {
     
     @EnvironmentObject var taskStore: TaskStore
     
-    @ObservedObject var vm: PatienceVM
+    @ObservedObject var vm: CleanTimeVM
     
     var body: some View {
         
         VStack {
-            if let dict = vm.getDict(array: taskStore.patienceArray) {
+            if let dict = vm.getDict(array: taskStore.cleanTimeArray) {
                 List {
                     getSections(dict: dict)
                 }
-                .animation(.spring(), value: taskStore.patienceArray.filter({$0.finished == false }).count)
-                .animation(.spring(), value: taskStore.patienceArray.count)
+                .animation(.spring(), value: taskStore.cleanTimeArray.filter({$0.finished == false }).count)
+                .animation(.spring(), value: taskStore.cleanTimeArray.count)
                 .listRowSpacing(20)
             } else {
-                Text("No patience")
+                Text("No clean time")
             }
         }
-        .animation(.spring(), value: taskStore.patienceArray.filter({$0.finished == false }).count)
+        .animation(.spring(), value: taskStore.cleanTimeArray.filter({$0.finished == false }).count)
     }
     
     private func getSections(dict: [Date : [TaskModel]]) -> some View {
@@ -50,20 +50,20 @@ struct PatienceView: View {
         .onDelete { idx in
             if let row = idx.first, let taskModel = dict[key]?.sorted(by: {$0.deadline < $1.deadline})[row] {
                 withAnimation(.spring()) {
-                    taskStore.patienceArray.removeAll(where: {$0.id == taskModel.id})
+                    taskStore.cleanTimeArray.removeAll(where: {$0.id == taskModel.id})
                 }
             }
         }
     }
     
     private func taskCell(taskModel: TaskModel) -> some View {
-        PatienceRow(storeArray: $taskStore.patienceArray, taskModel: taskModel)
+        CleanTimeRow(storeArray: $taskStore.cleanTimeArray, taskModel: taskModel)
     }
 }
 
 #Preview {
     let taskStore = TaskStore()
-    taskStore.patienceArray = TaskModel.mocArray(type: .cleanTime)
-    return PatienceView(vm: PatienceVM())
+    taskStore.cleanTimeArray = TaskModel.mocArray(type: .cleanTime)
+    return CleanTimeView(vm: .init())
         .environmentObject(taskStore)
 }

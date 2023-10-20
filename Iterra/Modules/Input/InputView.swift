@@ -34,7 +34,7 @@ struct InputView: View {
                 })
             })
             
-            if vm.type != .stopwatch {
+            if vm.type != .patience {
                 dateSelector
             }
             
@@ -70,12 +70,12 @@ struct InputView: View {
             let task = vm.createTask()
             
             switch task.type {
-            case .timer:
+            case .willpower:
                 taskStore.timersArray.append(task)
-            case .stopwatch:
-                taskStore.stopwatchArray.append(task)
-            case .patience2:
-                taskStore.patience2Array.append(task)
+            case .patience:
+                taskStore.cleanTimeArray.append(task)
+            case .cleanTime:
+                taskStore.patienceArray.append(task)
             }
 
             dismiss()
@@ -90,12 +90,12 @@ struct InputView: View {
                 .background(Color.blue)
                 .cornerRadius(10)
         })
-        .opacity(!vm.text.isEmpty && !(vm.type != .stopwatch && vm.selectedDate < Date()) ? 1 : 0.5)
-        .disabled(vm.text.isEmpty || (vm.type != .stopwatch && vm.selectedDate < Date()))
+        .opacity(!vm.text.isEmpty && !(vm.type != .patience && vm.selectedDate < Date()) ? 1 : 0.5)
+        .disabled(vm.text.isEmpty || (vm.type != .patience && vm.selectedDate < Date()))
     }
 }
 
 #Preview {
-    InputView(vm: InputVM(type: .timer))
+    InputView(vm: InputVM(type: .willpower))
         .environmentObject(TaskStore())
 }

@@ -18,8 +18,8 @@ struct BioNavigationStack: View {
 
 #Preview {
     let taskStore = TaskStore()
-    taskStore.timersArray = TaskModel.mocArray(type: .timer)
-    taskStore.stopwatchArray = TaskModel.mocArray(type: .stopwatch)
+    taskStore.timersArray = TaskModel.mocArray(type: .willpower)
+    taskStore.cleanTimeArray = TaskModel.mocArray(type: .patience)
     return BioNavigationStack()
         .environmentObject(taskStore)
 }

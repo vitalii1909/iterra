@@ -14,18 +14,21 @@
 		D60281B22AD78FEE00F47195 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60281B12AD78FEE00F47195 /* TaskModel.swift */; };
 		D60281B42AD7B53700F47195 /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60281B32AD7B53700F47195 /* AppTabView.swift */; };
 		D62CEF8C2AD8DC850025D626 /* AppScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62CEF8B2AD8DC850025D626 /* AppScreen.swift */; };
-		D62CEF912AD8DD160025D626 /* TimersNavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62CEF902AD8DD160025D626 /* TimersNavigationStack.swift */; };
-		D62CEF932AD8DE160025D626 /* TimersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62CEF922AD8DE160025D626 /* TimersView.swift */; };
-		D62CEF962AD8DF620025D626 /* TimersVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62CEF952AD8DF620025D626 /* TimersVM.swift */; };
-		D64DD2A82AD9F53000733FFC /* StopwatchsNavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64DD2A72AD9F53000733FFC /* StopwatchsNavigationStack.swift */; };
-		D64DD2AB2AD9F5CE00733FFC /* StopwatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64DD2AA2AD9F5CE00733FFC /* StopwatchView.swift */; };
-		D64DD2AD2AD9F5D500733FFC /* StopwatchVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64DD2AC2AD9F5D500733FFC /* StopwatchVM.swift */; };
+		D62CEF912AD8DD160025D626 /* WillpowerNavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62CEF902AD8DD160025D626 /* WillpowerNavigationStack.swift */; };
+		D62CEF932AD8DE160025D626 /* WillpowerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62CEF922AD8DE160025D626 /* WillpowerView.swift */; };
+		D62CEF962AD8DF620025D626 /* WillpowerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62CEF952AD8DF620025D626 /* WillpowerVM.swift */; };
+		D64DD2A82AD9F53000733FFC /* CleanTimeNavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64DD2A72AD9F53000733FFC /* CleanTimeNavigationStack.swift */; };
+		D64DD2AB2AD9F5CE00733FFC /* CleanTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64DD2AA2AD9F5CE00733FFC /* CleanTimeView.swift */; };
+		D64DD2AD2AD9F5D500733FFC /* CleanTimeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64DD2AC2AD9F5D500733FFC /* CleanTimeVM.swift */; };
 		D65128952AD785C100238E8B /* IterraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65128942AD785C100238E8B /* IterraApp.swift */; };
 		D651289B2AD785C300238E8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D651289A2AD785C300238E8B /* Assets.xcassets */; };
 		D651289E2AD785C300238E8B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D651289D2AD785C300238E8B /* Preview Assets.xcassets */; };
 		D6D4BE312ADE16D70013A72A /* PatienceNavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D4BE302ADE16D70013A72A /* PatienceNavigationStack.swift */; };
 		D6D4BE332ADE17350013A72A /* PatienceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D4BE322ADE17350013A72A /* PatienceView.swift */; };
 		D6D4BE362ADE179F0013A72A /* PatienceVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D4BE352ADE179F0013A72A /* PatienceVM.swift */; };
+		D6E55D192AE1E9D400816158 /* PatienceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E55D182AE1E9D400816158 /* PatienceRow.swift */; };
+		D6E55D1C2AE1F94700816158 /* WillpowerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E55D1B2AE1F94700816158 /* WillpowerRow.swift */; };
+		D6E55D1F2AE1FD4C00816158 /* CleanTimeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E55D1E2AE1FD4C00816158 /* CleanTimeRow.swift */; };
 		D6E7147D2ADDB4A5005BFC81 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D6E7147C2ADDB4A5005BFC81 /* GoogleService-Info.plist */; };
 		D6E714802ADDB531005BFC81 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = D6E7147F2ADDB531005BFC81 /* FirebaseAnalytics */; };
 		D6E714822ADDB531005BFC81 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = D6E714812ADDB531005BFC81 /* FirebaseAnalyticsOnDeviceConversion */; };
@@ -64,12 +67,12 @@
 		D60281B12AD78FEE00F47195 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		D60281B32AD7B53700F47195 /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
 		D62CEF8B2AD8DC850025D626 /* AppScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppScreen.swift; sourceTree = "<group>"; };
-		D62CEF902AD8DD160025D626 /* TimersNavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimersNavigationStack.swift; sourceTree = "<group>"; };
-		D62CEF922AD8DE160025D626 /* TimersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimersView.swift; sourceTree = "<group>"; };
-		D62CEF952AD8DF620025D626 /* TimersVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimersVM.swift; sourceTree = "<group>"; };
-		D64DD2A72AD9F53000733FFC /* StopwatchsNavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchsNavigationStack.swift; sourceTree = "<group>"; };
-		D64DD2AA2AD9F5CE00733FFC /* StopwatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchView.swift; sourceTree = "<group>"; };
-		D64DD2AC2AD9F5D500733FFC /* StopwatchVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchVM.swift; sourceTree = "<group>"; };
+		D62CEF902AD8DD160025D626 /* WillpowerNavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WillpowerNavigationStack.swift; sourceTree = "<group>"; };
+		D62CEF922AD8DE160025D626 /* WillpowerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WillpowerView.swift; sourceTree = "<group>"; };
+		D62CEF952AD8DF620025D626 /* WillpowerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WillpowerVM.swift; sourceTree = "<group>"; };
+		D64DD2A72AD9F53000733FFC /* CleanTimeNavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanTimeNavigationStack.swift; sourceTree = "<group>"; };
+		D64DD2AA2AD9F5CE00733FFC /* CleanTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanTimeView.swift; sourceTree = "<group>"; };
+		D64DD2AC2AD9F5D500733FFC /* CleanTimeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanTimeVM.swift; sourceTree = "<group>"; };
 		D65128912AD785C100238E8B /* Iterra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Iterra.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D65128942AD785C100238E8B /* IterraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IterraApp.swift; sourceTree = "<group>"; };
 		D651289A2AD785C300238E8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -77,6 +80,9 @@
 		D6D4BE302ADE16D70013A72A /* PatienceNavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceNavigationStack.swift; sourceTree = "<group>"; };
 		D6D4BE322ADE17350013A72A /* PatienceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceView.swift; sourceTree = "<group>"; };
 		D6D4BE352ADE179F0013A72A /* PatienceVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceVM.swift; sourceTree = "<group>"; };
+		D6E55D182AE1E9D400816158 /* PatienceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceRow.swift; sourceTree = "<group>"; };
+		D6E55D1B2AE1F94700816158 /* WillpowerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WillpowerRow.swift; sourceTree = "<group>"; };
+		D6E55D1E2AE1FD4C00816158 /* CleanTimeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanTimeRow.swift; sourceTree = "<group>"; };
 		D6E7147C2ADDB4A5005BFC81 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -176,7 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				D62CEF942AD8DF550025D626 /* StopwatchView */,
-				D64DD2A72AD9F53000733FFC /* StopwatchsNavigationStack.swift */,
+				D64DD2A72AD9F53000733FFC /* CleanTimeNavigationStack.swift */,
 				D64DD2A92AD9F5AA00733FFC /* StopwatchView */,
 			);
 			path = Stopwatch;
@@ -201,7 +207,7 @@
 		D64DD2A52AD9ED4C00733FFC /* Timers */ = {
 			isa = PBXGroup;
 			children = (
-				D62CEF902AD8DD160025D626 /* TimersNavigationStack.swift */,
+				D62CEF902AD8DD160025D626 /* WillpowerNavigationStack.swift */,
 				D64DD2A62AD9ED5E00733FFC /* TimersView */,
 			);
 			path = Timers;
@@ -210,8 +216,9 @@
 		D64DD2A62AD9ED5E00733FFC /* TimersView */ = {
 			isa = PBXGroup;
 			children = (
-				D62CEF922AD8DE160025D626 /* TimersView.swift */,
-				D62CEF952AD8DF620025D626 /* TimersVM.swift */,
+				D62CEF922AD8DE160025D626 /* WillpowerView.swift */,
+				D62CEF952AD8DF620025D626 /* WillpowerVM.swift */,
+				D6E55D1D2AE1F94C00816158 /* WillpowerRow */,
 			);
 			path = TimersView;
 			sourceTree = "<group>";
@@ -219,8 +226,9 @@
 		D64DD2A92AD9F5AA00733FFC /* StopwatchView */ = {
 			isa = PBXGroup;
 			children = (
-				D64DD2AA2AD9F5CE00733FFC /* StopwatchView.swift */,
-				D64DD2AC2AD9F5D500733FFC /* StopwatchVM.swift */,
+				D64DD2AA2AD9F5CE00733FFC /* CleanTimeView.swift */,
+				D64DD2AC2AD9F5D500733FFC /* CleanTimeVM.swift */,
+				D6E55D202AE1FD5100816158 /* CleanTimeRow */,
 			);
 			path = StopwatchView;
 			sourceTree = "<group>";
@@ -277,8 +285,33 @@
 			children = (
 				D6D4BE322ADE17350013A72A /* PatienceView.swift */,
 				D6D4BE352ADE179F0013A72A /* PatienceVM.swift */,
+				D6E55D1A2AE1F66C00816158 /* Row */,
 			);
 			path = PatienceView;
+			sourceTree = "<group>";
+		};
+		D6E55D1A2AE1F66C00816158 /* Row */ = {
+			isa = PBXGroup;
+			children = (
+				D6E55D182AE1E9D400816158 /* PatienceRow.swift */,
+			);
+			path = Row;
+			sourceTree = "<group>";
+		};
+		D6E55D1D2AE1F94C00816158 /* WillpowerRow */ = {
+			isa = PBXGroup;
+			children = (
+				D6E55D1B2AE1F94700816158 /* WillpowerRow.swift */,
+			);
+			path = WillpowerRow;
+			sourceTree = "<group>";
+		};
+		D6E55D202AE1FD5100816158 /* CleanTimeRow */ = {
+			isa = PBXGroup;
+			children = (
+				D6E55D1E2AE1FD4C00816158 /* CleanTimeRow.swift */,
+			);
+			path = CleanTimeRow;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -387,20 +420,23 @@
 				D60281AD2AD7869800F47195 /* InputView.swift in Sources */,
 				D6D4BE312ADE16D70013A72A /* PatienceNavigationStack.swift in Sources */,
 				D65128952AD785C100238E8B /* IterraApp.swift in Sources */,
+				D6E55D1C2AE1F94700816158 /* WillpowerRow.swift in Sources */,
 				D60281B22AD78FEE00F47195 /* TaskModel.swift in Sources */,
 				D6D4BE362ADE179F0013A72A /* PatienceVM.swift in Sources */,
 				D6D4BE332ADE17350013A72A /* PatienceView.swift in Sources */,
 				D60281AF2AD786B200F47195 /* InputVM.swift in Sources */,
-				D64DD2A82AD9F53000733FFC /* StopwatchsNavigationStack.swift in Sources */,
+				D64DD2A82AD9F53000733FFC /* CleanTimeNavigationStack.swift in Sources */,
 				D601BF362ADCB31D00256C6C /* BioView.swift in Sources */,
 				D60281B42AD7B53700F47195 /* AppTabView.swift in Sources */,
-				D64DD2AB2AD9F5CE00733FFC /* StopwatchView.swift in Sources */,
-				D62CEF962AD8DF620025D626 /* TimersVM.swift in Sources */,
+				D64DD2AB2AD9F5CE00733FFC /* CleanTimeView.swift in Sources */,
+				D62CEF962AD8DF620025D626 /* WillpowerVM.swift in Sources */,
 				D601BF342ADCB25500256C6C /* BioNavigationStack.swift in Sources */,
-				D64DD2AD2AD9F5D500733FFC /* StopwatchVM.swift in Sources */,
-				D62CEF912AD8DD160025D626 /* TimersNavigationStack.swift in Sources */,
-				D62CEF932AD8DE160025D626 /* TimersView.swift in Sources */,
+				D64DD2AD2AD9F5D500733FFC /* CleanTimeVM.swift in Sources */,
+				D62CEF912AD8DD160025D626 /* WillpowerNavigationStack.swift in Sources */,
+				D62CEF932AD8DE160025D626 /* WillpowerView.swift in Sources */,
+				D6E55D192AE1E9D400816158 /* PatienceRow.swift in Sources */,
 				D62CEF8C2AD8DC850025D626 /* AppScreen.swift in Sources */,
+				D6E55D1F2AE1FD4C00816158 /* CleanTimeRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
