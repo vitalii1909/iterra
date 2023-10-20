@@ -11,17 +11,45 @@ struct BioView: View {
     
     @EnvironmentObject var taskStore: TaskStore
     
+    @ObservedObject var vm: BioVM
+    
     private var tasks: [TaskModel] {
-        return (taskStore.cleanTimeArray + taskStore.timersArray + taskStore.patienceArray).filter({$0.finished == true}).sorted(by: {$0.date > $1.date})
+       return (taskStore.cleanTimeArray + taskStore.timersArray + taskStore.patienceArray)
+    }
+    
+    private var dict: [Date : [TaskModel]]? {
+       return vm.getDict(array: tasks)
     }
     
     var body: some View {
-        ScrollView {
-            LazyVStack(spacing: 14) {
-                ForEach(tasks, id: \.id) { task in
-                    taskCell(taskModel: task)
-                }
+        if let dict = dict {
+            List {
+                getSections(dict: dict)
             }
+            .animation(.spring(), value: taskStore.cleanTimeArray.filter({$0.finished == false }).count)
+            .animation(.spring(), value: taskStore.cleanTimeArray.count)
+            .listRowSpacing(20)
+        } else {
+            Text("No clean time")
+        }
+    }
+    
+    private func getSections(dict: [Date : [TaskModel]]) -> some View {
+        ForEach(dict.map({$0.key}).sorted(by: {$0 < $1}), id: \.timeIntervalSince1970) { key in
+            Section() {
+                getRows(key: key, dict: dict)
+            } header: {
+                Text(" \(key.get(.day))/\(key.get(.month))")
+                    .font(.subheadline.bold())
+                    .frame(maxWidth: .infinity)
+            }
+        }
+    }
+    
+    private func getRows(key: Date, dict: [Date : [TaskModel]]) -> some View {
+        let array = dict[key] ?? [TaskModel]()
+        return ForEach(array.sorted(by: {$0.deadline < $1.deadline}), id: \.id) { taskModel in
+            taskCell(taskModel: taskModel)
         }
     }
     
@@ -55,28 +83,39 @@ struct BioView: View {
                 }
             })
             
+            if taskModel.type != .cleanTime {
+                Text("\(taskModel.deadline.get(.hour)):\(taskModel.deadline.get(.minute))  \(taskModel.deadline.get(.day))/\(taskModel.deadline.get(.month))")
+            }
+            
         })
         .padding(.horizontal, 20)
         .padding(.vertical, 5)
-        .background(Color.blue.opacity(0.2))
-        .cornerRadius(10)
-        .padding(.horizontal, 20)
+        .padding(10)
+        .listRowBackground(Color.blue.opacity(0.2))
+        .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
     }
 }
 
 #Preview {
     let taskStore = TaskStore()
+    taskStore.cleanTimeArray = TaskModel.mocArray(type: .cleanTime)
     taskStore.timersArray = TaskModel.mocArray(type: .willpower)
-    taskStore.cleanTimeArray = TaskModel.mocArray(type: .patience)
-    taskStore.patienceArray = TaskModel.mocArray(type: .cleanTime)
-    
+    taskStore.cleanTimeArray = TaskModel.mocArray(type: .cleanTime)
+    taskStore.patienceArray = TaskModel.mocArray(type: .patience)
+
     for i in taskStore.cleanTimeArray {
         i.finished = true
     }
     for i in taskStore.patienceArray {
+        i.accepted = true
         i.finished = true
     }
-    return BioView()
+    for i in taskStore.timersArray {
+        i.accepted = true
+        i.finished = true
+    }
+    
+    return BioView(vm: .init())
         .environmentObject(taskStore)
 }
 

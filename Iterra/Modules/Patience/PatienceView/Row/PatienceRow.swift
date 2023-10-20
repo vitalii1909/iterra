@@ -43,7 +43,7 @@ struct PatienceRow: View {
                 .padding(.trailing, 5)
             })
             
-            Text("\(taskModel.deadline.get(.day))/\(taskModel.deadline.get(.month))")
+            Text("\(taskModel.deadline.get(.hour)):\(taskModel.deadline.get(.minute))  \(taskModel.deadline.get(.day))/\(taskModel.deadline.get(.month))")
         })
         .padding(10)
         .listRowBackground(Color.blue.opacity(0.2))

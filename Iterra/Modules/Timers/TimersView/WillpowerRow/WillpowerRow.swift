@@ -13,7 +13,7 @@ struct WillpowerRow: View {
     var taskModel: TaskModel
     
     var body: some View {
-        VStack(spacing: 10, content: {
+        VStack(alignment: .leading, spacing: 10, content: {
             Text(taskModel.text)
                 .lineLimit(1)
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -61,6 +61,8 @@ struct WillpowerRow: View {
                 .padding(.trailing, 5)
                 .buttonStyle(.borderless)
             })
+            
+            Text("\(taskModel.deadline.get(.hour)):\(taskModel.deadline.get(.minute))  \(taskModel.deadline.get(.day))/\(taskModel.deadline.get(.month))")
         })
         .padding(10)
         .listRowBackground(Color.blue.opacity(0.2))

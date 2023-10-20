@@ -10,7 +10,7 @@ import SwiftUI
 struct BioNavigationStack: View {
     var body: some View {
         NavigationView(content: {
-            BioView()
+            BioView(vm: .init())
                 .navigationTitle("BIO")
         })
     }

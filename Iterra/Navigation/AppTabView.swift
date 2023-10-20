@@ -9,12 +9,6 @@ import SwiftUI
 import Combine
 
 class TaskStore: ObservableObject {
-    @Published var cleanTimeArray = [TaskModel]() {
-        didSet {
-            saveStopwatch()
-        }
-    }
-    
     @Published var timersArray = [TaskModel]() {
         didSet {
             saveTimers()
@@ -24,6 +18,12 @@ class TaskStore: ObservableObject {
     @Published var patienceArray = [TaskModel]() {
         didSet {
             savePatience2()
+        }
+    }
+    
+    @Published var cleanTimeArray = [TaskModel]() {
+        didSet {
+            saveStopwatch()
         }
     }
     
@@ -41,22 +41,22 @@ class TaskStore: ObservableObject {
     }
     
     private func count() {
-        let expiredArray = patienceArray.filter({$0.finished == false}).filter({$0.deadline < Date()})
-        if expiredArray.count > 0 {
-            for i in expiredArray {
-                if let index = patienceArray.firstIndex(where: {$0.id == i.id}) {
-                    let task = patienceArray[index]
-                    task.finished = true
-                    task.accepted = true
-                    task.stopDate = Date()
-                    withAnimation(.spring) {
-                        patienceArray[index] = task
-                    }
-                }
-            }
-        }
-        
-        updateTimers()
+//        let expiredArray = patienceArray.filter({$0.finished == false}).filter({$0.deadline < Date()})
+//        if expiredArray.count > 0 {
+//            for i in expiredArray {
+//                if let index = patienceArray.firstIndex(where: {$0.id == i.id}) {
+//                    let task = patienceArray[index]
+//                    task.finished = true
+//                    task.accepted = true
+//                    task.stopDate = Date()
+//                    withAnimation(.spring) {
+//                        patienceArray[index] = task
+//                    }
+//                }
+//            }
+//        }
+//        
+//        updateTimers()
     }
     
     //clear test

@@ -29,6 +29,7 @@
 		D6E55D192AE1E9D400816158 /* PatienceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E55D182AE1E9D400816158 /* PatienceRow.swift */; };
 		D6E55D1C2AE1F94700816158 /* WillpowerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E55D1B2AE1F94700816158 /* WillpowerRow.swift */; };
 		D6E55D1F2AE1FD4C00816158 /* CleanTimeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E55D1E2AE1FD4C00816158 /* CleanTimeRow.swift */; };
+		D6E55D222AE203C900816158 /* BioVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E55D212AE203C900816158 /* BioVM.swift */; };
 		D6E7147D2ADDB4A5005BFC81 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D6E7147C2ADDB4A5005BFC81 /* GoogleService-Info.plist */; };
 		D6E714802ADDB531005BFC81 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = D6E7147F2ADDB531005BFC81 /* FirebaseAnalytics */; };
 		D6E714822ADDB531005BFC81 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = D6E714812ADDB531005BFC81 /* FirebaseAnalyticsOnDeviceConversion */; };
@@ -83,6 +84,7 @@
 		D6E55D182AE1E9D400816158 /* PatienceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceRow.swift; sourceTree = "<group>"; };
 		D6E55D1B2AE1F94700816158 /* WillpowerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WillpowerRow.swift; sourceTree = "<group>"; };
 		D6E55D1E2AE1FD4C00816158 /* CleanTimeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanTimeRow.swift; sourceTree = "<group>"; };
+		D6E55D212AE203C900816158 /* BioVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioVM.swift; sourceTree = "<group>"; };
 		D6E7147C2ADDB4A5005BFC81 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				D601BF352ADCB31D00256C6C /* BioView.swift */,
+				D6E55D212AE203C900816158 /* BioVM.swift */,
 			);
 			path = BioView;
 			sourceTree = "<group>";
@@ -433,6 +436,7 @@
 				D601BF342ADCB25500256C6C /* BioNavigationStack.swift in Sources */,
 				D64DD2AD2AD9F5D500733FFC /* CleanTimeVM.swift in Sources */,
 				D62CEF912AD8DD160025D626 /* WillpowerNavigationStack.swift in Sources */,
+				D6E55D222AE203C900816158 /* BioVM.swift in Sources */,
 				D62CEF932AD8DE160025D626 /* WillpowerView.swift in Sources */,
 				D6E55D192AE1E9D400816158 /* PatienceRow.swift in Sources */,
 				D62CEF8C2AD8DC850025D626 /* AppScreen.swift in Sources */,
