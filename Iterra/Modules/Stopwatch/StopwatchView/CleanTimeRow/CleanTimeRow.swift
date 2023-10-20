@@ -40,7 +40,7 @@ struct CleanTimeRow: View {
                         .tint(.red)
                 })
                 .padding(.trailing, 5)
-                
+                .buttonStyle(.borderless)
             })
         })
         .padding(10)

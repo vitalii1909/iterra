@@ -30,7 +30,7 @@ class InputVM: ObservableObject {
             task.deadline = selectedDate
         case .patience:
             task.date = Date()
-            task.deadline = Date()
+            task.deadline = selectedDate
         case .cleanTime:
             task.date = Date()
             task.deadline = selectedDate

@@ -23,7 +23,7 @@ struct PatienceNavigationStack: View {
                     })
                 }
                 .sheet(isPresented: $showInput, content: {
-                    InputView(vm: InputVM(type: .cleanTime))
+                    InputView(vm: InputVM(type: .patience))
                 })
         })
     }
