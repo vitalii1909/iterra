@@ -34,6 +34,7 @@ struct WillpowerRow: View {
                         let task = storeArray[index]
                         task.accepted = true
                         task.finished = true
+                        task.stopDate = Date()
                         storeArray[index] = task
                     }
                 }, label: {
@@ -50,6 +51,7 @@ struct WillpowerRow: View {
                         let task = storeArray[index]
                         task.accepted = false
                         task.finished = true
+                        task.stopDate = Date()
                         storeArray[index] = task
                     }
                 }, label: {

@@ -11,13 +11,36 @@ import FirebaseCore
 @main
 struct IterraApp: App {
     
+    @StateObject var appStateManager: AppStateManager = .init()
+    @StateObject var userService: UserService = .init()
+    
     init() {
         FirebaseApp.configure()
     }
     
     var body: some Scene {
         WindowGroup {
+            appContent
+                .task {
+                    Task() {
+                        let user = await userService.fetchUser()
+                        await appStateManager.configApp(user: user)
+                    }
+                }
+        }
+    }
+    
+    @ViewBuilder
+    var appContent: some View {
+        switch appStateManager.appState {
+        case .loading:
+            Text("loading...")
+        case .main:
             AppTabView()
+        case .registration:
+            LoginView()
+                .environmentObject(appStateManager)
+                .environmentObject(userService)
         }
     }
 }

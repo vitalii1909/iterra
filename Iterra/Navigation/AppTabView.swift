@@ -137,6 +137,9 @@ struct AppTabView: View {
                 }
             })
         })
+        .onAppear {
+            
+        }
     }
 }
 

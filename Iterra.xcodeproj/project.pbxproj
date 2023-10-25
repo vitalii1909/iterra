@@ -23,6 +23,13 @@
 		D65128952AD785C100238E8B /* IterraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65128942AD785C100238E8B /* IterraApp.swift */; };
 		D651289B2AD785C300238E8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D651289A2AD785C300238E8B /* Assets.xcassets */; };
 		D651289E2AD785C300238E8B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D651289D2AD785C300238E8B /* Preview Assets.xcassets */; };
+		D6C910092AE4B34C00447F04 /* SwiftUIIntrospect in Frameworks */ = {isa = PBXBuildFile; productRef = D6C910082AE4B34C00447F04 /* SwiftUIIntrospect */; };
+		D6C9100B2AE4B34C00447F04 /* SwiftUIIntrospect-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = D6C9100A2AE4B34C00447F04 /* SwiftUIIntrospect-Dynamic */; };
+		D6C9100D2AE4B34C00447F04 /* SwiftUIIntrospect-Static in Frameworks */ = {isa = PBXBuildFile; productRef = D6C9100C2AE4B34C00447F04 /* SwiftUIIntrospect-Static */; };
+		D6C910222AE7340B00447F04 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C910212AE7340B00447F04 /* AppState.swift */; };
+		D6C910252AE73B2B00447F04 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C910242AE73B2B00447F04 /* LoginView.swift */; };
+		D6C910282AE776D100447F04 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C910272AE776D100447F04 /* UserService.swift */; };
+		D6C9102A2AE7780900447F04 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C910292AE7780900447F04 /* User.swift */; };
 		D6D4BE312ADE16D70013A72A /* PatienceNavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D4BE302ADE16D70013A72A /* PatienceNavigationStack.swift */; };
 		D6D4BE332ADE17350013A72A /* PatienceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D4BE322ADE17350013A72A /* PatienceView.swift */; };
 		D6D4BE362ADE179F0013A72A /* PatienceVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D4BE352ADE179F0013A72A /* PatienceVM.swift */; };
@@ -78,6 +85,10 @@
 		D65128942AD785C100238E8B /* IterraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IterraApp.swift; sourceTree = "<group>"; };
 		D651289A2AD785C300238E8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D651289D2AD785C300238E8B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D6C910212AE7340B00447F04 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		D6C910242AE73B2B00447F04 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		D6C910272AE776D100447F04 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		D6C910292AE7780900447F04 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D6D4BE302ADE16D70013A72A /* PatienceNavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceNavigationStack.swift; sourceTree = "<group>"; };
 		D6D4BE322ADE17350013A72A /* PatienceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceView.swift; sourceTree = "<group>"; };
 		D6D4BE352ADE179F0013A72A /* PatienceVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceVM.swift; sourceTree = "<group>"; };
@@ -94,12 +105,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6E714922ADDB531005BFC81 /* FirebaseDatabase in Frameworks */,
+				D6C9100B2AE4B34C00447F04 /* SwiftUIIntrospect-Dynamic in Frameworks */,
 				D6E714A02ADDB531005BFC81 /* FirebaseFunctionsCombine-Community in Frameworks */,
 				D6E714982ADDB531005BFC81 /* FirebaseFirestore in Frameworks */,
 				D6E714842ADDB531005BFC81 /* FirebaseAnalyticsSwift in Frameworks */,
 				D6E714802ADDB531005BFC81 /* FirebaseAnalytics in Frameworks */,
 				D6E714822ADDB531005BFC81 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
 				D6E714A82ADDB531005BFC81 /* FirebaseMLModelDownloader in Frameworks */,
+				D6C910092AE4B34C00447F04 /* SwiftUIIntrospect in Frameworks */,
 				D6E7149C2ADDB531005BFC81 /* FirebaseFirestoreSwift in Frameworks */,
 				D6E714882ADDB531005BFC81 /* FirebaseAppCheck in Frameworks */,
 				D6E714862ADDB531005BFC81 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
@@ -108,6 +121,7 @@
 				D6E714B02ADDB531005BFC81 /* FirebaseRemoteConfigSwift in Frameworks */,
 				D6E714A22ADDB531005BFC81 /* FirebaseInAppMessaging-Beta in Frameworks */,
 				D6E714942ADDB531005BFC81 /* FirebaseDatabaseSwift in Frameworks */,
+				D6C9100D2AE4B34C00447F04 /* SwiftUIIntrospect-Static in Frameworks */,
 				D6E7149E2ADDB531005BFC81 /* FirebaseFunctions in Frameworks */,
 				D6E714B42ADDB531005BFC81 /* FirebaseStorageCombine-Community in Frameworks */,
 				D6E714AE2ADDB531005BFC81 /* FirebaseRemoteConfig in Frameworks */,
@@ -164,6 +178,7 @@
 		D60281B02AD78FCB00F47195 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D6C910292AE7780900447F04 /* User.swift */,
 				D60281B12AD78FEE00F47195 /* TaskModel.swift */,
 			);
 			path = Models;
@@ -172,6 +187,7 @@
 		D62CEF8A2AD8DBE30025D626 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				D6C910232AE73AFA00447F04 /* Login */,
 				D64DD2A52AD9ED4C00733FFC /* Timers */,
 				D6D4BE2F2ADE16C00013A72A /* Patience */,
 				D62CEF8F2AD8DD000025D626 /* Stopwatch */,
@@ -201,6 +217,7 @@
 		D64DD29E2AD8E57B00733FFC /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				D6C910212AE7340B00447F04 /* AppState.swift */,
 				D62CEF8B2AD8DC850025D626 /* AppScreen.swift */,
 				D60281B32AD7B53700F47195 /* AppTabView.swift */,
 			);
@@ -258,8 +275,9 @@
 				D6E7147C2ADDB4A5005BFC81 /* GoogleService-Info.plist */,
 				D60281AA2AD7867400F47195 /* App */,
 				D62CEF8A2AD8DBE30025D626 /* Modules */,
-				D64DD29E2AD8E57B00733FFC /* Navigation */,
+				D6C910262AE7700900447F04 /* Services */,
 				D60281B02AD78FCB00F47195 /* Models */,
+				D64DD29E2AD8E57B00733FFC /* Navigation */,
 				D651289A2AD785C300238E8B /* Assets.xcassets */,
 				D651289C2AD785C300238E8B /* Preview Content */,
 			);
@@ -272,6 +290,22 @@
 				D651289D2AD785C300238E8B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D6C910232AE73AFA00447F04 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				D6C910242AE73B2B00447F04 /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		D6C910262AE7700900447F04 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D6C910272AE776D100447F04 /* UserService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		D6D4BE2F2ADE16C00013A72A /* Patience */ = {
@@ -361,6 +395,9 @@
 				D6E714AF2ADDB531005BFC81 /* FirebaseRemoteConfigSwift */,
 				D6E714B12ADDB531005BFC81 /* FirebaseStorage */,
 				D6E714B32ADDB531005BFC81 /* FirebaseStorageCombine-Community */,
+				D6C910082AE4B34C00447F04 /* SwiftUIIntrospect */,
+				D6C9100A2AE4B34C00447F04 /* SwiftUIIntrospect-Dynamic */,
+				D6C9100C2AE4B34C00447F04 /* SwiftUIIntrospect-Static */,
 			);
 			productName = Iterra;
 			productReference = D65128912AD785C100238E8B /* Iterra.app */;
@@ -392,6 +429,7 @@
 			mainGroup = D65128882AD785C100238E8B;
 			packageReferences = (
 				D6E7147E2ADDB531005BFC81 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				D6C910072AE4B34C00447F04 /* XCRemoteSwiftPackageReference "swiftui-introspect" */,
 			);
 			productRefGroup = D65128922AD785C100238E8B /* Products */;
 			projectDirPath = "";
@@ -423,12 +461,15 @@
 				D60281AD2AD7869800F47195 /* InputView.swift in Sources */,
 				D6D4BE312ADE16D70013A72A /* PatienceNavigationStack.swift in Sources */,
 				D65128952AD785C100238E8B /* IterraApp.swift in Sources */,
+				D6C9102A2AE7780900447F04 /* User.swift in Sources */,
 				D6E55D1C2AE1F94700816158 /* WillpowerRow.swift in Sources */,
+				D6C910252AE73B2B00447F04 /* LoginView.swift in Sources */,
 				D60281B22AD78FEE00F47195 /* TaskModel.swift in Sources */,
 				D6D4BE362ADE179F0013A72A /* PatienceVM.swift in Sources */,
 				D6D4BE332ADE17350013A72A /* PatienceView.swift in Sources */,
 				D60281AF2AD786B200F47195 /* InputVM.swift in Sources */,
 				D64DD2A82AD9F53000733FFC /* CleanTimeNavigationStack.swift in Sources */,
+				D6C910282AE776D100447F04 /* UserService.swift in Sources */,
 				D601BF362ADCB31D00256C6C /* BioView.swift in Sources */,
 				D60281B42AD7B53700F47195 /* AppTabView.swift in Sources */,
 				D64DD2AB2AD9F5CE00733FFC /* CleanTimeView.swift in Sources */,
@@ -437,6 +478,7 @@
 				D64DD2AD2AD9F5D500733FFC /* CleanTimeVM.swift in Sources */,
 				D62CEF912AD8DD160025D626 /* WillpowerNavigationStack.swift in Sources */,
 				D6E55D222AE203C900816158 /* BioVM.swift in Sources */,
+				D6C910222AE7340B00447F04 /* AppState.swift in Sources */,
 				D62CEF932AD8DE160025D626 /* WillpowerView.swift in Sources */,
 				D6E55D192AE1E9D400816158 /* PatienceRow.swift in Sources */,
 				D62CEF8C2AD8DC850025D626 /* AppScreen.swift in Sources */,
@@ -650,6 +692,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		D6C910072AE4B34C00447F04 /* XCRemoteSwiftPackageReference "swiftui-introspect" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/siteline/swiftui-introspect";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.0;
+			};
+		};
 		D6E7147E2ADDB531005BFC81 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -661,6 +711,21 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		D6C910082AE4B34C00447F04 /* SwiftUIIntrospect */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D6C910072AE4B34C00447F04 /* XCRemoteSwiftPackageReference "swiftui-introspect" */;
+			productName = SwiftUIIntrospect;
+		};
+		D6C9100A2AE4B34C00447F04 /* SwiftUIIntrospect-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D6C910072AE4B34C00447F04 /* XCRemoteSwiftPackageReference "swiftui-introspect" */;
+			productName = "SwiftUIIntrospect-Dynamic";
+		};
+		D6C9100C2AE4B34C00447F04 /* SwiftUIIntrospect-Static */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D6C910072AE4B34C00447F04 /* XCRemoteSwiftPackageReference "swiftui-introspect" */;
+			productName = "SwiftUIIntrospect-Static";
+		};
 		D6E7147F2ADDB531005BFC81 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D6E7147E2ADDB531005BFC81 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

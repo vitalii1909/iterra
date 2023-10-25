@@ -22,6 +22,10 @@ struct BioView: View {
     }
     
     var body: some View {
+        
+        ScrollViewReader(content: { proxy in
+            
+        
         if let dict = dict {
             List {
                 getSections(dict: dict)
@@ -29,9 +33,13 @@ struct BioView: View {
             .animation(.spring(), value: taskStore.cleanTimeArray.filter({$0.finished == false }).count)
             .animation(.spring(), value: taskStore.cleanTimeArray.count)
             .listRowSpacing(20)
+            .onAppear {
+                scrollToCurrent(proxy: proxy)
+            }
         } else {
             Text("No clean time")
         }
+        })
     }
     
     private func getSections(dict: [Date : [TaskModel]]) -> some View {
@@ -43,6 +51,7 @@ struct BioView: View {
                     .font(.subheadline.bold())
                     .frame(maxWidth: .infinity)
             }
+            .id(key)
         }
     }
     
@@ -50,6 +59,7 @@ struct BioView: View {
         let array = dict[key] ?? [TaskModel]()
         return ForEach(array.sorted(by: {$0.deadline < $1.deadline}), id: \.id) { taskModel in
             taskCell(taskModel: taskModel)
+            .id(taskModel.id)
         }
     }
     
@@ -94,6 +104,15 @@ struct BioView: View {
         .listRowBackground(Color.blue.opacity(0.2))
         .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
     }
+    
+    private func scrollToCurrent(proxy: ScrollViewProxy) {
+        if let closestDate = dict?.keys.sorted(by: {$0 < $1}).first(where: {$0.compareDay(with: Date())}) { // "Feb 15, 2018, 12:00 PM"
+            print(closestDate.description(with: .current)) // Thursday, February 15, 2018 at 12:00:00 PM Brasilia Summer Time
+            proxy.scrollTo(closestDate, anchor: .top)
+        } else {
+            
+        }
+    }
 }
 
 #Preview {
@@ -133,4 +152,12 @@ extension TimeInterval{
         return String(format: "%0.2d:%0.2d:%0.2d.%0.3d",hours,minutes,seconds,ms)
         
     }
+}
+
+extension Date {
+    
+    func compareDay(with: Date) -> Bool {
+        return self.get(.day) == with.get(.day) &&  self.get(.month) == with.get(.month) && self.get(.year) == with.get(.year)
+    }
+    
 }
