@@ -9,9 +9,9 @@ import SwiftUI
 
 struct PatienceRow: View {
     
-    @Binding var storeArray: [TaskModel]
+    @Binding var storeArray: [BioPatience]
     
-    var taskModel: TaskModel
+    var taskModel: BioPatience
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10, content: {
@@ -52,8 +52,9 @@ struct PatienceRow: View {
 }
 
 #Preview {
-    @State var array = TaskModel.mocArray(type: .cleanTime)
+    @State var array = [BioPatience]()
     return List {
-        PatienceRow(storeArray: $array, taskModel: array.first ?? .mocData(type: .cleanTime))
+//        PatienceRow(storeArray: $array, taskModel: array.first ?? .mocData(type: .cleanTime))
+        Text("FIX2")
     }
 }

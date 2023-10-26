@@ -9,9 +9,9 @@ import SwiftUI
 
 struct CleanTimeRow: View {
     
-    @Binding var storeArray: [TaskModel]
+    @Binding var storeArray: [BioClean]
     
-    var taskModel: TaskModel
+    var taskModel: BioClean
     
     var body: some View {
         VStack(spacing: 10, content: {
@@ -20,7 +20,7 @@ struct CleanTimeRow: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
             
             HStack(content: {
-                Text(taskModel.date, style: .timer)
+                Text(taskModel.startDate, style: .timer)
                     .font(.title.bold())
                 
                 Spacer()
@@ -50,9 +50,10 @@ struct CleanTimeRow: View {
 }
 
 #Preview {
-    @State var array = TaskModel.mocArray(type: .cleanTime)
+    @State var array = [BioClean]()
     return List {
-        CleanTimeRow(storeArray: $array, taskModel: array.first ?? .mocData(type: .cleanTime))
+//        CleanTimeRow(storeArray: $array, taskModel: array.first ?? <#default value#>)
+        Text("FIX")
     }
 }
 

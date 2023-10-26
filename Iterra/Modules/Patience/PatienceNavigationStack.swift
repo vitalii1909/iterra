@@ -31,7 +31,7 @@ struct PatienceNavigationStack: View {
 
 #Preview {
     let taskStore = TaskStore()
-    taskStore.patienceArray = TaskModel.mocArray(type: .cleanTime)
+//    taskStore.patienceArray = TaskModel.mocArray(type: .cleanTime)
     return PatienceNavigationStack()
         .environmentObject(taskStore)
 }

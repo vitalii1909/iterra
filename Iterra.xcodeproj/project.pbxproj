@@ -23,6 +23,8 @@
 		D65128952AD785C100238E8B /* IterraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65128942AD785C100238E8B /* IterraApp.swift */; };
 		D651289B2AD785C300238E8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D651289A2AD785C300238E8B /* Assets.xcassets */; };
 		D651289E2AD785C300238E8B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D651289D2AD785C300238E8B /* Preview Assets.xcassets */; };
+		D66F4FF52AEB199200A2C4F4 /* NewBioEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66F4FF42AEB199200A2C4F4 /* NewBioEventView.swift */; };
+		D66F4FF72AEB290B00A2C4F4 /* NewBioEventVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66F4FF62AEB290B00A2C4F4 /* NewBioEventVM.swift */; };
 		D6C910092AE4B34C00447F04 /* SwiftUIIntrospect in Frameworks */ = {isa = PBXBuildFile; productRef = D6C910082AE4B34C00447F04 /* SwiftUIIntrospect */; };
 		D6C9100B2AE4B34C00447F04 /* SwiftUIIntrospect-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = D6C9100A2AE4B34C00447F04 /* SwiftUIIntrospect-Dynamic */; };
 		D6C9100D2AE4B34C00447F04 /* SwiftUIIntrospect-Static in Frameworks */ = {isa = PBXBuildFile; productRef = D6C9100C2AE4B34C00447F04 /* SwiftUIIntrospect-Static */; };
@@ -30,6 +32,12 @@
 		D6C910252AE73B2B00447F04 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C910242AE73B2B00447F04 /* LoginView.swift */; };
 		D6C910282AE776D100447F04 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C910272AE776D100447F04 /* UserService.swift */; };
 		D6C9102A2AE7780900447F04 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C910292AE7780900447F04 /* User.swift */; };
+		D6C910362AE8962300447F04 /* BioText.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C910352AE8962300447F04 /* BioText.swift */; };
+		D6C910382AE8973600447F04 /* BioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C910372AE8973600447F04 /* BioService.swift */; };
+		D6C9103B2AE8BBB500447F04 /* BioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C9103A2AE8BBB500447F04 /* BioModel.swift */; };
+		D6D2F0A62AEA12D500A4760D /* BioWillpower.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D2F0A52AEA12D500A4760D /* BioWillpower.swift */; };
+		D6D2F0A82AEA130400A4760D /* BioPatience.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D2F0A72AEA130400A4760D /* BioPatience.swift */; };
+		D6D2F0AA2AEA133A00A4760D /* BioClean.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D2F0A92AEA133A00A4760D /* BioClean.swift */; };
 		D6D4BE312ADE16D70013A72A /* PatienceNavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D4BE302ADE16D70013A72A /* PatienceNavigationStack.swift */; };
 		D6D4BE332ADE17350013A72A /* PatienceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D4BE322ADE17350013A72A /* PatienceView.swift */; };
 		D6D4BE362ADE179F0013A72A /* PatienceVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D4BE352ADE179F0013A72A /* PatienceVM.swift */; };
@@ -85,10 +93,18 @@
 		D65128942AD785C100238E8B /* IterraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IterraApp.swift; sourceTree = "<group>"; };
 		D651289A2AD785C300238E8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D651289D2AD785C300238E8B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D66F4FF42AEB199200A2C4F4 /* NewBioEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBioEventView.swift; sourceTree = "<group>"; };
+		D66F4FF62AEB290B00A2C4F4 /* NewBioEventVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBioEventVM.swift; sourceTree = "<group>"; };
 		D6C910212AE7340B00447F04 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		D6C910242AE73B2B00447F04 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		D6C910272AE776D100447F04 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		D6C910292AE7780900447F04 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D6C910352AE8962300447F04 /* BioText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioText.swift; sourceTree = "<group>"; };
+		D6C910372AE8973600447F04 /* BioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioService.swift; sourceTree = "<group>"; };
+		D6C9103A2AE8BBB500447F04 /* BioModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioModel.swift; sourceTree = "<group>"; };
+		D6D2F0A52AEA12D500A4760D /* BioWillpower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioWillpower.swift; sourceTree = "<group>"; };
+		D6D2F0A72AEA130400A4760D /* BioPatience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioPatience.swift; sourceTree = "<group>"; };
+		D6D2F0A92AEA133A00A4760D /* BioClean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioClean.swift; sourceTree = "<group>"; };
 		D6D4BE302ADE16D70013A72A /* PatienceNavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceNavigationStack.swift; sourceTree = "<group>"; };
 		D6D4BE322ADE17350013A72A /* PatienceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceView.swift; sourceTree = "<group>"; };
 		D6D4BE352ADE179F0013A72A /* PatienceVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceVM.swift; sourceTree = "<group>"; };
@@ -144,18 +160,19 @@
 			isa = PBXGroup;
 			children = (
 				D601BF332ADCB25500256C6C /* BioNavigationStack.swift */,
-				D601BF372ADCB39F00256C6C /* BioView */,
+				D601BF372ADCB39F00256C6C /* BioMain */,
 			);
 			path = BIO;
 			sourceTree = "<group>";
 		};
-		D601BF372ADCB39F00256C6C /* BioView */ = {
+		D601BF372ADCB39F00256C6C /* BioMain */ = {
 			isa = PBXGroup;
 			children = (
 				D601BF352ADCB31D00256C6C /* BioView.swift */,
 				D6E55D212AE203C900816158 /* BioVM.swift */,
+				D66F4FF82AEB292000A2C4F4 /* NewBioEvent */,
 			);
-			path = BioView;
+			path = BioMain;
 			sourceTree = "<group>";
 		};
 		D60281AA2AD7867400F47195 /* App */ = {
@@ -179,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				D6C910292AE7780900447F04 /* User.swift */,
+				D6C910392AE8BBA800447F04 /* BIO */,
 				D60281B12AD78FEE00F47195 /* TaskModel.swift */,
 			);
 			path = Models;
@@ -292,6 +310,15 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		D66F4FF82AEB292000A2C4F4 /* NewBioEvent */ = {
+			isa = PBXGroup;
+			children = (
+				D66F4FF42AEB199200A2C4F4 /* NewBioEventView.swift */,
+				D66F4FF62AEB290B00A2C4F4 /* NewBioEventVM.swift */,
+			);
+			path = NewBioEvent;
+			sourceTree = "<group>";
+		};
 		D6C910232AE73AFA00447F04 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -304,8 +331,21 @@
 			isa = PBXGroup;
 			children = (
 				D6C910272AE776D100447F04 /* UserService.swift */,
+				D6C910372AE8973600447F04 /* BioService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		D6C910392AE8BBA800447F04 /* BIO */ = {
+			isa = PBXGroup;
+			children = (
+				D6C9103A2AE8BBB500447F04 /* BioModel.swift */,
+				D6C910352AE8962300447F04 /* BioText.swift */,
+				D6D2F0A52AEA12D500A4760D /* BioWillpower.swift */,
+				D6D2F0A72AEA130400A4760D /* BioPatience.swift */,
+				D6D2F0A92AEA133A00A4760D /* BioClean.swift */,
+			);
+			path = BIO;
 			sourceTree = "<group>";
 		};
 		D6D4BE2F2ADE16C00013A72A /* Patience */ = {
@@ -459,18 +499,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				D60281AD2AD7869800F47195 /* InputView.swift in Sources */,
+				D66F4FF72AEB290B00A2C4F4 /* NewBioEventVM.swift in Sources */,
 				D6D4BE312ADE16D70013A72A /* PatienceNavigationStack.swift in Sources */,
 				D65128952AD785C100238E8B /* IterraApp.swift in Sources */,
 				D6C9102A2AE7780900447F04 /* User.swift in Sources */,
 				D6E55D1C2AE1F94700816158 /* WillpowerRow.swift in Sources */,
+				D6C910362AE8962300447F04 /* BioText.swift in Sources */,
 				D6C910252AE73B2B00447F04 /* LoginView.swift in Sources */,
 				D60281B22AD78FEE00F47195 /* TaskModel.swift in Sources */,
+				D6C9103B2AE8BBB500447F04 /* BioModel.swift in Sources */,
+				D6D2F0A62AEA12D500A4760D /* BioWillpower.swift in Sources */,
+				D6C910382AE8973600447F04 /* BioService.swift in Sources */,
 				D6D4BE362ADE179F0013A72A /* PatienceVM.swift in Sources */,
 				D6D4BE332ADE17350013A72A /* PatienceView.swift in Sources */,
 				D60281AF2AD786B200F47195 /* InputVM.swift in Sources */,
 				D64DD2A82AD9F53000733FFC /* CleanTimeNavigationStack.swift in Sources */,
 				D6C910282AE776D100447F04 /* UserService.swift in Sources */,
 				D601BF362ADCB31D00256C6C /* BioView.swift in Sources */,
+				D66F4FF52AEB199200A2C4F4 /* NewBioEventView.swift in Sources */,
 				D60281B42AD7B53700F47195 /* AppTabView.swift in Sources */,
 				D64DD2AB2AD9F5CE00733FFC /* CleanTimeView.swift in Sources */,
 				D62CEF962AD8DF620025D626 /* WillpowerVM.swift in Sources */,
@@ -481,7 +527,9 @@
 				D6C910222AE7340B00447F04 /* AppState.swift in Sources */,
 				D62CEF932AD8DE160025D626 /* WillpowerView.swift in Sources */,
 				D6E55D192AE1E9D400816158 /* PatienceRow.swift in Sources */,
+				D6D2F0A82AEA130400A4760D /* BioPatience.swift in Sources */,
 				D62CEF8C2AD8DC850025D626 /* AppScreen.swift in Sources */,
+				D6D2F0AA2AEA133A00A4760D /* BioClean.swift in Sources */,
 				D6E55D1F2AE1FD4C00816158 /* CleanTimeRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

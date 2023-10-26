@@ -16,6 +16,8 @@ struct IterraApp: App {
     
     init() {
         FirebaseApp.configure()
+        
+        
     }
     
     var body: some Scene {
@@ -37,6 +39,7 @@ struct IterraApp: App {
             Text("loading...")
         case .main:
             AppTabView()
+                .environmentObject(userService)
         case .registration:
             LoginView()
                 .environmentObject(appStateManager)

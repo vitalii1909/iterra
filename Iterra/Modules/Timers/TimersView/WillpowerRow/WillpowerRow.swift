@@ -9,21 +9,21 @@ import SwiftUI
 
 struct WillpowerRow: View {
     
-    @Binding var storeArray: [TaskModel]
-    var taskModel: TaskModel
+    @Binding var storeArray: [BioWillpower]
+    var taskModel: BioWillpower
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10, content: {
-            Text(taskModel.text)
+            Text(taskModel.text ?? "222")
                 .lineLimit(1)
                 .frame(maxWidth: .infinity, alignment: .leading)
             
             HStack(content: {
-                if taskModel.date < Date() {
+                if taskModel.deadline < Date() {
                     Text("Expired")
                         .font(.title.bold())
                 } else {
-                    Text(taskModel.date, style: .timer)
+                    Text(taskModel.deadline, style: .timer)
                         .font(.title.bold())
                 }
                 
@@ -73,8 +73,10 @@ struct WillpowerRow: View {
 }
 
 #Preview {
-    @State var array = TaskModel.mocArray(type: .cleanTime)
+    @State var array = [BioWillpower]()
     return List {
-        WillpowerRow(storeArray: $array, taskModel: array.first ?? .mocData(type: .willpower))
+//        WillpowerRow(storeArray: $array, taskModel: array.first ?? .mocData(type: .willpower))
+        //FIX3
+        Text("FIX3")
     }
 }

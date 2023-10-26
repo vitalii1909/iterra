@@ -8,20 +8,18 @@
 import SwiftUI
 import Combine
 
+import Firebase
+
 class TaskStore: ObservableObject {
-    @Published var timersArray = [TaskModel]() {
-        didSet {
-            saveTimers()
-        }
-    }
+    @Published var timersArray = [BioWillpower]()
     
-    @Published var patienceArray = [TaskModel]() {
+    @Published var patienceArray = [BioPatience]() {
         didSet {
             savePatience2()
         }
     }
     
-    @Published var cleanTimeArray = [TaskModel]() {
+    @Published var cleanTimeArray = [BioClean]() {
         didSet {
             saveStopwatch()
         }
@@ -33,6 +31,13 @@ class TaskStore: ObservableObject {
         fetchTimers()
         fetchStopwatch()
         fetchPatience2()
+        
+        $timersArray
+            .sink { [weak self] value in
+                print("get value \(value.count)")
+                self?.saveTimers(value: value)
+            }
+            .store(in: &tickets)
         
         Timer.publish(every: 1, on: .main, in: .common)
             .autoconnect()
@@ -78,10 +83,22 @@ class TaskStore: ObservableObject {
     }
     //clear test
     
-    func saveTimers() {
-        if let encoded = try? JSONEncoder().encode(timersArray) {
-            UserDefaults.standard.set(encoded, forKey: "timersArray")
+    func saveTimers(value: [BioWillpower]) {
+        let a = timersArray
+        
+        if !value.isEmpty {
+            do {
+                let encoded = try JSONEncoder().encode(timersArray)
+                UserDefaults.standard.set(encoded, forKey: "timersArray")
+            } catch let error {
+                print("errrrrr \(error)")
+            }
         }
+        
+        
+//        if let encoded = try? Firestore.Encoder().encode(timersArray) {
+//            UserDefaults.standard.set(encoded, forKey: "timersArray")
+//        }
     }
     
     func saveStopwatch() {
@@ -98,21 +115,21 @@ class TaskStore: ObservableObject {
     
     func fetchTimers() {
         guard let data = UserDefaults.standard.value(forKey: "timersArray") as? Data,
-              let decodedData = try? JSONDecoder().decode([TaskModel].self, from: data)
+              let decodedData = try? JSONDecoder().decode([BioWillpower].self, from: data)
         else { return }
         timersArray = decodedData
     }
     
     func fetchStopwatch() {
         guard let data = UserDefaults.standard.value(forKey: "cleanTimeArray") as? Data,
-              let decodedData = try? JSONDecoder().decode([TaskModel].self, from: data)
+              let decodedData = try? JSONDecoder().decode([BioClean].self, from: data)
         else { return }
         cleanTimeArray = decodedData
     }
     
     func fetchPatience2() {
         guard let data = UserDefaults.standard.value(forKey: "patienceArray") as? Data,
-              let decodedData = try? JSONDecoder().decode([TaskModel].self, from: data)
+              let decodedData = try? JSONDecoder().decode([BioPatience].self, from: data)
         else { return }
         patienceArray = decodedData
     }
@@ -146,4 +163,27 @@ struct AppTabView: View {
 #Preview {
     AppTabView()
         .environmentObject(TaskStore())
+}
+
+extension Encodable {
+    var dictionary: [String: Any]? {
+        do {
+            let encoded = try Firestore.Encoder().encode(self)
+            return encoded
+        } catch let error {
+            print("wwwww \(error)")
+            return nil
+        }
+    }
+}
+
+extension UserDefaults {
+    func decode<T: Decodable>(_ type: T.Type, forKey defaultName: String) throws -> T {
+//        try! JSONDecoder().decode(T.self, from: data(forKey: defaultName) ?? .init())
+        try! Firestore.Decoder().decode(T.self, from: data(forKey: defaultName) ?? .init())
+    }
+    func encode<T: Encodable>(_ value: T, forKey defaultName: String) throws {
+//        try! set(JSONEncoder().encode(value), forKey: defaultName)
+        try! set(Firestore.Encoder().encode(value), forKey: defaultName)
+    }
 }

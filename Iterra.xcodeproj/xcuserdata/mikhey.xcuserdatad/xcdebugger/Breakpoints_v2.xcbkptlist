@@ -3,4 +3,70 @@
    uuid = "588B13DA-2394-40E6-8F53-7497366F8ED7"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2F44C72D-35C4-482F-8B85-1C608827018F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Iterra/Modules/Input/InputView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "200"
+            endingLineNumber = "200"
+            landmarkName = "newHud(proxy:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "01527ABC-2ABF-4A90-942F-41AC50A6EC43"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Iterra/Services/BioService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "addBio(event:userId:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "01527ABC-2ABF-4A90-942F-41AC50A6EC43 - 4d649c18a16bdd26"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for Iterra.BioService.addBio(event: Iterra.BioModel, userId: Swift.String) async -&gt; ()"
+                  moduleName = "Iterra"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mikhey/Projects/Upwork/Itterra%20BIO/Iterra/Services/BioService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "588">
+               </Location>
+               <Location
+                  uuid = "01527ABC-2ABF-4A90-942F-41AC50A6EC43 - 4d649c18a16bdd07"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for Iterra.BioService.addBio(event: Iterra.BioModel, userId: Swift.String) async -&gt; ()"
+                  moduleName = "Iterra"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mikhey/Projects/Upwork/Itterra%20BIO/Iterra/Services/BioService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "588">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

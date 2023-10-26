@@ -15,7 +15,6 @@ struct User: Identifiable, Decodable {
 }
 
 extension User {
-    
     var isCurrentUser: Bool {
         Auth.auth().currentUser?.uid == id
     }

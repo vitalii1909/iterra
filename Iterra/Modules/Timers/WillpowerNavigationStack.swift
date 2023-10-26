@@ -31,7 +31,7 @@ struct WillpowerNavigationStack: View {
 
 #Preview {
     let taskStore = TaskStore()
-    taskStore.timersArray = TaskModel.mocArray(type: .willpower)
+//    taskStore.timersArray = TaskModel.mocArray(type: .willpower)
     return WillpowerNavigationStack()
         .environmentObject(taskStore)
 }

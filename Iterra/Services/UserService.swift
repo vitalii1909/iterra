@@ -10,7 +10,11 @@ import FirebaseFirestore
 
 class UserService: ObservableObject {
     
+    @Published var user: User?
+    
+    @MainActor
     func fetchUser() async -> User? {
+        
         guard let email = UserDefaults.standard.string(forKey: "currentUserEmail") else {
             return nil
         }
@@ -22,6 +26,8 @@ class UserService: ObservableObject {
         guard let user = try? document.data(as: User.self) else {
             return nil
         }
+        
+        self.user = user
         
         return user
     }

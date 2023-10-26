@@ -31,7 +31,7 @@ struct CleanTimeNavigationStack: View {
 
 #Preview {
     let taskStore = TaskStore()
-    taskStore.timersArray = TaskModel.mocArray(type: .patience)
+//    taskStore.timersArray = TaskModel.mocArray(type: .patience)
     return CleanTimeNavigationStack()
         .environmentObject(taskStore)
 }

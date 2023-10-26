@@ -14,7 +14,7 @@ class PatienceVM: TaskVM {
 
 
 class TaskVM: ObservableObject {
-    func getDict(array: [TaskModel]) -> [Date : [TaskModel]]? {
+    func getDict(array: [BioModel]) -> [Date : [BioModel]]? {
         let array = array.filter({$0.finished == false}).sorted(by: {$0.deadline > $1.deadline})
         //FIXME: remove force
         let grouped = array.sliced(by: [.year, .month, .day], for: \.deadline)

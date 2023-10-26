@@ -18,7 +18,8 @@ struct CleanTimeView: View {
         VStack {
             if let dict = vm.getDict(array: taskStore.cleanTimeArray) {
                 List {
-                    getSections(dict: dict)
+                    Text("222")
+//                    getSections(dict: dict)
                 }
                 .animation(.spring(), value: taskStore.cleanTimeArray.filter({$0.finished == false }).count)
                 .animation(.spring(), value: taskStore.cleanTimeArray.count)
@@ -30,7 +31,7 @@ struct CleanTimeView: View {
         .animation(.spring(), value: taskStore.cleanTimeArray.filter({$0.finished == false }).count)
     }
     
-    private func getSections(dict: [Date : [TaskModel]]) -> some View {
+    private func getSections(dict: [Date : [BioClean]]) -> some View {
         ForEach(dict.map({$0.key}).sorted(by: {$0 < $1}), id: \.timeIntervalSince1970) { key in
             Section() {
                 getRows(key: key, dict: dict)
@@ -42,8 +43,8 @@ struct CleanTimeView: View {
         }
     }
     
-    private func getRows(key: Date, dict: [Date : [TaskModel]]) -> some View {
-        let array = dict[key] ?? [TaskModel]()
+    private func getRows(key: Date, dict: [Date : [BioClean]]) -> some View {
+        let array = dict[key] ?? [BioClean]()
         return ForEach(array.sorted(by: {$0.deadline < $1.deadline}), id: \.id) { taskModel in
             taskCell(taskModel: taskModel)
         }
@@ -56,14 +57,14 @@ struct CleanTimeView: View {
         }
     }
     
-    private func taskCell(taskModel: TaskModel) -> some View {
+    private func taskCell(taskModel: BioClean) -> some View {
         CleanTimeRow(storeArray: $taskStore.cleanTimeArray, taskModel: taskModel)
     }
 }
 
 #Preview {
     let taskStore = TaskStore()
-    taskStore.cleanTimeArray = TaskModel.mocArray(type: .cleanTime)
+//    taskStore.cleanTimeArray = TaskModel.mocArray(type: .cleanTime)
     return CleanTimeView(vm: .init())
         .environmentObject(taskStore)
 }

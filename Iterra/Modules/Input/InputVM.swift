@@ -19,23 +19,21 @@ class InputVM: ObservableObject {
         self.type = type
     }
     
-    func createTask() -> TaskModel {
-        
-        
-        let task = TaskModel(id: UUID().uuidString, type: type, date: selectedDate, text: text)
-        
+    func createTask() -> BioModel {
         switch type {
         case .willpower:
-            task.date = selectedDate
-            task.deadline = selectedDate
+            let task = BioWillpower(id: UUID().uuidString, startDate: Date(), deadline: selectedDate, finished: false, text: text, accepted: false)
+            return task
         case .patience:
-            task.date = Date()
-            task.deadline = selectedDate
+//            task.date = Date()
+//            task.deadline = selectedDate
+            let task = BioWillpower(id: UUID().uuidString, startDate: Date(), stopDate: selectedDate, deadline: selectedDate, finished: false, text: text, accepted: false)
+            return task
         case .cleanTime:
-            task.date = Date()
-            task.deadline = selectedDate
+//            task.date = Date()
+//            task.deadline = selectedDate
+            let task = BioWillpower(id: UUID().uuidString, startDate: Date(), stopDate: selectedDate, deadline: selectedDate, finished: false, text: text, accepted: false)
+            return task
         }
-    
-        return task
     }
 }

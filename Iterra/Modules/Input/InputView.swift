@@ -14,7 +14,7 @@ struct InputView: View {
     @EnvironmentObject var taskStore: TaskStore
     @Environment(\.dismiss) var dismiss
     
-    @State private var localArray = [TaskModel]()
+    @State private var localArray = [BioModel]()
     
     @State var tableView: UITableView?
     
@@ -55,10 +55,10 @@ struct InputView: View {
         List {
             ForEach(localArray, id: \.id) { taskModel in
                 VStack(alignment: .leading, content: {
-                    Text(taskModel.text)
-                        .font(.title3.bold())
-                        .lineLimit(1)
-                        .multilineTextAlignment(.leading)
+//                    Text(taskModel.text)
+//                        .font(.title3.bold())
+//                        .lineLimit(1)
+//                        .multilineTextAlignment(.leading)
                     
                     Text("\(taskModel.deadline.get(.hour)):\(taskModel.deadline.get(.minute))  \(taskModel.deadline.get(.day))/\(taskModel.deadline.get(.month))")
                 })
@@ -109,13 +109,15 @@ struct InputView: View {
             
             let task = vm.createTask()
             
-            switch task.type {
-            case .willpower:
-                taskStore.timersArray.append(task)
-            case .patience:
-                taskStore.patienceArray.append(task)
-            case .cleanTime:
-                taskStore.cleanTimeArray.append(task)
+            switch task {
+            case let bio as BioWillpower:
+                taskStore.timersArray.append(bio)
+            case let bio as BioPatience:
+                taskStore.patienceArray.append(bio)
+            case let bio as BioClean:
+                taskStore.cleanTimeArray.append(bio)
+            default:
+                break
             }
             
             dismiss()
@@ -193,13 +195,15 @@ struct InputView: View {
                         return
                     }
                     
-                    switch vm.type {
-                    case .willpower:
-                        taskStore.timersArray += localArray
-                    case .patience:
-                        taskStore.patienceArray += localArray
-                    case .cleanTime:
-                        taskStore.cleanTimeArray += localArray
+                    switch localArray {
+                    case let local as [BioWillpower]:
+                        taskStore.timersArray += local
+                    case let local as [BioPatience]:
+                        taskStore.patienceArray += local
+                    case let local as [BioClean]:
+                        taskStore.cleanTimeArray += local
+                    default:
+                        break
                     }
                     
                     dismiss()

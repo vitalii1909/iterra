@@ -18,7 +18,8 @@ struct PatienceView: View {
         VStack {
             if let dict = vm.getDict(array: taskStore.patienceArray) {
                 List {
-                    getSections(dict: dict)
+                    Text("222")
+//                    getSections(dict: dict)
                 }
                 .animation(.spring(), value: taskStore.patienceArray.filter({$0.finished == false }).count)
                 .animation(.spring(), value: taskStore.patienceArray.count)
@@ -30,7 +31,7 @@ struct PatienceView: View {
         .animation(.spring(), value: taskStore.patienceArray.filter({$0.finished == false }).count)
     }
     
-    private func getSections(dict: [Date : [TaskModel]]) -> some View {
+    private func getSections(dict: [Date : [BioPatience]]) -> some View {
         ForEach(dict.map({$0.key}).sorted(by: {$0 < $1}), id: \.timeIntervalSince1970) { key in
             Section() {
                 getRows(key: key, dict: dict)
@@ -42,8 +43,8 @@ struct PatienceView: View {
         }
     }
     
-    private func getRows(key: Date, dict: [Date : [TaskModel]]) -> some View {
-        let array = dict[key] ?? [TaskModel]()
+    private func getRows(key: Date, dict: [Date : [BioPatience]]) -> some View {
+        let array = dict[key] ?? [BioPatience]()
         return ForEach(array.sorted(by: {$0.deadline < $1.deadline}), id: \.id) { taskModel in
             taskCell(taskModel: taskModel)
         }
@@ -56,14 +57,14 @@ struct PatienceView: View {
         }
     }
     
-    private func taskCell(taskModel: TaskModel) -> some View {
+    private func taskCell(taskModel: BioPatience) -> some View {
         PatienceRow(storeArray: $taskStore.patienceArray, taskModel: taskModel)
     }
 }
 
 #Preview {
     let taskStore = TaskStore()
-    taskStore.patienceArray = TaskModel.mocArray(type: .cleanTime)
+//    taskStore.patienceArray = TaskModel.mocArray(type: .cleanTime)
     return PatienceView(vm: PatienceVM())
         .environmentObject(taskStore)
 }
