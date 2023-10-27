@@ -9,17 +9,12 @@ import SwiftUI
 
 struct BioView: View {
     
-    @EnvironmentObject var taskStore: TaskStore
+    @EnvironmentObject var taskStore: StoreManager
     @EnvironmentObject var userService: UserService
-    @StateObject var bioService: BioService = .init()
+    
+//    @StateObject var bioService: BioService = .init()
     
     @ObservedObject var vm: BioVM
-    
-    private var tasks: [BioModel] {
-        return (taskStore.cleanTimeArray + taskStore.timersArray + taskStore.patienceArray)
-    }
-    
-    @State var dict = [Date : [BioModel]]()
     
     @State var showNewEvent = false
     
@@ -27,7 +22,7 @@ struct BioView: View {
         
         ScrollViewReader(content: { proxy in
             
-            if !dict.isEmpty {
+            if let dict = vm.getDict(array: taskStore.bioArray), !dict.isEmpty {
                 List {
                     getSections(dict: dict)
                 }
@@ -46,13 +41,19 @@ struct BioView: View {
                 guard let userId = userService.user?.id else {
                     return
                 }
-                if let dict = await vm.fetchBio(service: bioService, userId: userId) {
-                    self.dict = dict
-                }
+                
+                await vm.fetchBio(bioArray: $taskStore.bioArray, userId: userId)
             }
         }
+        .toolbar {
+            Button(action: {
+                showNewEvent = true
+            }, label: {
+                Image(systemName: "plus")
+            })
+        }
         .sheet(isPresented: $showNewEvent, content: {
-            NewBioEventView()
+            NewBioEventView(array: $taskStore.bioArray)
         })
     }
     
@@ -150,7 +151,7 @@ struct BioView: View {
 
 
 #Preview {
-    let taskStore = TaskStore()
+    let taskStore = StoreManager()
 //    taskStore.cleanTimeArray = TaskModel.mocArray(type: .cleanTime)
 //    taskStore.timersArray = TaskModel.mocArray(type: .willpower)
 //    taskStore.cleanTimeArray = TaskModel.mocArray(type: .cleanTime)

@@ -9,11 +9,13 @@ import SwiftUI
 
 struct NewBioEventView: View {
     
-    @State var text = ""
     @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var userService: UserService
     
     @StateObject var vm: NewBioEventVM = .init()
-    @EnvironmentObject var userService: UserService
+    
+    @Binding var array: [BioModel]
+    @State var text = ""
     
     var body: some View {
         VStack(content: {
@@ -46,6 +48,8 @@ struct NewBioEventView: View {
                 
                 Task {
                     await vm.addNewEvenet(bio: bioEvent, userId: userId)
+                    array.append(bioEvent)
+                    dismiss()
                 }
             }, label: {
                 Text("Send")
@@ -66,5 +70,5 @@ struct NewBioEventView: View {
 }
 
 #Preview {
-    NewBioEventView()
+    NewBioEventView(array: .constant([BioModel]()))
 }

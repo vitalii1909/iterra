@@ -30,7 +30,6 @@ class BioService: ObservableObject {
     func addBio(event: BioModel, userId: String) async {
         do {
             try Firestore.firestore().collection("users").document(userId).collection("bio").addDocument(from: event)
-            
         } catch let error {
             print("Error writing city to Firestore: \(error)")
         }

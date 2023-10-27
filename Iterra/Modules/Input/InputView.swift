@@ -11,7 +11,7 @@ struct InputView: View {
     
     @ObservedObject var vm: InputVM
     
-    @EnvironmentObject var taskStore: TaskStore
+    @EnvironmentObject var taskStore: StoreManager
     @Environment(\.dismiss) var dismiss
     
     @State private var localArray = [BioModel]()
@@ -227,7 +227,7 @@ struct InputView: View {
 
 #Preview {
     InputView(vm: InputVM(type: .cleanTime))
-        .environmentObject(TaskStore())
+        .environmentObject(StoreManager())
 }
 
 import UIKit

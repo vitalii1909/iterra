@@ -8,6 +8,13 @@
 import SwiftUI
 
 class BioVM: ObservableObject {
+    
+    var bioService: BioService
+    
+    init(bioService: BioService = .init()) {
+        self.bioService = bioService
+    }
+    
     func getDict(array: [BioModel]) -> [Date : [BioModel]]? {
         let array = array.filter({$0.finished == true}).sorted(by: {$0.deadline > $1.deadline})
         let grouped = array.sliced(by: [.year, .month, .day], for: \.deadline)
@@ -19,16 +26,13 @@ class BioVM: ObservableObject {
         }
     }
     
-    func fetchBio(service: BioService, userId: String) async ->[Date : [BioModel]]? {
+    @MainActor
+    func fetchBio(bioArray: Binding<[BioModel]>, userId: String) async {
         
-        guard let array = await service.fetchBio(userId: userId) else {
-            return nil
+        guard let array = await bioService.fetchBio(userId: userId) else {
+            return
         }
         
-        guard let dict = getDict(array: array) else {
-            return nil
-        }
-        
-        return dict
+        bioArray.wrappedValue = array
     }
 }

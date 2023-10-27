@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PatienceView: View {
     
-    @EnvironmentObject var taskStore: TaskStore
+    @EnvironmentObject var taskStore: StoreManager
     
     @ObservedObject var vm: PatienceVM
     
@@ -63,7 +63,7 @@ struct PatienceView: View {
 }
 
 #Preview {
-    let taskStore = TaskStore()
+    let taskStore = StoreManager()
 //    taskStore.patienceArray = TaskModel.mocArray(type: .cleanTime)
     return PatienceView(vm: PatienceVM())
         .environmentObject(taskStore)

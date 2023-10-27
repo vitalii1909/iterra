@@ -9,7 +9,7 @@ import SwiftUI
 
 struct WillpowerView: View {
     
-    @EnvironmentObject var taskStore: TaskStore
+    @EnvironmentObject var taskStore: StoreManager
     @ObservedObject var vm: WillpowerVM
     
     var body: some View {
@@ -61,7 +61,7 @@ struct WillpowerView: View {
 }
 
 #Preview {
-    let taskStore = TaskStore()
+    let taskStore = StoreManager()
     taskStore.timersArray = BioWillpower.mocArray()
     return WillpowerView(vm: .init())
         .environmentObject(taskStore)

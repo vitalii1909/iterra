@@ -20,53 +20,5 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "01527ABC-2ABF-4A90-942F-41AC50A6EC43"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Iterra/Services/BioService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "addBio(event:userId:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "01527ABC-2ABF-4A90-942F-41AC50A6EC43 - 4d649c18a16bdd26"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for Iterra.BioService.addBio(event: Iterra.BioModel, userId: Swift.String) async -&gt; ()"
-                  moduleName = "Iterra"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mikhey/Projects/Upwork/Itterra%20BIO/Iterra/Services/BioService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "588">
-               </Location>
-               <Location
-                  uuid = "01527ABC-2ABF-4A90-942F-41AC50A6EC43 - 4d649c18a16bdd07"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for Iterra.BioService.addBio(event: Iterra.BioModel, userId: Swift.String) async -&gt; ()"
-                  moduleName = "Iterra"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mikhey/Projects/Upwork/Itterra%20BIO/Iterra/Services/BioService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "34"
-                  endingLineNumber = "34"
-                  offsetFromSymbolStart = "588">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

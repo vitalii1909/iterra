@@ -10,7 +10,7 @@ import Combine
 
 import Firebase
 
-class TaskStore: ObservableObject {
+class StoreManager: ObservableObject {
     @Published var timersArray = [BioWillpower]()
     
     @Published var patienceArray = [BioPatience]() {
@@ -24,6 +24,8 @@ class TaskStore: ObservableObject {
             saveStopwatch()
         }
     }
+    
+    @Published var bioArray = [BioModel]()
     
     private var tickets: [AnyCancellable] = []
     
@@ -140,7 +142,7 @@ struct AppTabView: View {
     @State var currentScreen: AppScreen = .timer
     @State var showInput = false
     
-    @StateObject var taskStore = TaskStore()
+    @StateObject var taskStore = StoreManager()
     
     var body: some View {
         ZStack(alignment: .bottom, content: {
@@ -162,7 +164,7 @@ struct AppTabView: View {
 
 #Preview {
     AppTabView()
-        .environmentObject(TaskStore())
+        .environmentObject(StoreManager())
 }
 
 extension Encodable {

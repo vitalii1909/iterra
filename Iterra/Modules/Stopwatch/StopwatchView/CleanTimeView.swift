@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CleanTimeView: View {
     
-    @EnvironmentObject var taskStore: TaskStore
+    @EnvironmentObject var taskStore: StoreManager
     
     @ObservedObject var vm: CleanTimeVM
     
@@ -63,7 +63,7 @@ struct CleanTimeView: View {
 }
 
 #Preview {
-    let taskStore = TaskStore()
+    let taskStore = StoreManager()
 //    taskStore.cleanTimeArray = TaskModel.mocArray(type: .cleanTime)
     return CleanTimeView(vm: .init())
         .environmentObject(taskStore)
