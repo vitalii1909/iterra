@@ -48,7 +48,7 @@ class StoreManager: ObservableObject {
     }
     
     private func count() {
-        let expiredArray = patienceArray.filter({$0.finished == false}).filter({$0.deadline < Date()})
+        let expiredArray = patienceArray.filter({$0.finished == false}).filter({$0.date < Date()})
         if expiredArray.count > 0 {
             for i in expiredArray {
                 if let index = patienceArray.firstIndex(where: {$0.id == i.id}) {
@@ -68,7 +68,7 @@ class StoreManager: ObservableObject {
     
     //clear test
     private func updateTimers() {
-        let expiredArray = timersArray.filter({$0.finished == false}).filter({$0.deadline < Date()})
+        let expiredArray = timersArray.filter({$0.finished == false}).filter({$0.date < Date()})
         if expiredArray.count > 0 {
             for i in expiredArray {
                 if let index = timersArray.firstIndex(where: {$0.id == i.id}) {

@@ -11,17 +11,10 @@ import FirebaseFirestoreSwift
 class BioModel: Codable, Identifiable {
     @DocumentID var id: String?
     
-    var startDate: Date
-    var stopDate: Date?
-    var deadline: Date
+    var date: Date
     
-    var finished: Bool
-    
-    init(id: String? = nil, startDate: Date, stopDate: Date? = nil, deadline: Date, finished: Bool) {
+    init(id: String? = nil, date: Date) {
         self.id = id
-        self.startDate = startDate
-        self.stopDate = stopDate
-        self.deadline = deadline
-        self.finished = finished
+        self.date = date
     }
 }

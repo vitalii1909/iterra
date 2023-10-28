@@ -31,14 +31,4 @@ class UserService: ObservableObject {
         
         return user
     }
-    
-    private func fetchUsers(withEmail: String, completion: @escaping([User]) -> Void) {
-        Firestore.firestore().collection("users").whereField("email", isEqualTo: withEmail)
-            .getDocuments { snapshot, _ in
-                guard let documents = snapshot?.documents else { return }
-                let users = documents.compactMap({ try? $0.data(as: User.self)})
-                
-                completion(users)
-            }
-    }
 }

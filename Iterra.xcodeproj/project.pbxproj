@@ -25,9 +25,12 @@
 		D651289E2AD785C300238E8B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D651289D2AD785C300238E8B /* Preview Assets.xcassets */; };
 		D66F4FF52AEB199200A2C4F4 /* NewBioEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66F4FF42AEB199200A2C4F4 /* NewBioEventView.swift */; };
 		D66F4FF72AEB290B00A2C4F4 /* NewBioEventVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66F4FF62AEB290B00A2C4F4 /* NewBioEventVM.swift */; };
-		D6C910092AE4B34C00447F04 /* SwiftUIIntrospect in Frameworks */ = {isa = PBXBuildFile; productRef = D6C910082AE4B34C00447F04 /* SwiftUIIntrospect */; };
-		D6C9100B2AE4B34C00447F04 /* SwiftUIIntrospect-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = D6C9100A2AE4B34C00447F04 /* SwiftUIIntrospect-Dynamic */; };
-		D6C9100D2AE4B34C00447F04 /* SwiftUIIntrospect-Static in Frameworks */ = {isa = PBXBuildFile; productRef = D6C9100C2AE4B34C00447F04 /* SwiftUIIntrospect-Static */; };
+		D66F4FFB2AEB387000A2C4F4 /* BioTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66F4FFA2AEB387000A2C4F4 /* BioTask.swift */; };
+		D66F4FFD2AEB434600A2C4F4 /* BioUpdateDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66F4FFC2AEB434600A2C4F4 /* BioUpdateDateView.swift */; };
+		D66F50002AEB46F200A2C4F4 /* BioUpdateDateVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66F4FFF2AEB46F200A2C4F4 /* BioUpdateDateVM.swift */; };
+		D66F50062AEC954900A2C4F4 /* Extension + Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66F50052AEC954900A2C4F4 /* Extension + Date.swift */; };
+		D66F50082AEC972200A2C4F4 /* Extension + Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66F50072AEC972200A2C4F4 /* Extension + Array.swift */; };
+		D66F500D2AEC9FB500A2C4F4 /* SelectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66F500C2AEC9FB500A2C4F4 /* SelectButton.swift */; };
 		D6C910222AE7340B00447F04 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C910212AE7340B00447F04 /* AppState.swift */; };
 		D6C910252AE73B2B00447F04 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C910242AE73B2B00447F04 /* LoginView.swift */; };
 		D6C910282AE776D100447F04 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C910272AE776D100447F04 /* UserService.swift */; };
@@ -95,6 +98,12 @@
 		D651289D2AD785C300238E8B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D66F4FF42AEB199200A2C4F4 /* NewBioEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBioEventView.swift; sourceTree = "<group>"; };
 		D66F4FF62AEB290B00A2C4F4 /* NewBioEventVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBioEventVM.swift; sourceTree = "<group>"; };
+		D66F4FFA2AEB387000A2C4F4 /* BioTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioTask.swift; sourceTree = "<group>"; };
+		D66F4FFC2AEB434600A2C4F4 /* BioUpdateDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioUpdateDateView.swift; sourceTree = "<group>"; };
+		D66F4FFF2AEB46F200A2C4F4 /* BioUpdateDateVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioUpdateDateVM.swift; sourceTree = "<group>"; };
+		D66F50052AEC954900A2C4F4 /* Extension + Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + Date.swift"; sourceTree = "<group>"; };
+		D66F50072AEC972200A2C4F4 /* Extension + Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + Array.swift"; sourceTree = "<group>"; };
+		D66F500C2AEC9FB500A2C4F4 /* SelectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectButton.swift; sourceTree = "<group>"; };
 		D6C910212AE7340B00447F04 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		D6C910242AE73B2B00447F04 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		D6C910272AE776D100447F04 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
@@ -121,14 +130,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6E714922ADDB531005BFC81 /* FirebaseDatabase in Frameworks */,
-				D6C9100B2AE4B34C00447F04 /* SwiftUIIntrospect-Dynamic in Frameworks */,
 				D6E714A02ADDB531005BFC81 /* FirebaseFunctionsCombine-Community in Frameworks */,
 				D6E714982ADDB531005BFC81 /* FirebaseFirestore in Frameworks */,
 				D6E714842ADDB531005BFC81 /* FirebaseAnalyticsSwift in Frameworks */,
 				D6E714802ADDB531005BFC81 /* FirebaseAnalytics in Frameworks */,
 				D6E714822ADDB531005BFC81 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
 				D6E714A82ADDB531005BFC81 /* FirebaseMLModelDownloader in Frameworks */,
-				D6C910092AE4B34C00447F04 /* SwiftUIIntrospect in Frameworks */,
 				D6E7149C2ADDB531005BFC81 /* FirebaseFirestoreSwift in Frameworks */,
 				D6E714882ADDB531005BFC81 /* FirebaseAppCheck in Frameworks */,
 				D6E714862ADDB531005BFC81 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
@@ -137,7 +144,6 @@
 				D6E714B02ADDB531005BFC81 /* FirebaseRemoteConfigSwift in Frameworks */,
 				D6E714A22ADDB531005BFC81 /* FirebaseInAppMessaging-Beta in Frameworks */,
 				D6E714942ADDB531005BFC81 /* FirebaseDatabaseSwift in Frameworks */,
-				D6C9100D2AE4B34C00447F04 /* SwiftUIIntrospect-Static in Frameworks */,
 				D6E7149E2ADDB531005BFC81 /* FirebaseFunctions in Frameworks */,
 				D6E714B42ADDB531005BFC81 /* FirebaseStorageCombine-Community in Frameworks */,
 				D6E714AE2ADDB531005BFC81 /* FirebaseRemoteConfig in Frameworks */,
@@ -170,6 +176,7 @@
 			children = (
 				D601BF352ADCB31D00256C6C /* BioView.swift */,
 				D6E55D212AE203C900816158 /* BioVM.swift */,
+				D66F4FFE2AEB434A00A2C4F4 /* BioUpdateDate */,
 				D66F4FF82AEB292000A2C4F4 /* NewBioEvent */,
 			);
 			path = BioMain;
@@ -202,34 +209,26 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		D62CEF8A2AD8DBE30025D626 /* Modules */ = {
+		D62CEF8A2AD8DBE30025D626 /* Features */ = {
 			isa = PBXGroup;
 			children = (
 				D6C910232AE73AFA00447F04 /* Login */,
-				D64DD2A52AD9ED4C00733FFC /* Timers */,
+				D64DD2A52AD9ED4C00733FFC /* Willpower */,
 				D6D4BE2F2ADE16C00013A72A /* Patience */,
-				D62CEF8F2AD8DD000025D626 /* Stopwatch */,
+				D62CEF8F2AD8DD000025D626 /* Clean */,
 				D601BF322ADCB22600256C6C /* BIO */,
 				D60281AB2AD7867C00F47195 /* Input */,
 			);
-			path = Modules;
+			path = Features;
 			sourceTree = "<group>";
 		};
-		D62CEF8F2AD8DD000025D626 /* Stopwatch */ = {
+		D62CEF8F2AD8DD000025D626 /* Clean */ = {
 			isa = PBXGroup;
 			children = (
-				D62CEF942AD8DF550025D626 /* StopwatchView */,
 				D64DD2A72AD9F53000733FFC /* CleanTimeNavigationStack.swift */,
-				D64DD2A92AD9F5AA00733FFC /* StopwatchView */,
+				D64DD2A92AD9F5AA00733FFC /* CleanTime */,
 			);
-			path = Stopwatch;
-			sourceTree = "<group>";
-		};
-		D62CEF942AD8DF550025D626 /* StopwatchView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = StopwatchView;
+			path = Clean;
 			sourceTree = "<group>";
 		};
 		D64DD29E2AD8E57B00733FFC /* Navigation */ = {
@@ -242,33 +241,33 @@
 			path = Navigation;
 			sourceTree = "<group>";
 		};
-		D64DD2A52AD9ED4C00733FFC /* Timers */ = {
+		D64DD2A52AD9ED4C00733FFC /* Willpower */ = {
 			isa = PBXGroup;
 			children = (
 				D62CEF902AD8DD160025D626 /* WillpowerNavigationStack.swift */,
-				D64DD2A62AD9ED5E00733FFC /* TimersView */,
+				D64DD2A62AD9ED5E00733FFC /* WillpowerView */,
 			);
-			path = Timers;
+			path = Willpower;
 			sourceTree = "<group>";
 		};
-		D64DD2A62AD9ED5E00733FFC /* TimersView */ = {
+		D64DD2A62AD9ED5E00733FFC /* WillpowerView */ = {
 			isa = PBXGroup;
 			children = (
 				D62CEF922AD8DE160025D626 /* WillpowerView.swift */,
 				D62CEF952AD8DF620025D626 /* WillpowerVM.swift */,
 				D6E55D1D2AE1F94C00816158 /* WillpowerRow */,
 			);
-			path = TimersView;
+			path = WillpowerView;
 			sourceTree = "<group>";
 		};
-		D64DD2A92AD9F5AA00733FFC /* StopwatchView */ = {
+		D64DD2A92AD9F5AA00733FFC /* CleanTime */ = {
 			isa = PBXGroup;
 			children = (
 				D64DD2AA2AD9F5CE00733FFC /* CleanTimeView.swift */,
 				D64DD2AC2AD9F5D500733FFC /* CleanTimeVM.swift */,
 				D6E55D202AE1FD5100816158 /* CleanTimeRow */,
 			);
-			path = StopwatchView;
+			path = CleanTime;
 			sourceTree = "<group>";
 		};
 		D65128882AD785C100238E8B = {
@@ -290,13 +289,14 @@
 		D65128932AD785C100238E8B /* Iterra */ = {
 			isa = PBXGroup;
 			children = (
-				D6E7147C2ADDB4A5005BFC81 /* GoogleService-Info.plist */,
+				D66F500A2AEC9F9800A2C4F4 /* Shared */,
 				D60281AA2AD7867400F47195 /* App */,
-				D62CEF8A2AD8DBE30025D626 /* Modules */,
+				D62CEF8A2AD8DBE30025D626 /* Features */,
 				D6C910262AE7700900447F04 /* Services */,
 				D60281B02AD78FCB00F47195 /* Models */,
+				D66F50022AEC8AC600A2C4F4 /* Extensions */,
 				D64DD29E2AD8E57B00733FFC /* Navigation */,
-				D651289A2AD785C300238E8B /* Assets.xcassets */,
+				D66F50092AEC9F3E00A2C4F4 /* Resources */,
 				D651289C2AD785C300238E8B /* Preview Content */,
 			);
 			path = Iterra;
@@ -317,6 +317,60 @@
 				D66F4FF62AEB290B00A2C4F4 /* NewBioEventVM.swift */,
 			);
 			path = NewBioEvent;
+			sourceTree = "<group>";
+		};
+		D66F4FF92AEB385E00A2C4F4 /* BioTasks */ = {
+			isa = PBXGroup;
+			children = (
+				D66F4FFA2AEB387000A2C4F4 /* BioTask.swift */,
+				D6D2F0A52AEA12D500A4760D /* BioWillpower.swift */,
+				D6D2F0A72AEA130400A4760D /* BioPatience.swift */,
+				D6D2F0A92AEA133A00A4760D /* BioClean.swift */,
+			);
+			path = BioTasks;
+			sourceTree = "<group>";
+		};
+		D66F4FFE2AEB434A00A2C4F4 /* BioUpdateDate */ = {
+			isa = PBXGroup;
+			children = (
+				D66F4FFC2AEB434600A2C4F4 /* BioUpdateDateView.swift */,
+				D66F4FFF2AEB46F200A2C4F4 /* BioUpdateDateVM.swift */,
+			);
+			path = BioUpdateDate;
+			sourceTree = "<group>";
+		};
+		D66F50022AEC8AC600A2C4F4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D66F50052AEC954900A2C4F4 /* Extension + Date.swift */,
+				D66F50072AEC972200A2C4F4 /* Extension + Array.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D66F50092AEC9F3E00A2C4F4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D6E7147C2ADDB4A5005BFC81 /* GoogleService-Info.plist */,
+				D651289A2AD785C300238E8B /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D66F500A2AEC9F9800A2C4F4 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				D66F500B2AEC9FA200A2C4F4 /* UI */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		D66F500B2AEC9FA200A2C4F4 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D66F500C2AEC9FB500A2C4F4 /* SelectButton.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		D6C910232AE73AFA00447F04 /* Login */ = {
@@ -341,9 +395,7 @@
 			children = (
 				D6C9103A2AE8BBB500447F04 /* BioModel.swift */,
 				D6C910352AE8962300447F04 /* BioText.swift */,
-				D6D2F0A52AEA12D500A4760D /* BioWillpower.swift */,
-				D6D2F0A72AEA130400A4760D /* BioPatience.swift */,
-				D6D2F0A92AEA133A00A4760D /* BioClean.swift */,
+				D66F4FF92AEB385E00A2C4F4 /* BioTasks */,
 			);
 			path = BIO;
 			sourceTree = "<group>";
@@ -435,9 +487,6 @@
 				D6E714AF2ADDB531005BFC81 /* FirebaseRemoteConfigSwift */,
 				D6E714B12ADDB531005BFC81 /* FirebaseStorage */,
 				D6E714B32ADDB531005BFC81 /* FirebaseStorageCombine-Community */,
-				D6C910082AE4B34C00447F04 /* SwiftUIIntrospect */,
-				D6C9100A2AE4B34C00447F04 /* SwiftUIIntrospect-Dynamic */,
-				D6C9100C2AE4B34C00447F04 /* SwiftUIIntrospect-Static */,
 			);
 			productName = Iterra;
 			productReference = D65128912AD785C100238E8B /* Iterra.app */;
@@ -469,7 +518,6 @@
 			mainGroup = D65128882AD785C100238E8B;
 			packageReferences = (
 				D6E7147E2ADDB531005BFC81 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				D6C910072AE4B34C00447F04 /* XCRemoteSwiftPackageReference "swiftui-introspect" */,
 			);
 			productRefGroup = D65128922AD785C100238E8B /* Products */;
 			projectDirPath = "";
@@ -504,7 +552,10 @@
 				D65128952AD785C100238E8B /* IterraApp.swift in Sources */,
 				D6C9102A2AE7780900447F04 /* User.swift in Sources */,
 				D6E55D1C2AE1F94700816158 /* WillpowerRow.swift in Sources */,
+				D66F50002AEB46F200A2C4F4 /* BioUpdateDateVM.swift in Sources */,
+				D66F4FFD2AEB434600A2C4F4 /* BioUpdateDateView.swift in Sources */,
 				D6C910362AE8962300447F04 /* BioText.swift in Sources */,
+				D66F500D2AEC9FB500A2C4F4 /* SelectButton.swift in Sources */,
 				D6C910252AE73B2B00447F04 /* LoginView.swift in Sources */,
 				D60281B22AD78FEE00F47195 /* TaskModel.swift in Sources */,
 				D6C9103B2AE8BBB500447F04 /* BioModel.swift in Sources */,
@@ -513,6 +564,7 @@
 				D6D4BE362ADE179F0013A72A /* PatienceVM.swift in Sources */,
 				D6D4BE332ADE17350013A72A /* PatienceView.swift in Sources */,
 				D60281AF2AD786B200F47195 /* InputVM.swift in Sources */,
+				D66F50062AEC954900A2C4F4 /* Extension + Date.swift in Sources */,
 				D64DD2A82AD9F53000733FFC /* CleanTimeNavigationStack.swift in Sources */,
 				D6C910282AE776D100447F04 /* UserService.swift in Sources */,
 				D601BF362ADCB31D00256C6C /* BioView.swift in Sources */,
@@ -522,11 +574,13 @@
 				D62CEF962AD8DF620025D626 /* WillpowerVM.swift in Sources */,
 				D601BF342ADCB25500256C6C /* BioNavigationStack.swift in Sources */,
 				D64DD2AD2AD9F5D500733FFC /* CleanTimeVM.swift in Sources */,
+				D66F50082AEC972200A2C4F4 /* Extension + Array.swift in Sources */,
 				D62CEF912AD8DD160025D626 /* WillpowerNavigationStack.swift in Sources */,
 				D6E55D222AE203C900816158 /* BioVM.swift in Sources */,
 				D6C910222AE7340B00447F04 /* AppState.swift in Sources */,
 				D62CEF932AD8DE160025D626 /* WillpowerView.swift in Sources */,
 				D6E55D192AE1E9D400816158 /* PatienceRow.swift in Sources */,
+				D66F4FFB2AEB387000A2C4F4 /* BioTask.swift in Sources */,
 				D6D2F0A82AEA130400A4760D /* BioPatience.swift in Sources */,
 				D62CEF8C2AD8DC850025D626 /* AppScreen.swift in Sources */,
 				D6D2F0AA2AEA133A00A4760D /* BioClean.swift in Sources */,
@@ -740,14 +794,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		D6C910072AE4B34C00447F04 /* XCRemoteSwiftPackageReference "swiftui-introspect" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/siteline/swiftui-introspect";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.1.0;
-			};
-		};
 		D6E7147E2ADDB531005BFC81 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -759,21 +805,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		D6C910082AE4B34C00447F04 /* SwiftUIIntrospect */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D6C910072AE4B34C00447F04 /* XCRemoteSwiftPackageReference "swiftui-introspect" */;
-			productName = SwiftUIIntrospect;
-		};
-		D6C9100A2AE4B34C00447F04 /* SwiftUIIntrospect-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D6C910072AE4B34C00447F04 /* XCRemoteSwiftPackageReference "swiftui-introspect" */;
-			productName = "SwiftUIIntrospect-Dynamic";
-		};
-		D6C9100C2AE4B34C00447F04 /* SwiftUIIntrospect-Static */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D6C910072AE4B34C00447F04 /* XCRemoteSwiftPackageReference "swiftui-introspect" */;
-			productName = "SwiftUIIntrospect-Static";
-		};
 		D6E7147F2ADDB531005BFC81 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D6E7147E2ADDB531005BFC81 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

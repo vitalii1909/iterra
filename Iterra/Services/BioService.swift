@@ -8,7 +8,13 @@
 import Foundation
 import FirebaseFirestore
 
-class BioService: ObservableObject {
+protocol BioServiceProtocol {
+    func fetchBio(userId: String) async -> [BioModel]?
+    func addBio(event: BioModel, userId: String) async
+    func updateDate(userId: String, documentId: String, newDate: Date) async
+}
+
+class BioService: ObservableObject, BioServiceProtocol {
     
     func fetchBio(userId: String) async -> [BioModel]? {
         
@@ -20,6 +26,9 @@ class BioService: ObservableObject {
         
         for doc in documents {
             if let bio = try? doc.data(as: BioText.self) {
+                bioArray.append(bio)
+                //handle regular bioModel
+            } else if let bio = try? doc.data(as: BioModel.self)  {
                 bioArray.append(bio)
             }
         }
@@ -35,14 +44,13 @@ class BioService: ObservableObject {
         }
     }
     
+    func updateDate(userId: String, documentId: String, newDate: Date) async {
+        do {
+            try await Firestore.firestore().collection("users").document(userId).collection("bio").document(documentId).setData(["date" : newDate], merge: true)
+            
+        } catch let error {
+            print("Error writing city to Firestore: \(error)")
+        }
+    }
+    
 }
-
-//extension QueryDocumentSnapshot {
-//
-//    func prepareForDecoding() -> [String: Any] {
-//        var data = self.data()
-//        data["documentId"] = self.documentID
-//
-//        return data
-//    }
-//}

@@ -1,25 +1,21 @@
 //
-//  BioText.swift
+//  BioClean.swift
 //  Iterra
 //
-//  Created by mikhey on 2023-10-24.
+//  Created by mikhey on 2023-10-25.
 //
 
 import Foundation
-import FirebaseFirestoreSwift
 
-class BioText: BioModel {
+class BioClean: BioTask {
     
     var text: String
-    
-    init(id: String? = nil, date: Date, finished: Bool, text: String) {
-        self.text = text
-        super.init(id: id, date: date)
-    }
+    var accepted: Bool
     
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         text = try container.decode(String.self, forKey: .text)
+        accepted = try container.decode(Bool.self, forKey: .accepted)
         try super.init(from: decoder)
     }
     
@@ -31,6 +27,7 @@ class BioText: BioModel {
     
     enum CodingKeys: String, CodingKey {
         case text
+        case accepted
     }
+    
 }
-

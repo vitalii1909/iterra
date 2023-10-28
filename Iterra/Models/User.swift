@@ -19,3 +19,10 @@ extension User {
         Auth.auth().currentUser?.uid == id
     }
 }
+
+//MARK: MOC
+extension User {
+    static func mocUser() -> User {
+        User(id: "Y7pN9sZVpwgngcEnj0L9", email: "mikhey.work@gmail.com")
+    }
+}
