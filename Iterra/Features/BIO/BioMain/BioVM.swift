@@ -39,10 +39,10 @@ class BioVM: ObservableObject {
             guard let array = try await bioService.fetchBio(userId: userId) else {
                 return
             }
-            
             bioArray.wrappedValue = array
         } catch let error {
             throw error
         }
+        
     }
 }

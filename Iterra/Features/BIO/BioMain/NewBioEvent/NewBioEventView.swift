@@ -44,12 +44,11 @@ struct NewBioEventView: View {
                 
                 Task {
                     do {
-                        try await vm.addNewEvenet(bio: bioEvent, userId: userService.user?.id)
+                        try await vm.addNewEvenet(bio: bioEvent, userId: publicUserId?.id)
                         array.append(bioEvent)
                         dismiss()
                     } catch let error {
-                        print("error \(error)")
-                        
+                        print("error \(error)")         
                     }
                 }
             }, label: {

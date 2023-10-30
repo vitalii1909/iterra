@@ -8,9 +8,10 @@
 import Foundation
 import FirebaseFirestore
 
+//FIXME: need delete after auth
+var publicUserId: User?
+
 class UserService: ObservableObject {
-    
-    @Published var user: User?
     
     @MainActor
     func fetchUser() async -> User? {
@@ -27,7 +28,7 @@ class UserService: ObservableObject {
             return nil
         }
         
-        self.user = user
+        publicUserId = user
         
         return user
     }

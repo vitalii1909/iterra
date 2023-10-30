@@ -11,10 +11,9 @@ struct InputView: View {
     
     @ObservedObject var vm: InputVM
     
-    @EnvironmentObject var taskStore: StoreManager
+    @EnvironmentObject private var taskStore: StoreManager
+    @EnvironmentObject private var userService: UserService
     @Environment(\.dismiss) var dismiss
-    
-    @State private var localArray = [BioModel]()
     
     @State var tableView: UITableView?
     
@@ -53,7 +52,7 @@ struct InputView: View {
     
     var localList: some View {
         List {
-            ForEach(localArray, id: \.id) { taskModel in
+            ForEach(vm.localArray, id: \.id) { taskModel in
                 VStack(alignment: .leading, content: {
                     //                    Text(taskModel.text)
                     //                        .font(.title3.bold())
@@ -66,7 +65,7 @@ struct InputView: View {
                 .listRowBackground(Color.blue.opacity(0.2))
             }
             .onDelete(perform: { indexSet in
-                localArray.remove(atOffsets: indexSet)
+                vm.localArray.remove(atOffsets: indexSet)
             })
         }
         .listStyle(.plain)
@@ -107,20 +106,22 @@ struct InputView: View {
                 return
             }
             
-            let task = vm.createTask()
             
-            switch task {
-            case let bio as BioWillpower:
-                taskStore.timersArray.append(bio)
-            case let bio as BioPatience:
-                taskStore.patienceArray.append(bio)
-            case let bio as BioClean:
-                taskStore.cleanTimeArray.append(bio)
-            default:
-                break
-            }
             
-            dismiss()
+//            let task = vm.createTask()
+//            
+//            switch task {
+//            case let bio as BioWillpower:
+//                taskStore.timersArray.append(bio)
+//            case let bio as BioPatience:
+//                taskStore.patienceArray.append(bio)
+//            case let bio as BioClean:
+//                taskStore.cleanTimeArray.append(bio)
+//            default:
+//                break
+//            }
+            
+//            dismiss()
             
         }, label: {
             Text("Add")
@@ -148,7 +149,7 @@ struct InputView: View {
                 
                 let task = vm.createTask()
                 
-                localArray.append(task)
+                vm.localArray.append(task)
                 
                 withAnimation {
                     vm.text = ""
@@ -156,7 +157,7 @@ struct InputView: View {
                 }
                 
                 DispatchQueue.main.async {
-                    if let id = localArray.last?.id {
+                    if let id = vm.localArray.last?.id {
                         withAnimation {
                             proxy.scrollTo(id, anchor: .top)
                         }
@@ -191,22 +192,37 @@ struct InputView: View {
                 
                 Button(action: {
                     
-                    guard !localArray.isEmpty else {
-                        return
+                    Task {
+                        do {
+                            switch vm.type {
+                            case .willpower:
+                                try await vm.addWillpower(array: $taskStore.timersArray, userId: publicUserId?.id)
+                                dismiss()
+                            default:
+                                break
+                            }
+                        } catch let error {
+                            print("error \(error.localizedDescription)")
+                        }
                     }
                     
-                    switch localArray {
-                    case let local as [BioWillpower]:
-                        taskStore.timersArray += local
-                    case let local as [BioPatience]:
-                        taskStore.patienceArray += local
-                    case let local as [BioClean]:
-                        taskStore.cleanTimeArray += local
-                    default:
-                        break
-                    }
                     
-                    dismiss()
+//                    guard !localArray.isEmpty else {
+//                        return
+//                    }
+//                    
+//                    switch localArray {
+//                    case let local as [BioWillpower]:
+//                        taskStore.timersArray += local
+//                    case let local as [BioPatience]:
+//                        taskStore.patienceArray += local
+//                    case let local as [BioClean]:
+//                        taskStore.cleanTimeArray += local
+//                    default:
+//                        break
+//                    }
+//                    
+//                    dismiss()
                 }, label: {
                     Text("Apply")
                         .fontWeight(.bold)
@@ -217,8 +233,8 @@ struct InputView: View {
                         .background(Color.green)
                         .cornerRadius(10)
                 })
-                .opacity(localArray.count > 0 ? 1 : 0.5)
-                .disabled(localArray.count == 0)
+                .opacity(vm.localArray.count > 0 ? 1 : 0.5)
+                .disabled(vm.localArray.count == 0)
             }
         })
         
@@ -226,8 +242,9 @@ struct InputView: View {
 }
 
 #Preview {
-    InputView(vm: InputVM(type: .cleanTime))
+    InputView(vm: InputVM(type: .willpower))
         .environmentObject(StoreManager())
+        .environmentObject(UserService())
 }
 
 import UIKit

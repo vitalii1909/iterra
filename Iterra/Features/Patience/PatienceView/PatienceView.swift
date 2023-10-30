@@ -21,14 +21,14 @@ struct PatienceView: View {
                     Text("222")
 //                    getSections(dict: dict)
                 }
-                .animation(.smooth(), value: taskStore.patienceArray.filter({$0.finished == false }).count)
+//                .animation(.smooth(), value: taskStore.patienceArray.filter({$0.finished == false }).count)
                 .animation(.smooth(), value: taskStore.patienceArray.count)
                 .listRowSpacing(20)
             } else {
                 Text("No patience")
             }
         }
-        .animation(.smooth(), value: taskStore.patienceArray.filter({$0.finished == false }).count)
+//        .animation(.smooth(), value: taskStore.patienceArray.filter({$0.finished == false }).count)
     }
     
     private func getSections(dict: [Date : [BioPatience]]) -> some View {

@@ -17,7 +17,7 @@ class BioWillpower: BioTask {
         self.text = text
         self.accepted = accepted
         
-        super.init(id: id, startDate: startDate, stopDate: stopDate, date: date, finished: finished)
+        super.init(id: id, startDate: startDate, stopDate: stopDate, date: date)
     }
     
     required init(from decoder: Decoder) throws {

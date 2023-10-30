@@ -21,14 +21,14 @@ struct CleanTimeView: View {
                     Text("222")
 //                    getSections(dict: dict)
                 }
-                .animation(.smooth(), value: taskStore.cleanTimeArray.filter({$0.finished == false }).count)
+//                .animation(.smooth(), value: taskStore.cleanTimeArray.filter({$0.finished == false }).count)
                 .animation(.smooth(), value: taskStore.cleanTimeArray.count)
                 .listRowSpacing(20)
             } else {
                 Text("No clean time")
             }
         }
-        .animation(.smooth(), value: taskStore.cleanTimeArray.filter({$0.finished == false }).count)
+//        .animation(.smooth(), value: taskStore.cleanTimeArray.filter({$0.finished == false }).count)
     }
     
     private func getSections(dict: [Date : [BioClean]]) -> some View {

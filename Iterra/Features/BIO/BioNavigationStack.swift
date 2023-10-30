@@ -22,7 +22,7 @@ struct BioNavigationStack: View {
 //    taskStore.cleanTimeArray = TaskModel.mocArray(type: .patience)
     
     let userService = UserService()
-    userService.user = .mocUser()
+    publicUserId = .mocUser()
     
     return BioNavigationStack()
         .environmentObject(taskStore)

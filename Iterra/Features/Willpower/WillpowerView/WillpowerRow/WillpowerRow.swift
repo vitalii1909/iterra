@@ -33,7 +33,6 @@ struct WillpowerRow: View {
                     if let index = storeArray.firstIndex(where: {$0.id == taskModel.id}) {
                         let task = storeArray[index]
                         task.accepted = true
-                        task.finished = true
                         task.stopDate = Date()
                         storeArray[index] = task
                     }
@@ -50,7 +49,6 @@ struct WillpowerRow: View {
                     if let index = storeArray.firstIndex(where: {$0.id == taskModel.id}) {
                         let task = storeArray[index]
                         task.accepted = false
-                        task.finished = true
                         task.stopDate = Date()
                         storeArray[index] = task
                     }

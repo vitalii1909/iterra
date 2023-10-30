@@ -32,6 +32,8 @@
 		D66F50082AEC972200A2C4F4 /* Extension + Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66F50072AEC972200A2C4F4 /* Extension + Array.swift */; };
 		D66F500D2AEC9FB500A2C4F4 /* SelectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66F500C2AEC9FB500A2C4F4 /* SelectButton.swift */; };
 		D66F500F2AEDA96800A2C4F4 /* BioTextRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66F500E2AEDA96800A2C4F4 /* BioTextRow.swift */; };
+		D66F50122AEF558200A2C4F4 /* TaskServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66F50112AEF558200A2C4F4 /* TaskServiceProtocol.swift */; };
+		D66F50142AEF595A00A2C4F4 /* WillpowerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66F50132AEF595A00A2C4F4 /* WillpowerService.swift */; };
 		D6C910222AE7340B00447F04 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C910212AE7340B00447F04 /* AppState.swift */; };
 		D6C910252AE73B2B00447F04 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C910242AE73B2B00447F04 /* LoginView.swift */; };
 		D6C910282AE776D100447F04 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C910272AE776D100447F04 /* UserService.swift */; };
@@ -106,6 +108,8 @@
 		D66F50072AEC972200A2C4F4 /* Extension + Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + Array.swift"; sourceTree = "<group>"; };
 		D66F500C2AEC9FB500A2C4F4 /* SelectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectButton.swift; sourceTree = "<group>"; };
 		D66F500E2AEDA96800A2C4F4 /* BioTextRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioTextRow.swift; sourceTree = "<group>"; };
+		D66F50112AEF558200A2C4F4 /* TaskServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskServiceProtocol.swift; sourceTree = "<group>"; };
+		D66F50132AEF595A00A2C4F4 /* WillpowerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WillpowerService.swift; sourceTree = "<group>"; };
 		D6C910212AE7340B00447F04 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		D6C910242AE73B2B00447F04 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		D6C910272AE776D100447F04 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
@@ -397,6 +401,8 @@
 			children = (
 				D6C910272AE776D100447F04 /* UserService.swift */,
 				D6C910372AE8973600447F04 /* BioService.swift */,
+				D66F50112AEF558200A2C4F4 /* TaskServiceProtocol.swift */,
+				D66F50132AEF595A00A2C4F4 /* WillpowerService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -588,7 +594,9 @@
 				D64DD2AD2AD9F5D500733FFC /* CleanTimeVM.swift in Sources */,
 				D66F50082AEC972200A2C4F4 /* Extension + Array.swift in Sources */,
 				D62CEF912AD8DD160025D626 /* WillpowerNavigationStack.swift in Sources */,
+				D66F50142AEF595A00A2C4F4 /* WillpowerService.swift in Sources */,
 				D6E55D222AE203C900816158 /* BioVM.swift in Sources */,
+				D66F50122AEF558200A2C4F4 /* TaskServiceProtocol.swift in Sources */,
 				D6C910222AE7340B00447F04 /* AppState.swift in Sources */,
 				D62CEF932AD8DE160025D626 /* WillpowerView.swift in Sources */,
 				D6E55D192AE1E9D400816158 /* PatienceRow.swift in Sources */,

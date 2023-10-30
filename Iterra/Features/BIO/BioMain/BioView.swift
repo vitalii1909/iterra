@@ -22,7 +22,7 @@ struct BioView: View {
             .task {
                 Task {
                     do {
-                        try await vm.fetchBio(bioArray: $taskStore.bioArray, userId: userService.user?.id)
+                        try await vm.fetchBio(bioArray: $taskStore.bioArray, userId: publicUserId?.id)
                     } catch let error {
                         print("let error \(error)")
                     }
@@ -49,7 +49,7 @@ struct BioView: View {
                 List {
                     getSections(dict: dict)
                 }
-                .animation(.smooth(), value: taskStore.cleanTimeArray.filter({$0.finished == false }).count)
+//                .animation(.smooth(), value: taskStore.cleanTimeArray.filter({$0.finished == false }).count)
                 .animation(.smooth(), value: taskStore.cleanTimeArray.count)
                 .listRowSpacing(14)
                 .onAppear {
@@ -196,7 +196,7 @@ private extension BioView {
     //    }
     
     let userService = UserService()
-    userService.user = User(id: "Y7pN9sZVpwgngcEnj0L9", email: "mikhey.work@gmail.com")
+    publicUserId = User(id: "Y7pN9sZVpwgngcEnj0L9", email: "mikhey.work@gmail.com")
     
     return BioNavigationStack()
         .environmentObject(taskStore)

@@ -40,7 +40,7 @@ struct BioUpdateDateView: View {
             Button(action: {
                 Task {
                     do {
-                        try await vm.updateBioDate(userID: userService.user?.id)
+                        try await vm.updateBioDate(userID: publicUserId?.id)
                         dismiss()
                     } catch let error {
                         print("error \(error.localizedDescription)")

@@ -9,7 +9,8 @@ import SwiftUI
 
 struct WillpowerView: View {
     
-    @EnvironmentObject var taskStore: StoreManager
+    @EnvironmentObject private var taskStore: StoreManager
+    @EnvironmentObject private var userService: UserService
     @ObservedObject var vm: WillpowerVM
     
     var body: some View {
@@ -19,14 +20,27 @@ struct WillpowerView: View {
                 List {
                     getSections(dict: dict)
                 }
-                .animation(.smooth(), value: taskStore.timersArray.filter({$0.finished == false }).count)
+//                .animation(.smooth(), value: taskStore.timersArray.filter({$0.finished == false }).count)
                 .animation(.smooth(), value: taskStore.timersArray.count)
                 .listRowSpacing(20)
             } else {
                 Text("No willpower")
             }
         }
-        .animation(.smooth(), value: taskStore.timersArray.filter({$0.finished == false }).count)
+//        .animation(.smooth(), value: taskStore.timersArray.filter({$0.finished == false }).count)
+        .task {
+            guard taskStore.timersArray.isEmpty else {
+                return
+            }
+            
+            Task {
+                do {
+                    try await vm.fetch(taskArray: $taskStore.timersArray, userId: publicUserId?.id)
+                } catch let error {
+                    print("let error \(error)")
+                }
+            }
+        }
     }
     
     private func getSections(dict: [Date : [BioWillpower]]) -> some View {
@@ -48,8 +62,12 @@ struct WillpowerView: View {
         }
         .onDelete { idx in
             if let row = idx.first, let taskModel = dict[key]?.sorted(by: {$0.date < $1.date})[row] {
-                withAnimation(.smooth()) {
-                    taskStore.timersArray.removeAll(where: {$0.id == taskModel.id})
+                Task {
+                    do {
+                       try await vm.delete(task: taskModel, taskArray: $taskStore.timersArray, userId: publicUserId?.id)
+                    } catch let error {
+                        print("error \(error.localizedDescription)")
+                    }
                 }
             }
         }

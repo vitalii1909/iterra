@@ -10,6 +10,7 @@ import Combine
 
 import Firebase
 
+@MainActor
 class StoreManager: ObservableObject {
     @Published var timersArray = [BioWillpower]()
     
@@ -48,12 +49,11 @@ class StoreManager: ObservableObject {
     }
     
     private func count() {
-        let expiredArray = patienceArray.filter({$0.finished == false}).filter({$0.date < Date()})
+        let expiredArray = patienceArray.filter({$0.date < Date()})
         if expiredArray.count > 0 {
             for i in expiredArray {
                 if let index = patienceArray.firstIndex(where: {$0.id == i.id}) {
                     let task = patienceArray[index]
-                    task.finished = true
                     task.accepted = true
                     task.stopDate = Date()
                     withAnimation(.smooth) {
@@ -68,17 +68,29 @@ class StoreManager: ObservableObject {
     
     //clear test
     private func updateTimers() {
-        let expiredArray = timersArray.filter({$0.finished == false}).filter({$0.date < Date()})
+        
+        guard let userId = publicUserId?.id else {
+            return
+        }
+        
+        let service = WillpowerService()
+        
+        let expiredArray = timersArray.filter({$0.date < Date()})
         if expiredArray.count > 0 {
             for i in expiredArray {
                 if let index = timersArray.firstIndex(where: {$0.id == i.id}) {
-                    let task = timersArray[index]
-                    task.finished = true
-                    task.accepted = false
-                    task.stopDate = Date()
-                    withAnimation(.smooth) {
-                        timersArray[index] = task
+                    
+                    Task {
+                        do {
+                            try await service.moveToBio(task: i, userId: userId)
+                            timersArray.remove(at: index)
+                            bioArray.append(i)
+                        } catch let error {
+                           print("error \(error)")
+                        }
                     }
+                    
+                    
                 }
             }
         }
