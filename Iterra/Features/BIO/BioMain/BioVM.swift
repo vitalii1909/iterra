@@ -29,12 +29,20 @@ class BioVM: ObservableObject {
         }
     }
     
-    func fetchBio(bioArray: Binding<[BioModel]>, userId: String) async throws {
+    func fetchBio(bioArray: Binding<[BioModel]>, userId: String?) async throws {
         
-        guard let array = await bioService.fetchBio(userId: userId) else {
-            return
+        guard let userId = userId else {
+            throw TestError.userId
         }
         
-        bioArray.wrappedValue = array
+        do {
+            guard let array = try await bioService.fetchBio(userId: userId) else {
+                return
+            }
+            
+            bioArray.wrappedValue = array
+        } catch let error {
+            throw error
+        }
     }
 }

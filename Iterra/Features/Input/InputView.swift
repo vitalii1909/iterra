@@ -55,10 +55,10 @@ struct InputView: View {
         List {
             ForEach(localArray, id: \.id) { taskModel in
                 VStack(alignment: .leading, content: {
-//                    Text(taskModel.text)
-//                        .font(.title3.bold())
-//                        .lineLimit(1)
-//                        .multilineTextAlignment(.leading)
+                    //                    Text(taskModel.text)
+                    //                        .font(.title3.bold())
+                    //                        .lineLimit(1)
+                    //                        .multilineTextAlignment(.leading)
                     
                     Text("\(taskModel.date.get(.hour)):\(taskModel.date.get(.minute))  \(taskModel.date.get(.day))/\(taskModel.date.get(.month))")
                 })

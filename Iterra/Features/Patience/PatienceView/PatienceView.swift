@@ -21,14 +21,14 @@ struct PatienceView: View {
                     Text("222")
 //                    getSections(dict: dict)
                 }
-                .animation(.spring(), value: taskStore.patienceArray.filter({$0.finished == false }).count)
-                .animation(.spring(), value: taskStore.patienceArray.count)
+                .animation(.smooth(), value: taskStore.patienceArray.filter({$0.finished == false }).count)
+                .animation(.smooth(), value: taskStore.patienceArray.count)
                 .listRowSpacing(20)
             } else {
                 Text("No patience")
             }
         }
-        .animation(.spring(), value: taskStore.patienceArray.filter({$0.finished == false }).count)
+        .animation(.smooth(), value: taskStore.patienceArray.filter({$0.finished == false }).count)
     }
     
     private func getSections(dict: [Date : [BioPatience]]) -> some View {
@@ -50,7 +50,7 @@ struct PatienceView: View {
         }
         .onDelete { idx in
             if let row = idx.first, let taskModel = dict[key]?.sorted(by: {$0.date < $1.date})[row] {
-                withAnimation(.spring()) {
+                withAnimation(.smooth()) {
                     taskStore.patienceArray.removeAll(where: {$0.id == taskModel.id})
                 }
             }

@@ -19,14 +19,14 @@ struct WillpowerView: View {
                 List {
                     getSections(dict: dict)
                 }
-                .animation(.spring(), value: taskStore.timersArray.filter({$0.finished == false }).count)
-                .animation(.spring(), value: taskStore.timersArray.count)
+                .animation(.smooth(), value: taskStore.timersArray.filter({$0.finished == false }).count)
+                .animation(.smooth(), value: taskStore.timersArray.count)
                 .listRowSpacing(20)
             } else {
                 Text("No willpower")
             }
         }
-        .animation(.spring(), value: taskStore.timersArray.filter({$0.finished == false }).count)
+        .animation(.smooth(), value: taskStore.timersArray.filter({$0.finished == false }).count)
     }
     
     private func getSections(dict: [Date : [BioWillpower]]) -> some View {
@@ -48,7 +48,7 @@ struct WillpowerView: View {
         }
         .onDelete { idx in
             if let row = idx.first, let taskModel = dict[key]?.sorted(by: {$0.date < $1.date})[row] {
-                withAnimation(.spring()) {
+                withAnimation(.smooth()) {
                     taskStore.timersArray.removeAll(where: {$0.id == taskModel.id})
                 }
             }

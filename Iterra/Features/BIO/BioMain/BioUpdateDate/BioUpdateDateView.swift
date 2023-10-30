@@ -38,29 +38,28 @@ struct BioUpdateDateView: View {
             Spacer()
             
             Button(action: {
-                guard let userID = userService.user?.id else {
-                    return
-                }
                 Task {
-                    await vm.updateBioDate(userID: userID)
-                    dismiss()
+                    do {
+                        try await vm.updateBioDate(userID: userService.user?.id)
+                        dismiss()
+                    } catch let error {
+                        print("error \(error.localizedDescription)")
+                    }
                 }
             }, label: {
                 Text("Update")
-                    .font(.title3.bold())
-                    .foregroundStyle(.white)
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(.blue)
-                    .cornerRadius(10)
             })
+            .buttonStyle(BlueButton())
+            //FIXME: compare date and hour only
+            .disabled(vm.date.compareMinutes(with: vm.currentBio.date))
+            .animation(.smooth, value: vm.date.compareMinutes(with: vm.currentBio.date))
         })
         .padding(.horizontal, 20)
     }
     
     var dateSelector: some View {
         DatePicker("",selection: $vm.date)
-            .datePickerStyle(.wheel)
+            .datePickerStyle(.graphical)
             .labelsHidden()
     }
 }

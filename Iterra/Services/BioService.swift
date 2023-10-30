@@ -9,17 +9,21 @@ import Foundation
 import FirebaseFirestore
 
 protocol BioServiceProtocol {
-    func fetchBio(userId: String) async -> [BioModel]?
-    func addBio(event: BioModel, userId: String) async
-    func updateDate(userId: String, documentId: String, newDate: Date) async
+    func fetchBio(userId: String?) async throws -> [BioModel]?
+    func addBio(event: BioModel, userId: String?) async throws
+    func updateDate(userId: String?, documentId: String, newDate: Date) async throws
 }
 
 class BioService: ObservableObject, BioServiceProtocol {
     
-    func fetchBio(userId: String) async -> [BioModel]? {
+    func fetchBio(userId: String?) async throws -> [BioModel]? {
+        
+        guard let userId = userId else {
+            throw TestError.userId
+        }
         
         guard let documents = try? await Firestore.firestore().collection("users").document(userId).collection("bio").getDocuments().documents else {
-            return nil
+            throw TestError.dbError
         }
         
         var bioArray = [BioModel]()
@@ -33,24 +37,34 @@ class BioService: ObservableObject, BioServiceProtocol {
             }
         }
         
+        if bioArray.isEmpty {
+            throw TestError.emptyArray
+        }
+        
         return bioArray
     }
     
-    func addBio(event: BioModel, userId: String) async {
-        do {
-            try Firestore.firestore().collection("users").document(userId).collection("bio").addDocument(from: event)
-        } catch let error {
-            print("Error writing city to Firestore: \(error)")
+    func addBio(event: BioModel, userId: String?) async throws {
+        
+        guard let userId = userId else {
+            throw TestError.userId
         }
+        
+        try Firestore.firestore().collection("users").document(userId).collection("bio").addDocument(from: event)
     }
     
-    func updateDate(userId: String, documentId: String, newDate: Date) async {
-        do {
-            try await Firestore.firestore().collection("users").document(userId).collection("bio").document(documentId).setData(["date" : newDate], merge: true)
-            
-        } catch let error {
-            print("Error writing city to Firestore: \(error)")
+    func updateDate(userId: String?, documentId: String, newDate: Date) async throws {
+        
+        guard let userId = userId else {
+            throw TestError.userId
         }
+        
+        try await Firestore.firestore().collection("users").document(userId).collection("bio").document(documentId).setData(["date" : newDate], merge: true)
     }
-    
+}
+
+enum TestError: Error {
+    case userId
+    case emptyArray
+    case dbError
 }

@@ -56,7 +56,7 @@ class StoreManager: ObservableObject {
                     task.finished = true
                     task.accepted = true
                     task.stopDate = Date()
-                    withAnimation(.spring) {
+                    withAnimation(.smooth) {
                         patienceArray[index] = task
                     }
                 }
@@ -76,7 +76,7 @@ class StoreManager: ObservableObject {
                     task.finished = true
                     task.accepted = false
                     task.stopDate = Date()
-                    withAnimation(.spring) {
+                    withAnimation(.smooth) {
                         timersArray[index] = task
                     }
                 }

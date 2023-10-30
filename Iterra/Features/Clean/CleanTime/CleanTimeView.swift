@@ -21,14 +21,14 @@ struct CleanTimeView: View {
                     Text("222")
 //                    getSections(dict: dict)
                 }
-                .animation(.spring(), value: taskStore.cleanTimeArray.filter({$0.finished == false }).count)
-                .animation(.spring(), value: taskStore.cleanTimeArray.count)
+                .animation(.smooth(), value: taskStore.cleanTimeArray.filter({$0.finished == false }).count)
+                .animation(.smooth(), value: taskStore.cleanTimeArray.count)
                 .listRowSpacing(20)
             } else {
                 Text("No clean time")
             }
         }
-        .animation(.spring(), value: taskStore.cleanTimeArray.filter({$0.finished == false }).count)
+        .animation(.smooth(), value: taskStore.cleanTimeArray.filter({$0.finished == false }).count)
     }
     
     private func getSections(dict: [Date : [BioClean]]) -> some View {
@@ -50,7 +50,7 @@ struct CleanTimeView: View {
         }
         .onDelete { idx in
             if let row = idx.first, let taskModel = dict[key]?.sorted(by: {$0.date < $1.date})[row] {
-                withAnimation(.spring()) {
+                withAnimation(.smooth()) {
                     taskStore.cleanTimeArray.removeAll(where: {$0.id == taskModel.id})
                 }
             }

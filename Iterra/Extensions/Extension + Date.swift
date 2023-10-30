@@ -11,6 +11,10 @@ extension Date {
     func compareDay(with: Date) -> Bool {
         return self.get(.day) == with.get(.day) &&  self.get(.month) == with.get(.month) && self.get(.year) == with.get(.year)
     }
+    
+    func compareMinutes(with: Date) -> Bool {
+        return self.get(.minute) == with.get(.minute) && self.get(.hour) == with.get(.hour) && self.get(.day) == with.get(.day) &&  self.get(.month) == with.get(.month) && self.get(.year) == with.get(.year)
+    }
 }
 
 extension Date {

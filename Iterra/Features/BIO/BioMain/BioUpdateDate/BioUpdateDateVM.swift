@@ -23,14 +23,14 @@ class BioUpdateDateVM: ObservableObject {
         self.currentBio = currentBio
     }
     
-    func updateBioDate(userID: String) async {
+    func updateBioDate(userID: String?) async throws {
         let newDate = date
         
         guard let docId = currentBio.id else {
             return
         }
         
-        await bioService.updateDate(userId: userID, documentId: docId, newDate: newDate)
+        try await bioService.updateDate(userId: userID, documentId: docId, newDate: newDate)
         
         guard let index = array.firstIndex(where: {$0.id == docId}) else {
             return

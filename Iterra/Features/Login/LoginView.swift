@@ -26,28 +26,30 @@ struct LoginView: View {
                 .padding()
             Spacer()
             
-            Button(action: {
-                guard !email.isEmpty else {
-                    return
-                }
-                UserDefaults.standard.set(email, forKey: "currentUserEmail")
-                
-                Task {
-                    let user = await userService.fetchUser()
-                    await appStateManager.configApp(user: user)
-                }
-            }, label: {
-                Text("Sign in")
-                    .font(.title2.bold())
-                    .foregroundStyle(.white)
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(Color.blue)
-                    .cornerRadius(10)
-                    .padding()
-            })
-            .disabled(email.isEmpty)
+            loginBtn
         })
+    }
+    
+    private var loginBtn: some View {
+        Button(action: {
+#if RELEASE
+            guard !email.isEmpty else {
+                return
+            }
+            UserDefaults.standard.set(email, forKey: "currentUserEmail")
+            
+            Task {
+                let user = await userService.fetchUser()
+                await appStateManager.configApp(user: user)
+            }
+#endif
+        }, label: {
+            Text("Sign in")
+        })
+        .buttonStyle(BlueButton())
+        .padding(.horizontal, 20)
+        .disabled(email.isEmpty)
+        .animation(.smooth, value: email.isEmpty)
     }
 }
 

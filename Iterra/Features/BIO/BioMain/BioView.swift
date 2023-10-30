@@ -19,32 +19,28 @@ struct BioView: View {
     
     var body: some View {
         bodyContet
-        .task {
-            Task {
-                guard let userId = userService.user?.id else {
-                    return
-                }
-                
-                do {
-                    try await vm.fetchBio(bioArray: $taskStore.bioArray, userId: userId)
-                } catch let error {
-                    print("let error \(error)")
+            .task {
+                Task {
+                    do {
+                        try await vm.fetchBio(bioArray: $taskStore.bioArray, userId: userService.user?.id)
+                    } catch let error {
+                        print("let error \(error)")
+                    }
                 }
             }
-        }
-        .toolbar {
-            Button(action: {
-                showNewEvent = true
-            }, label: {
-                Image(systemName: "plus")
+            .toolbar {
+                Button(action: {
+                    showNewEvent = true
+                }, label: {
+                    Image(systemName: "plus")
+                })
+            }
+            .sheet(isPresented: $showNewEvent, content: {
+                NewBioEventView(array: $taskStore.bioArray)
             })
-        }
-        .sheet(isPresented: $showNewEvent, content: {
-            NewBioEventView(array: $taskStore.bioArray)
-        })
-        .sheet(item: $changeDateBio) { bioModel in
-            BioUpdateDateView(array: $taskStore.bioArray, currentBio: bioModel)
-        }
+            .sheet(item: $changeDateBio) { bioModel in
+                BioUpdateDateView(array: $taskStore.bioArray, currentBio: bioModel)
+            }
     }
     
     private var bodyContet: some View {
@@ -53,8 +49,8 @@ struct BioView: View {
                 List {
                     getSections(dict: dict)
                 }
-                .animation(.spring(), value: taskStore.cleanTimeArray.filter({$0.finished == false }).count)
-                .animation(.spring(), value: taskStore.cleanTimeArray.count)
+                .animation(.smooth(), value: taskStore.cleanTimeArray.filter({$0.finished == false }).count)
+                .animation(.smooth(), value: taskStore.cleanTimeArray.count)
                 .listRowSpacing(14)
                 .onAppear {
                     scrollToCurrent(proxy: proxy)
@@ -91,9 +87,10 @@ private extension BioView {
         }
     }
     
+    @ViewBuilder
     private func getRows(key: Date, dict: [Date : [BioModel]]) -> some View {
         let array = dict[key] ?? [BioModel]()
-        return ForEach(array.sorted(by: {$0.date < $1.date}), id: \.id) { taskModel in
+        ForEach(array.sorted(by: {$0.date < $1.date}), id: \.id) { taskModel in
             taskCell(taskModel: taskModel)
                 .id(taskModel.id)
                 .contextMenu(menuItems: {
@@ -106,12 +103,23 @@ private extension BioView {
         }
     }
     
-    private func taskCell(taskModel: BioModel) -> some View {
+    @ViewBuilder
+    func taskCell(taskModel: BioModel) -> some View {
         switch taskModel {
         case let bioText as BioText:
-            return Text("\(bioText.text)")
+            BioTextRow(text: bioText.text)
         default:
-            return Text("Error type")
+            Text("Error type")
+        }
+    }
+    
+    //FIXME: delete
+    private func taskCell2(taskModel: BioModel) -> some View {
+        switch taskModel {
+        case let bioText as BioText:
+            return AnyView(BioTextRow(text: bioText.text))
+        default:
+            return AnyView(Text("22"))
         }
         
         //          if let object = taskModel as? BioText {

@@ -31,6 +31,7 @@
 		D66F50062AEC954900A2C4F4 /* Extension + Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66F50052AEC954900A2C4F4 /* Extension + Date.swift */; };
 		D66F50082AEC972200A2C4F4 /* Extension + Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66F50072AEC972200A2C4F4 /* Extension + Array.swift */; };
 		D66F500D2AEC9FB500A2C4F4 /* SelectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66F500C2AEC9FB500A2C4F4 /* SelectButton.swift */; };
+		D66F500F2AEDA96800A2C4F4 /* BioTextRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66F500E2AEDA96800A2C4F4 /* BioTextRow.swift */; };
 		D6C910222AE7340B00447F04 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C910212AE7340B00447F04 /* AppState.swift */; };
 		D6C910252AE73B2B00447F04 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C910242AE73B2B00447F04 /* LoginView.swift */; };
 		D6C910282AE776D100447F04 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C910272AE776D100447F04 /* UserService.swift */; };
@@ -104,6 +105,7 @@
 		D66F50052AEC954900A2C4F4 /* Extension + Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + Date.swift"; sourceTree = "<group>"; };
 		D66F50072AEC972200A2C4F4 /* Extension + Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + Array.swift"; sourceTree = "<group>"; };
 		D66F500C2AEC9FB500A2C4F4 /* SelectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectButton.swift; sourceTree = "<group>"; };
+		D66F500E2AEDA96800A2C4F4 /* BioTextRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioTextRow.swift; sourceTree = "<group>"; };
 		D6C910212AE7340B00447F04 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		D6C910242AE73B2B00447F04 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		D6C910272AE776D100447F04 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 			children = (
 				D601BF352ADCB31D00256C6C /* BioView.swift */,
 				D6E55D212AE203C900816158 /* BioVM.swift */,
+				D66F50102AEDBD7C00A2C4F4 /* Rows */,
 				D66F4FFE2AEB434A00A2C4F4 /* BioUpdateDate */,
 				D66F4FF82AEB292000A2C4F4 /* NewBioEvent */,
 			);
@@ -289,8 +292,8 @@
 		D65128932AD785C100238E8B /* Iterra */ = {
 			isa = PBXGroup;
 			children = (
-				D66F500A2AEC9F9800A2C4F4 /* Shared */,
 				D60281AA2AD7867400F47195 /* App */,
+				D66F500A2AEC9F9800A2C4F4 /* Shared */,
 				D62CEF8A2AD8DBE30025D626 /* Features */,
 				D6C910262AE7700900447F04 /* Services */,
 				D60281B02AD78FCB00F47195 /* Models */,
@@ -371,6 +374,14 @@
 				D66F500C2AEC9FB500A2C4F4 /* SelectButton.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		D66F50102AEDBD7C00A2C4F4 /* Rows */ = {
+			isa = PBXGroup;
+			children = (
+				D66F500E2AEDA96800A2C4F4 /* BioTextRow.swift */,
+			);
+			path = Rows;
 			sourceTree = "<group>";
 		};
 		D6C910232AE73AFA00447F04 /* Login */ = {
@@ -556,6 +567,7 @@
 				D66F4FFD2AEB434600A2C4F4 /* BioUpdateDateView.swift in Sources */,
 				D6C910362AE8962300447F04 /* BioText.swift in Sources */,
 				D66F500D2AEC9FB500A2C4F4 /* SelectButton.swift in Sources */,
+				D66F500F2AEDA96800A2C4F4 /* BioTextRow.swift in Sources */,
 				D6C910252AE73B2B00447F04 /* LoginView.swift in Sources */,
 				D60281B22AD78FEE00F47195 /* TaskModel.swift in Sources */,
 				D6C9103B2AE8BBB500447F04 /* BioModel.swift in Sources */,

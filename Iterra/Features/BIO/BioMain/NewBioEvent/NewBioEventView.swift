@@ -42,26 +42,23 @@ struct NewBioEventView: View {
             Button(action: {
                 let bioEvent = BioText(id: UUID().uuidString, date: Date(), finished: true, text: text)
                 
-                guard let userId = userService.user?.id else {
-                    return
-                }
-                
                 Task {
-                    await vm.addNewEvenet(bio: bioEvent, userId: userId)
-                    array.append(bioEvent)
-                    dismiss()
+                    do {
+                        try await vm.addNewEvenet(bio: bioEvent, userId: userService.user?.id)
+                        array.append(bioEvent)
+                        dismiss()
+                    } catch let error {
+                        print("error \(error)")
+                        
+                    }
                 }
             }, label: {
                 Text("Send")
-                    .font(.title3.bold())
-                    .foregroundStyle(.white)
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(.blue)
-                    .cornerRadius(10)
             })
-            .opacity(text.isEmpty ? 0.6 : 1)
+            .buttonStyle(BlueButton())
             .disabled(text.isEmpty)
+            .animation(.smooth, value: text.isEmpty)
+            .padding(.bottom, 20)
         })
         .padding(.horizontal, 20)
         

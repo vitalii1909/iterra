@@ -9,8 +9,8 @@ import Foundation
 
 class NewBioEventVM: ObservableObject {
     
-    func addNewEvenet(bioService: BioService = BioService(), bio: BioModel, userId: String) async {
-        await bioService.addBio(event: bio, userId: userId)
+    func addNewEvenet(bioService: BioService = BioService(), bio: BioModel, userId: String?) async throws {
+        try await bioService.addBio(event: bio, userId: userId)
     }
     
 }
