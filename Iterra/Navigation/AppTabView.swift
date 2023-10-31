@@ -82,7 +82,7 @@ class StoreManager: ObservableObject {
                     
                     Task {
                         do {
-                            try await service.moveToBio(task: i, userId: userId)
+                            try await service.moveToBio(task: i, accepted: false)
                             timersArray.remove(at: index)
                             bioArray.append(i)
                         } catch let error {

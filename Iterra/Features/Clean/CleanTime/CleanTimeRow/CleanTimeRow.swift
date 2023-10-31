@@ -28,7 +28,7 @@ struct CleanTimeRow: View {
                 Button(action: {
                     if let index = storeArray.firstIndex(where: {$0.id == taskModel.id}) {
                         let task = storeArray[index]
-                        task.accepted = false
+//                        task.accepted = false
                         task.stopDate = Date()
                         storeArray[index] = task
                     }

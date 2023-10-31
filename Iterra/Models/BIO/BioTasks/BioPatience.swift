@@ -10,12 +10,10 @@ import Foundation
 class BioPatience: BioTask {
     
     var text: String
-    var accepted: Bool
     
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         text = try container.decode(String.self, forKey: .text)
-        accepted = try container.decode(Bool.self, forKey: .accepted)
         try super.init(from: decoder)
     }
     
@@ -27,6 +25,5 @@ class BioPatience: BioTask {
     
     enum CodingKeys: String, CodingKey {
         case text
-        case accepted
     }
 }

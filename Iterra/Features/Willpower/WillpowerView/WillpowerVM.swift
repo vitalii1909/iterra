@@ -16,14 +16,14 @@ class WillpowerVM: TaskVM {
         self.service = service
     }
     
-    func fetch(taskArray: Binding<[BioWillpower]>, userId: String?) async throws {
+    func fetch(taskArray: Binding<[BioWillpower]>) async throws {
         
-        guard let userId = userId else {
+        guard let userId = publicUserId?.id else {
             throw TestError.userId
         }
         
         do {
-            guard let array = try await service.fetch(userId: userId) as? [BioWillpower] else {
+            guard let array = try await service.fetch() as? [BioWillpower] else {
                 return
             }
             taskArray.wrappedValue = array
@@ -32,8 +32,30 @@ class WillpowerVM: TaskVM {
         }
     }
     
-    func delete(task: BioTask, taskArray: Binding<[BioWillpower]>, userId: String?) async throws {
-        guard let userId = userId else {
+    func moveToBio(task: BioTask, timersArray: Binding<[BioWillpower]>, accepted: Bool) async throws {
+        
+        guard let documentId = task.id else {
+            throw TestError.userId
+        }
+        
+        
+        if let index = timersArray.firstIndex(where: {$0.id == documentId}) {
+            let task = timersArray.wrappedValue[index]
+            Task {
+                do {
+                    let newBio = try await service.moveToBio(task: task, accepted: accepted)
+                    timersArray.wrappedValue.remove(at: index)
+                } catch let error {
+                   print("error \(error)")
+                }
+            }
+            
+            
+        }
+    }
+    
+    func delete(task: BioTask, taskArray: Binding<[BioWillpower]>) async throws {
+        guard let userId = publicUserId?.id else {
             throw TestError.userId
         }
         
@@ -42,7 +64,7 @@ class WillpowerVM: TaskVM {
         }
         
         do {
-            try await service.delete(task: task, documentId: documentId, userId: userId)
+            try await service.delete(task: task, documentId: documentId)
             
             if let index = taskArray.firstIndex(where: {$0.id == documentId}) {
                 taskArray.wrappedValue.remove(at: index)

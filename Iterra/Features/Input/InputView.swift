@@ -196,7 +196,7 @@ struct InputView: View {
                         do {
                             switch vm.type {
                             case .willpower:
-                                try await vm.addWillpower(array: $taskStore.timersArray, userId: publicUserId?.id)
+                                try await vm.addWillpower(array: $taskStore.timersArray)
                                 dismiss()
                             default:
                                 break

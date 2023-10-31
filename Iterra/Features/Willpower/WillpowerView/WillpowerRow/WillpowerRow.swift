@@ -9,6 +9,8 @@ import SwiftUI
 
 struct WillpowerRow: View {
     
+    @EnvironmentObject var vm: WillpowerVM
+    @EnvironmentObject var taskStore: StoreManager
     @Binding var storeArray: [BioWillpower]
     var taskModel: BioWillpower
     
@@ -30,12 +32,20 @@ struct WillpowerRow: View {
                 Spacer()
                 
                 Button(action: {
-                    if let index = storeArray.firstIndex(where: {$0.id == taskModel.id}) {
-                        let task = storeArray[index]
-                        task.accepted = true
-                        task.stopDate = Date()
-                        storeArray[index] = task
+                    Task {
+                        do {
+                            try await vm.moveToBio(task: taskModel, timersArray: $taskStore.timersArray, accepted: true)
+                        } catch let error {
+                            print("error \(error.localizedDescription)")
+                        }
                     }
+
+//                    if let index = storeArray.firstIndex(where: {$0.id == taskModel.id}) {
+//                        let task = storeArray[index]
+//                        task.accepted = true
+//                        task.stopDate = Date()
+//                        storeArray[index] = task
+//                    }
                 }, label: {
                     Image(systemName: "checkmark.circle.fill")
                         .resizable()
@@ -46,11 +56,12 @@ struct WillpowerRow: View {
                 .buttonStyle(.borderless)
                 
                 Button(action: {
-                    if let index = storeArray.firstIndex(where: {$0.id == taskModel.id}) {
-                        let task = storeArray[index]
-                        task.accepted = false
-                        task.stopDate = Date()
-                        storeArray[index] = task
+                    Task {
+                        do {
+                            try await vm.moveToBio(task: taskModel, timersArray: $taskStore.timersArray, accepted: false)
+                        } catch let error {
+                            print("error \(error.localizedDescription)")
+                        }
                     }
                 }, label: {
                     Image(systemName: "xmark.circle.fill")
@@ -73,8 +84,8 @@ struct WillpowerRow: View {
 #Preview {
     @State var array = [BioWillpower]()
     return List {
-//        WillpowerRow(storeArray: $array, taskModel: array.first ?? .mocData(type: .willpower))
-        //FIX3
-        Text("FIX3")
+        WillpowerRow(storeArray: .constant([BioWillpower]()), taskModel: .mocData())
+            .environmentObject(WillpowerVM())
+            .environmentObject(StoreManager())
     }
 }

@@ -25,17 +25,17 @@ class InputVM: ObservableObject {
     func createTask() -> BioTask {
         switch type {
         case .willpower:
-            let task = BioWillpower(id: UUID().uuidString, startDate: Date(), date: selectedDate, finished: false, text: text, accepted: false)
+            let task = BioWillpower(id: UUID().uuidString, startDate: Date(), date: selectedDate, text: text, accepted: false)
             return task
         case .patience:
 //            task.date = Date()
 //            task.deadline = selectedDate
-            let task = BioWillpower(id: UUID().uuidString, startDate: Date(), stopDate: selectedDate, date: selectedDate, finished: false, text: text, accepted: false)
+            let task = BioWillpower(id: UUID().uuidString, startDate: Date(), stopDate: selectedDate, date: selectedDate, text: text, accepted: false)
             return task
         case .cleanTime:
 //            task.date = Date()
 //            task.deadline = selectedDate
-            let task = BioWillpower(id: UUID().uuidString, startDate: Date(), stopDate: selectedDate, date: selectedDate, finished: false, text: text, accepted: false)
+            let task = BioWillpower(id: UUID().uuidString, startDate: Date(), stopDate: selectedDate, date: selectedDate, text: text, accepted: false)
             return task
         }
     }
@@ -58,11 +58,11 @@ class InputVM: ObservableObject {
 //        }
 //    }
     
-    func addWillpower(array: Binding<[BioWillpower]>, userId: String?) async throws {
+    func addWillpower(array: Binding<[BioWillpower]>) async throws {
         let service = WillpowerService()
         for task in localArray {
             if let willpower = task as? BioWillpower {
-               let docRef = try await service.add(task: task, userId: userId)
+               let docRef = try await service.add(task: task)
                 willpower.id = docRef.documentID
                 array.wrappedValue.append(willpower)
             }

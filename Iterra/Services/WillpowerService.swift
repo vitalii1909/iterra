@@ -11,8 +11,8 @@ import FirebaseFirestoreSwift
 
 class WillpowerService: TaskServiceProtocol {
     
-    func fetch(userId: String?) async throws -> [BioTask]? {
-        guard let userId = userId else {
+    func fetch() async throws -> [BioTask]? {
+        guard let userId = publicUserId?.id else {
             throw TestError.userId
         }
         
@@ -31,38 +31,36 @@ class WillpowerService: TaskServiceProtocol {
         return bioArray
     }
     
-    func add(task: BioTask, userId: String?) async throws -> DocumentReference {
-        guard let userId = userId else {
+    func add(task: BioTask) async throws -> DocumentReference {
+        guard let userId = publicUserId?.id else {
             throw TestError.userId
         }
         
        return try Firestore.firestore().collection("users").document(userId).collection("willpower").addDocument(from: task)
     }
     
-    func moveToBio(task: BioTask, userId: String?) async throws {
-        guard let userId = userId else {
+    func moveToBio(task: BioTask, accepted: Bool) async throws {
+        guard let userId = publicUserId?.id else {
             throw TestError.userId
         }
         
         guard let documentId = task.id else {
-            return
+            throw TestError.dbError
         }
+        
+        task.accepted = accepted
+        task.stopDate = Date()
         
         try await Firestore.firestore().collection("users").document(userId).collection("willpower").document(documentId).delete()
         
-//        let encoded = try Firestore.Encoder().encode(task)
-        
         try Firestore.firestore().collection("users").document(userId).collection("bio").addDocument(from: task)
-//        try await  Firestore.firestore().collection("users").document(userId).collection("bio").addDocument(data: encoded)
     }
     
-    func delete(task: BioTask, documentId: String, userId: String?) async throws {
-        guard let userId = userId else {
+    func delete(task: BioTask, documentId: String) async throws {
+        guard let userId = publicUserId?.id else {
             throw TestError.userId
         }
         
         try await Firestore.firestore().collection("users").document(userId).collection("willpower").document(documentId).delete()
     }
-    
-    
 }

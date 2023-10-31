@@ -35,7 +35,7 @@ struct WillpowerView: View {
             
             Task {
                 do {
-                    try await vm.fetch(taskArray: $taskStore.timersArray, userId: publicUserId?.id)
+                    try await vm.fetch(taskArray: $taskStore.timersArray)
                 } catch let error {
                     print("let error \(error)")
                 }
@@ -64,7 +64,7 @@ struct WillpowerView: View {
             if let row = idx.first, let taskModel = dict[key]?.sorted(by: {$0.date < $1.date})[row] {
                 Task {
                     do {
-                       try await vm.delete(task: taskModel, taskArray: $taskStore.timersArray, userId: publicUserId?.id)
+                       try await vm.delete(task: taskModel, taskArray: $taskStore.timersArray)
                     } catch let error {
                         print("error \(error.localizedDescription)")
                     }
@@ -75,6 +75,7 @@ struct WillpowerView: View {
     
     private func taskCell(taskModel: BioWillpower) -> some View {
         WillpowerRow(storeArray: $taskStore.timersArray, taskModel: taskModel)
+            .environmentObject(vm)
     }
 }
 
