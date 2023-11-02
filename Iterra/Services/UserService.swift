@@ -21,12 +21,25 @@ class UserService: ObservableObject {
         }
         
         guard let document = try? await Firestore.firestore().collection("users").whereField("email", isEqualTo: email).getDocuments().documents.first else {
+            
             return nil
         }
         
         guard let user = try? document.data(as: User.self) else {
             return nil
         }
+        
+        publicUserId = user
+        
+        return user
+    }
+    
+    func signUpUser(email: String) async -> User? {
+        guard let document = try? await Firestore.firestore().collection("users").addDocument(data: ["email" : email]) else {
+            return nil
+        }
+        
+        let user = User(id: document.documentID, email: email)
         
         publicUserId = user
         

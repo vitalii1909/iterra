@@ -32,17 +32,22 @@ struct LoginView: View {
     
     private var loginBtn: some View {
         Button(action: {
-#if RELEASE
             guard !email.isEmpty else {
                 return
             }
             UserDefaults.standard.set(email, forKey: "currentUserEmail")
             
             Task {
-                let user = await userService.fetchUser()
+                
+                var user: User?
+                user = await userService.fetchUser()
+                
+                if user == nil {
+                   user = await userService.signUpUser(email: email)
+                }
+                
                 await appStateManager.configApp(user: user)
             }
-#endif
         }, label: {
             Text("Sign in")
         })
