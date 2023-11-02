@@ -74,7 +74,7 @@ struct WillpowerView: View {
     }
     
     private func taskCell(taskModel: BioWillpower) -> some View {
-        WillpowerRow(storeArray: $taskStore.timersArray, taskModel: taskModel)
+        WillpowerRow(taskModel: taskModel)
             .environmentObject(vm)
     }
 }

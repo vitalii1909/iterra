@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct PatienceRow: View {
-    
-    @Binding var storeArray: [BioPatience]
-    
+
+    @EnvironmentObject var vm: PatienceVM
+    @EnvironmentObject var taskStore: StoreManager
     var taskModel: BioPatience
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10, content: {
-            Text(taskModel.text)
+            Text("text")
                 .lineLimit(1)
                 .frame(maxWidth: .infinity, alignment: .leading)
             
@@ -26,12 +26,14 @@ struct PatienceRow: View {
                 Spacer()
                 
                 Button(action: {
-                    if let index = storeArray.firstIndex(where: {$0.id == taskModel.id}) {
-                        let task = storeArray[index]
-//                        task.accepted = false
-//                        task.stopDate = Date()
-                        storeArray[index] = task
+                    Task {
+                        do {
+                            try await vm.moveToBio(task: taskModel, patienceArray: $taskStore.patienceArray, accepted: false)
+                        } catch let error {
+                            print("error \(error.localizedDescription)")
+                        }
                     }
+
                 }, label: {
                     Image(systemName: "xmark.circle.fill")
                         .resizable()
@@ -51,9 +53,9 @@ struct PatienceRow: View {
 }
 
 #Preview {
-    @State var array = [BioPatience]()
     return List {
-//        PatienceRow(storeArray: $array, taskModel: array.first ?? .mocData(type: .cleanTime))
-        Text("FIX2")
+        PatienceRow(taskModel: .mocData())
+            .environmentObject(StoreManager())
+            .environmentObject(PatienceVM())
     }
 }

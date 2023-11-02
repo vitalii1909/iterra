@@ -13,27 +13,17 @@ import Firebase
 @MainActor
 class StoreManager: ObservableObject {
     @Published var timersArray = [BioWillpower]()
-    
-    @Published var patienceArray = [BioPatience]() {
-        didSet {
-            savePatience2()
-        }
-    }
-    
-    @Published var cleanTimeArray = [BioClean]() {
-        didSet {
-            saveStopwatch()
-        }
-    }
+    @Published var patienceArray = [BioPatience]()
+    @Published var cleanTimeArray = [BioClean]()
     
     @Published var bioArray = [BioModel]()
     
     private var tickets: [AnyCancellable] = []
     
     init() {
-        fetchTimers()
-        fetchStopwatch()
-        fetchPatience2()
+//        fetchTimers()
+//        fetchStopwatch()
+//        fetchPatience2()
         
         $timersArray
             .sink { [weak self] value in
@@ -49,16 +39,28 @@ class StoreManager: ObservableObject {
     }
     
     private func count() {
+        let service = PatienceService()
+        
         let expiredArray = patienceArray.filter({$0.date < Date()})
         if expiredArray.count > 0 {
             for i in expiredArray {
                 if let index = patienceArray.firstIndex(where: {$0.id == i.id}) {
-                    let task = patienceArray[index]
-                    task.accepted = true
-                    task.stopDate = Date()
-                    withAnimation(.smooth) {
-                        patienceArray[index] = task
+                    Task {
+                        do {
+                            try await service.moveToBio(task: i, accepted: true)
+                            withAnimation(.smooth) {
+                                patienceArray.remove(at: index)
+                                bioArray.append(i)
+                            }
+                        } catch let error {
+                            print("error \(error)")
+                        }
                     }
+                    //                    task.accepted = true
+                    //                    task.stopDate = Date()
+                    //                    withAnimation(.smooth) {
+                    //                        patienceArray[index] = task
+                    //                    }
                 }
             }
         }
@@ -86,7 +88,7 @@ class StoreManager: ObservableObject {
                             timersArray.remove(at: index)
                             bioArray.append(i)
                         } catch let error {
-                           print("error \(error)")
+                            print("error \(error)")
                         }
                     }
                     
@@ -110,43 +112,43 @@ class StoreManager: ObservableObject {
         }
         
         
-//        if let encoded = try? Firestore.Encoder().encode(timersArray) {
-//            UserDefaults.standard.set(encoded, forKey: "timersArray")
+        //        if let encoded = try? Firestore.Encoder().encode(timersArray) {
+        //            UserDefaults.standard.set(encoded, forKey: "timersArray")
+        //        }
+    }
+    
+//    func saveStopwatch() {
+//        if let encoded = try? JSONEncoder().encode(cleanTimeArray) {
+//            UserDefaults.standard.set(encoded, forKey: "cleanTimeArray")
 //        }
-    }
-    
-    func saveStopwatch() {
-        if let encoded = try? JSONEncoder().encode(cleanTimeArray) {
-            UserDefaults.standard.set(encoded, forKey: "cleanTimeArray")
-        }
-    }
-    
-    func savePatience2() {
-        if let encoded = try? JSONEncoder().encode(patienceArray) {
-            UserDefaults.standard.set(encoded, forKey: "patienceArray")
-        }
-    }
-    
-    func fetchTimers() {
-        guard let data = UserDefaults.standard.value(forKey: "timersArray") as? Data,
-              let decodedData = try? JSONDecoder().decode([BioWillpower].self, from: data)
-        else { return }
-        timersArray = decodedData
-    }
-    
-    func fetchStopwatch() {
-        guard let data = UserDefaults.standard.value(forKey: "cleanTimeArray") as? Data,
-              let decodedData = try? JSONDecoder().decode([BioClean].self, from: data)
-        else { return }
-        cleanTimeArray = decodedData
-    }
-    
-    func fetchPatience2() {
-        guard let data = UserDefaults.standard.value(forKey: "patienceArray") as? Data,
-              let decodedData = try? JSONDecoder().decode([BioPatience].self, from: data)
-        else { return }
-        patienceArray = decodedData
-    }
+//    }
+//    
+//    func savePatience2() {
+//        if let encoded = try? JSONEncoder().encode(patienceArray) {
+//            UserDefaults.standard.set(encoded, forKey: "patienceArray")
+//        }
+//    }
+//    
+//    func fetchTimers() {
+//        guard let data = UserDefaults.standard.value(forKey: "timersArray") as? Data,
+//              let decodedData = try? JSONDecoder().decode([BioWillpower].self, from: data)
+//        else { return }
+//        timersArray = decodedData
+//    }
+//    
+//    func fetchStopwatch() {
+//        guard let data = UserDefaults.standard.value(forKey: "cleanTimeArray") as? Data,
+//              let decodedData = try? JSONDecoder().decode([BioClean].self, from: data)
+//        else { return }
+//        cleanTimeArray = decodedData
+//    }
+//    
+//    func fetchPatience2() {
+//        guard let data = UserDefaults.standard.value(forKey: "patienceArray") as? Data,
+//              let decodedData = try? JSONDecoder().decode([BioPatience].self, from: data)
+//        else { return }
+//        patienceArray = decodedData
+//    }
 }
 
 struct AppTabView: View {
@@ -193,11 +195,11 @@ extension Encodable {
 
 extension UserDefaults {
     func decode<T: Decodable>(_ type: T.Type, forKey defaultName: String) throws -> T {
-//        try! JSONDecoder().decode(T.self, from: data(forKey: defaultName) ?? .init())
+        //        try! JSONDecoder().decode(T.self, from: data(forKey: defaultName) ?? .init())
         try! Firestore.Decoder().decode(T.self, from: data(forKey: defaultName) ?? .init())
     }
     func encode<T: Encodable>(_ value: T, forKey defaultName: String) throws {
-//        try! set(JSONEncoder().encode(value), forKey: defaultName)
+        //        try! set(JSONEncoder().encode(value), forKey: defaultName)
         try! set(Firestore.Encoder().encode(value), forKey: defaultName)
     }
 }

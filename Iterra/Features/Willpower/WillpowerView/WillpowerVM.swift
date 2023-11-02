@@ -10,18 +10,13 @@ import SwiftUI
 @MainActor
 class WillpowerVM: TaskVM {
     
-    var service: TaskServiceProtocol
+    private var service: TaskServiceProtocol
     
     init(service: TaskServiceProtocol = WillpowerService()) {
         self.service = service
     }
     
     func fetch(taskArray: Binding<[BioWillpower]>) async throws {
-        
-        guard let userId = publicUserId?.id else {
-            throw TestError.userId
-        }
-        
         do {
             guard let array = try await service.fetch() as? [BioWillpower] else {
                 return
@@ -38,12 +33,11 @@ class WillpowerVM: TaskVM {
             throw TestError.userId
         }
         
-        
         if let index = timersArray.firstIndex(where: {$0.id == documentId}) {
             let task = timersArray.wrappedValue[index]
             Task {
                 do {
-                    let newBio = try await service.moveToBio(task: task, accepted: accepted)
+                    try await service.moveToBio(task: task, accepted: accepted)
                     timersArray.wrappedValue.remove(at: index)
                 } catch let error {
                    print("error \(error)")
@@ -55,10 +49,6 @@ class WillpowerVM: TaskVM {
     }
     
     func delete(task: BioTask, taskArray: Binding<[BioWillpower]>) async throws {
-        guard let userId = publicUserId?.id else {
-            throw TestError.userId
-        }
-        
         guard let documentId = task.id else {
             throw TestError.userId
         }

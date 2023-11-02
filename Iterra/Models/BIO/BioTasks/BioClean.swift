@@ -9,11 +9,10 @@ import Foundation
 
 class BioClean: BioTask {
     
-    var text: String
+//    var failed: Bool
     
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        text = try container.decode(String.self, forKey: .text)
         try super.init(from: decoder)
     }
     
@@ -26,5 +25,4 @@ class BioClean: BioTask {
     enum CodingKeys: String, CodingKey {
         case text
     }
-    
 }

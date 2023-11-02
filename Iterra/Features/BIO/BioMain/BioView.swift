@@ -106,6 +106,10 @@ private extension BioView {
     @ViewBuilder
     func taskCell(taskModel: BioModel) -> some View {
         switch taskModel {
+        case let bioWillpower as BioWillpower:
+            BioWillpoweRow(bioWillpower: bioWillpower)
+        case let bioPatience as BioPatience:
+            BioPatienceRow(bioPatience: bioPatience)
         case let bioText as BioText:
             BioTextRow(text: bioText.text)
         default:

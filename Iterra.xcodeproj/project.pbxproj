@@ -17,12 +17,15 @@
 		D62CEF912AD8DD160025D626 /* WillpowerNavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62CEF902AD8DD160025D626 /* WillpowerNavigationStack.swift */; };
 		D62CEF932AD8DE160025D626 /* WillpowerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62CEF922AD8DE160025D626 /* WillpowerView.swift */; };
 		D62CEF962AD8DF620025D626 /* WillpowerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62CEF952AD8DF620025D626 /* WillpowerVM.swift */; };
+		D64266BC2AF1908A00A40A12 /* BioWillpoweRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64266BB2AF1908A00A40A12 /* BioWillpoweRow.swift */; };
 		D64DD2A82AD9F53000733FFC /* CleanTimeNavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64DD2A72AD9F53000733FFC /* CleanTimeNavigationStack.swift */; };
 		D64DD2AB2AD9F5CE00733FFC /* CleanTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64DD2AA2AD9F5CE00733FFC /* CleanTimeView.swift */; };
 		D64DD2AD2AD9F5D500733FFC /* CleanTimeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64DD2AC2AD9F5D500733FFC /* CleanTimeVM.swift */; };
 		D65128952AD785C100238E8B /* IterraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65128942AD785C100238E8B /* IterraApp.swift */; };
 		D651289B2AD785C300238E8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D651289A2AD785C300238E8B /* Assets.xcassets */; };
 		D651289E2AD785C300238E8B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D651289D2AD785C300238E8B /* Preview Assets.xcassets */; };
+		D666375F2AF2EFBE0084EDF5 /* PatienceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D666375E2AF2EFBE0084EDF5 /* PatienceService.swift */; };
+		D66637612AF339C80084EDF5 /* BioPatienceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66637602AF339C80084EDF5 /* BioPatienceRow.swift */; };
 		D66F4FF52AEB199200A2C4F4 /* NewBioEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66F4FF42AEB199200A2C4F4 /* NewBioEventView.swift */; };
 		D66F4FF72AEB290B00A2C4F4 /* NewBioEventVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66F4FF62AEB290B00A2C4F4 /* NewBioEventVM.swift */; };
 		D66F4FFB2AEB387000A2C4F4 /* BioTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66F4FFA2AEB387000A2C4F4 /* BioTask.swift */; };
@@ -92,6 +95,7 @@
 		D62CEF902AD8DD160025D626 /* WillpowerNavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WillpowerNavigationStack.swift; sourceTree = "<group>"; };
 		D62CEF922AD8DE160025D626 /* WillpowerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WillpowerView.swift; sourceTree = "<group>"; };
 		D62CEF952AD8DF620025D626 /* WillpowerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WillpowerVM.swift; sourceTree = "<group>"; };
+		D64266BB2AF1908A00A40A12 /* BioWillpoweRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioWillpoweRow.swift; sourceTree = "<group>"; };
 		D64DD2A72AD9F53000733FFC /* CleanTimeNavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanTimeNavigationStack.swift; sourceTree = "<group>"; };
 		D64DD2AA2AD9F5CE00733FFC /* CleanTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanTimeView.swift; sourceTree = "<group>"; };
 		D64DD2AC2AD9F5D500733FFC /* CleanTimeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanTimeVM.swift; sourceTree = "<group>"; };
@@ -99,6 +103,8 @@
 		D65128942AD785C100238E8B /* IterraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IterraApp.swift; sourceTree = "<group>"; };
 		D651289A2AD785C300238E8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D651289D2AD785C300238E8B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D666375E2AF2EFBE0084EDF5 /* PatienceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceService.swift; sourceTree = "<group>"; };
+		D66637602AF339C80084EDF5 /* BioPatienceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioPatienceRow.swift; sourceTree = "<group>"; };
 		D66F4FF42AEB199200A2C4F4 /* NewBioEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBioEventView.swift; sourceTree = "<group>"; };
 		D66F4FF62AEB290B00A2C4F4 /* NewBioEventVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBioEventVM.swift; sourceTree = "<group>"; };
 		D66F4FFA2AEB387000A2C4F4 /* BioTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioTask.swift; sourceTree = "<group>"; };
@@ -183,8 +189,8 @@
 				D601BF352ADCB31D00256C6C /* BioView.swift */,
 				D6E55D212AE203C900816158 /* BioVM.swift */,
 				D66F50102AEDBD7C00A2C4F4 /* Rows */,
-				D66F4FFE2AEB434A00A2C4F4 /* BioUpdateDate */,
 				D66F4FF82AEB292000A2C4F4 /* NewBioEvent */,
+				D66F4FFE2AEB434A00A2C4F4 /* BioUpdateDate */,
 			);
 			path = BioMain;
 			sourceTree = "<group>";
@@ -317,6 +323,17 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		D666375D2AF2EF6B0084EDF5 /* BIO */ = {
+			isa = PBXGroup;
+			children = (
+				D6C910372AE8973600447F04 /* BioService.swift */,
+				D66F50112AEF558200A2C4F4 /* TaskServiceProtocol.swift */,
+				D66F50132AEF595A00A2C4F4 /* WillpowerService.swift */,
+				D666375E2AF2EFBE0084EDF5 /* PatienceService.swift */,
+			);
+			path = BIO;
+			sourceTree = "<group>";
+		};
 		D66F4FF82AEB292000A2C4F4 /* NewBioEvent */ = {
 			isa = PBXGroup;
 			children = (
@@ -384,6 +401,8 @@
 			isa = PBXGroup;
 			children = (
 				D66F500E2AEDA96800A2C4F4 /* BioTextRow.swift */,
+				D64266BB2AF1908A00A40A12 /* BioWillpoweRow.swift */,
+				D66637602AF339C80084EDF5 /* BioPatienceRow.swift */,
 			);
 			path = Rows;
 			sourceTree = "<group>";
@@ -400,9 +419,7 @@
 			isa = PBXGroup;
 			children = (
 				D6C910272AE776D100447F04 /* UserService.swift */,
-				D6C910372AE8973600447F04 /* BioService.swift */,
-				D66F50112AEF558200A2C4F4 /* TaskServiceProtocol.swift */,
-				D66F50132AEF595A00A2C4F4 /* WillpowerService.swift */,
+				D666375D2AF2EF6B0084EDF5 /* BIO */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -564,14 +581,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				D60281AD2AD7869800F47195 /* InputView.swift in Sources */,
+				D66637612AF339C80084EDF5 /* BioPatienceRow.swift in Sources */,
 				D66F4FF72AEB290B00A2C4F4 /* NewBioEventVM.swift in Sources */,
 				D6D4BE312ADE16D70013A72A /* PatienceNavigationStack.swift in Sources */,
 				D65128952AD785C100238E8B /* IterraApp.swift in Sources */,
+				D64266BC2AF1908A00A40A12 /* BioWillpoweRow.swift in Sources */,
 				D6C9102A2AE7780900447F04 /* User.swift in Sources */,
 				D6E55D1C2AE1F94700816158 /* WillpowerRow.swift in Sources */,
 				D66F50002AEB46F200A2C4F4 /* BioUpdateDateVM.swift in Sources */,
 				D66F4FFD2AEB434600A2C4F4 /* BioUpdateDateView.swift in Sources */,
 				D6C910362AE8962300447F04 /* BioText.swift in Sources */,
+				D666375F2AF2EFBE0084EDF5 /* PatienceService.swift in Sources */,
 				D66F500D2AEC9FB500A2C4F4 /* SelectButton.swift in Sources */,
 				D66F500F2AEDA96800A2C4F4 /* BioTextRow.swift in Sources */,
 				D6C910252AE73B2B00447F04 /* LoginView.swift in Sources */,

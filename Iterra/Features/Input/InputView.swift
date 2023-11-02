@@ -198,6 +198,9 @@ struct InputView: View {
                             case .willpower:
                                 try await vm.addWillpower(array: $taskStore.timersArray)
                                 dismiss()
+                            case .patience:
+                                try await vm.addPatience(array: $taskStore.patienceArray)
+                                dismiss()
                             default:
                                 break
                             }

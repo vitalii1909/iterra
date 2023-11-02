@@ -25,17 +25,13 @@ class InputVM: ObservableObject {
     func createTask() -> BioTask {
         switch type {
         case .willpower:
-            let task = BioWillpower(id: UUID().uuidString, startDate: Date(), date: selectedDate, text: text, accepted: false)
+            let task = BioWillpower(id: UUID().uuidString, startDate: Date(), date: selectedDate, text: text, done: false)
             return task
         case .patience:
-//            task.date = Date()
-//            task.deadline = selectedDate
-            let task = BioWillpower(id: UUID().uuidString, startDate: Date(), stopDate: selectedDate, date: selectedDate, text: text, accepted: false)
+            let task = BioPatience(id: UUID().uuidString, startDate: Date(), stopDate: selectedDate, date: selectedDate, text: text, waited: false)
             return task
         case .cleanTime:
-//            task.date = Date()
-//            task.deadline = selectedDate
-            let task = BioWillpower(id: UUID().uuidString, startDate: Date(), stopDate: selectedDate, date: selectedDate, text: text, accepted: false)
+            let task = BioWillpower(id: UUID().uuidString, startDate: Date(), stopDate: selectedDate, date: selectedDate, text: text, done: false)
             return task
         }
     }
@@ -68,4 +64,16 @@ class InputVM: ObservableObject {
             }
         }
     }
+    
+    func addPatience(array: Binding<[BioPatience]>) async throws {
+        let service = PatienceService()
+        for task in localArray {
+            if let willpower = task as? BioPatience {
+               let docRef = try await service.add(task: task)
+                willpower.id = docRef.documentID
+                array.wrappedValue.append(willpower)
+            }
+        }
+    }
+    
 }

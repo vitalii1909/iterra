@@ -9,35 +9,34 @@ import Foundation
 
 class BioWillpower: BioTask {
     
-    var text: String
+    var done: Bool
     
-    init(id: String? = nil, startDate: Date, stopDate: Date? = nil, date: Date, text: String, accepted: Bool) {
+    init(id: String? = nil, startDate: Date, stopDate: Date? = nil, date: Date, text: String, done: Bool) {
+        self.done = done
         
-        self.text = text
-        
-        super.init(id: id, startDate: startDate, stopDate: stopDate, date: date, accepted: accepted)
+        super.init(id: id,text: text, startDate: startDate, stopDate: stopDate, date: date)
     }
     
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        text = try container.decode(String.self, forKey: .text)
+        done = try container.decode(Bool.self, forKey: .done)
         try super.init(from: decoder)
     }
     
     override func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try super.encode(to: encoder)
-        try container.encode(text, forKey: .text)
+        try container.encode(done, forKey: .done)
     }
     
     enum CodingKeys: String, CodingKey {
-        case text
+        case done
     }
 }
 
 extension BioWillpower {
     static func mocData() -> BioWillpower {
-        BioWillpower(id: UUID().uuidString, startDate: Date(), date: Date(), text: "test text", accepted: false)
+        BioWillpower(id: UUID().uuidString, startDate: Date(), date: Date(), text: "test text", done: false)
     }
     
     static func mocArray() -> [BioWillpower] {

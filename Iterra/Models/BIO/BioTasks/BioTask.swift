@@ -9,36 +9,36 @@ import Foundation
 
 class BioTask: BioModel {
     
+    var text: String
     var startDate: Date
     var stopDate: Date?
-    var accepted: Bool
     
-    init(id: String? = nil, startDate: Date, stopDate: Date?, date: Date, accepted: Bool) {
+    init(id: String? = nil, text: String, startDate: Date, stopDate: Date?, date: Date) {
+        self.text = text
         self.startDate = startDate
         self.stopDate = stopDate
-        self.accepted = accepted
         super.init(id: id, date: date)
     }
     
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
+        text = try container.decode(String.self, forKey: .text)
         startDate = try container.decode(Date.self, forKey: .startDate)
         stopDate = try container.decode(Date?.self, forKey: .stopDate)
-        accepted = try container.decode(Bool.self, forKey: .accepted)
         try super.init(from: decoder)
     }
     
     override func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try super.encode(to: encoder)
+        try container.encode(text, forKey: .text)
         try container.encode(startDate, forKey: .startDate)
         try container.encode(stopDate, forKey: .stopDate)
-        try container.encode(accepted, forKey: .accepted)
     }
     
     enum CodingKeys: String, CodingKey {
+        case text
         case startDate
         case stopDate
-        case accepted
     }
 }

@@ -11,7 +11,6 @@ struct WillpowerRow: View {
     
     @EnvironmentObject var vm: WillpowerVM
     @EnvironmentObject var taskStore: StoreManager
-    @Binding var storeArray: [BioWillpower]
     var taskModel: BioWillpower
     
     var body: some View {
@@ -84,7 +83,7 @@ struct WillpowerRow: View {
 #Preview {
     @State var array = [BioWillpower]()
     return List {
-        WillpowerRow(storeArray: .constant([BioWillpower]()), taskModel: .mocData())
+        WillpowerRow(taskModel: .mocData())
             .environmentObject(WillpowerVM())
             .environmentObject(StoreManager())
     }

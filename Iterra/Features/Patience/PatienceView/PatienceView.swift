@@ -16,10 +16,9 @@ struct PatienceView: View {
     var body: some View {
         
         VStack {
-            if let dict = vm.getDict(array: taskStore.patienceArray) {
+            if let dict = vm.getDict(array: taskStore.patienceArray) as? [Date : [BioPatience]] {
                 List {
-                    Text("222")
-//                    getSections(dict: dict)
+                    getSections(dict: dict)
                 }
 //                .animation(.smooth(), value: taskStore.patienceArray.filter({$0.finished == false }).count)
                 .animation(.smooth(), value: taskStore.patienceArray.count)
@@ -29,6 +28,19 @@ struct PatienceView: View {
             }
         }
 //        .animation(.smooth(), value: taskStore.patienceArray.filter({$0.finished == false }).count)
+        .task {
+            guard taskStore.patienceArray.isEmpty else {
+                return
+            }
+            
+            Task {
+                do {
+                    try await vm.fetch(taskArray: $taskStore.patienceArray)
+                } catch let error {
+                    print("let error \(error)")
+                }
+            }
+        }
     }
     
     private func getSections(dict: [Date : [BioPatience]]) -> some View {
@@ -58,13 +70,14 @@ struct PatienceView: View {
     }
     
     private func taskCell(taskModel: BioPatience) -> some View {
-        PatienceRow(storeArray: $taskStore.patienceArray, taskModel: taskModel)
+        PatienceRow(taskModel: taskModel)
+            .environmentObject(vm)
     }
 }
 
 #Preview {
     let taskStore = StoreManager()
-//    taskStore.patienceArray = TaskModel.mocArray(type: .cleanTime)
+//    taskStore.patienceArray =
     return PatienceView(vm: PatienceVM())
         .environmentObject(taskStore)
 }

@@ -29,10 +29,14 @@ class BioService: ObservableObject, BioServiceProtocol {
         var bioArray = [BioModel]()
         
         for doc in documents {
-            if let bio = try? doc.data(as: BioText.self) {
-                bioArray.append(bio)
+            if let bioWillpower = try? doc.data(as: BioWillpower.self)  {
+                bioArray.append(bioWillpower)
+            } else if let bioPatience = try? doc.data(as: BioPatience.self) {
+                bioArray.append(bioPatience)
+            } else if let bioText = try? doc.data(as: BioText.self) {
+                bioArray.append(bioText)
+            }else if let bio = try? doc.data(as: BioModel.self)  {
                 //handle regular bioModel
-            } else if let bio = try? doc.data(as: BioModel.self)  {
                 bioArray.append(bio)
             }
         }

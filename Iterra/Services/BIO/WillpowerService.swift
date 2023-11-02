@@ -7,7 +7,6 @@
 
 import Foundation
 import FirebaseFirestore
-import FirebaseFirestoreSwift
 
 class WillpowerService: TaskServiceProtocol {
     
@@ -48,7 +47,11 @@ class WillpowerService: TaskServiceProtocol {
             throw TestError.dbError
         }
         
-        task.accepted = accepted
+        guard let task = task as? BioWillpower else {
+            throw TestError.dbError
+        }
+        
+        task.done = accepted
         task.stopDate = Date()
         
         try await Firestore.firestore().collection("users").document(userId).collection("willpower").document(documentId).delete()
