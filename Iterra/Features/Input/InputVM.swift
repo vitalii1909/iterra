@@ -31,7 +31,7 @@ class InputVM: ObservableObject {
             let task = BioPatience(id: UUID().uuidString, startDate: Date(), stopDate: selectedDate, date: selectedDate, text: text, waited: false)
             return task
         case .cleanTime:
-            let task = BioWillpower(id: UUID().uuidString, startDate: Date(), stopDate: selectedDate, date: selectedDate, text: text, done: false)
+            let task = BioClean(id: UUID().uuidString, startDate: Date(), stopDate: selectedDate, date: selectedDate, text: text, failed: false)
             return task
         }
     }
@@ -76,4 +76,14 @@ class InputVM: ObservableObject {
         }
     }
     
+    func addClean(array: Binding<[BioClean]>) async throws {
+        let service = CleanService()
+        for task in localArray {
+            if let clean = task as? BioClean {
+               let docRef = try await service.add(task: task)
+                clean.id = docRef.documentID
+                array.wrappedValue.append(clean)
+            }
+        }
+    }
 }

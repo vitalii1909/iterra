@@ -9,8 +9,8 @@ import SwiftUI
 
 struct CleanTimeRow: View {
     
-    @Binding var storeArray: [BioClean]
-    
+    @EnvironmentObject var vm: CleanTimeVM
+    @EnvironmentObject var taskStore: StoreManager
     var taskModel: BioClean
     
     var body: some View {
@@ -26,11 +26,12 @@ struct CleanTimeRow: View {
                 Spacer()
                 
                 Button(action: {
-                    if let index = storeArray.firstIndex(where: {$0.id == taskModel.id}) {
-                        let task = storeArray[index]
-//                        task.accepted = false
-                        task.stopDate = Date()
-                        storeArray[index] = task
+                    Task {
+                        do {
+                            try await vm.moveToBio(task: taskModel, cleanArray: $taskStore.cleanTimeArray, accepted: true)
+                        } catch let error {
+                            print("error \(error.localizedDescription)")
+                        }
                     }
                 }, label: {
                     Image(systemName: "xmark.circle.fill")

@@ -62,8 +62,12 @@ struct PatienceView: View {
         }
         .onDelete { idx in
             if let row = idx.first, let taskModel = dict[key]?.sorted(by: {$0.date < $1.date})[row] {
-                withAnimation(.smooth()) {
-                    taskStore.patienceArray.removeAll(where: {$0.id == taskModel.id})
+                Task {
+                    do {
+                       try await vm.delete(task: taskModel, taskArray: $taskStore.patienceArray)
+                    } catch let error {
+                        print("error \(error.localizedDescription)")
+                    }
                 }
             }
         }

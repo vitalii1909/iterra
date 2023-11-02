@@ -49,7 +49,7 @@ class PatienceVM: TaskVM {
         }
     }
     
-    func delete(task: BioTask, taskArray: Binding<[BioWillpower]>) async throws {
+    func delete(task: BioTask, taskArray: Binding<[BioPatience]>) async throws {
         guard let documentId = task.id else {
             throw TestError.userId
         }

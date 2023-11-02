@@ -106,22 +106,28 @@ struct InputView: View {
                 return
             }
             
+            let task = vm.createTask()
+            vm.localArray.append(task)
             
-            
-//            let task = vm.createTask()
-//            
-//            switch task {
-//            case let bio as BioWillpower:
-//                taskStore.timersArray.append(bio)
-//            case let bio as BioPatience:
-//                taskStore.patienceArray.append(bio)
-//            case let bio as BioClean:
-//                taskStore.cleanTimeArray.append(bio)
-//            default:
-//                break
-//            }
-            
-//            dismiss()
+            Task {
+                do {
+                    switch vm.type {
+//                    case .willpower:
+//                        try await vm.addWillpower(array: $taskStore.timersArray)
+//                        dismiss()
+//                    case .patience:
+//                        try await vm.addPatience(array: $taskStore.patienceArray)
+//                        dismiss()
+                    case .cleanTime:
+                        try await vm.addClean(array: $taskStore.cleanTimeArray)
+                        dismiss()
+                    default:
+                        break
+                    }
+                } catch let error {
+                    print("error \(error.localizedDescription)")
+                }
+            }
             
         }, label: {
             Text("Add")
@@ -201,31 +207,14 @@ struct InputView: View {
                             case .patience:
                                 try await vm.addPatience(array: $taskStore.patienceArray)
                                 dismiss()
-                            default:
-                                break
+                            case .cleanTime:
+                                try await vm.addClean(array: $taskStore.cleanTimeArray)
+                                dismiss()
                             }
                         } catch let error {
                             print("error \(error.localizedDescription)")
                         }
                     }
-                    
-                    
-//                    guard !localArray.isEmpty else {
-//                        return
-//                    }
-//                    
-//                    switch localArray {
-//                    case let local as [BioWillpower]:
-//                        taskStore.timersArray += local
-//                    case let local as [BioPatience]:
-//                        taskStore.patienceArray += local
-//                    case let local as [BioClean]:
-//                        taskStore.cleanTimeArray += local
-//                    default:
-//                        break
-//                    }
-//                    
-//                    dismiss()
                 }, label: {
                     Text("Apply")
                         .fontWeight(.bold)

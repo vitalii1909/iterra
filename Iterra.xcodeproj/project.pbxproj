@@ -26,6 +26,8 @@
 		D651289E2AD785C300238E8B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D651289D2AD785C300238E8B /* Preview Assets.xcassets */; };
 		D666375F2AF2EFBE0084EDF5 /* PatienceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D666375E2AF2EFBE0084EDF5 /* PatienceService.swift */; };
 		D66637612AF339C80084EDF5 /* BioPatienceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66637602AF339C80084EDF5 /* BioPatienceRow.swift */; };
+		D66637632AF358E20084EDF5 /* CleanService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66637622AF358E20084EDF5 /* CleanService.swift */; };
+		D66637652AF360C40084EDF5 /* BioCleanRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66637642AF360C40084EDF5 /* BioCleanRow.swift */; };
 		D66F4FF52AEB199200A2C4F4 /* NewBioEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66F4FF42AEB199200A2C4F4 /* NewBioEventView.swift */; };
 		D66F4FF72AEB290B00A2C4F4 /* NewBioEventVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66F4FF62AEB290B00A2C4F4 /* NewBioEventVM.swift */; };
 		D66F4FFB2AEB387000A2C4F4 /* BioTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66F4FFA2AEB387000A2C4F4 /* BioTask.swift */; };
@@ -105,6 +107,8 @@
 		D651289D2AD785C300238E8B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D666375E2AF2EFBE0084EDF5 /* PatienceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceService.swift; sourceTree = "<group>"; };
 		D66637602AF339C80084EDF5 /* BioPatienceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioPatienceRow.swift; sourceTree = "<group>"; };
+		D66637622AF358E20084EDF5 /* CleanService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanService.swift; sourceTree = "<group>"; };
+		D66637642AF360C40084EDF5 /* BioCleanRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioCleanRow.swift; sourceTree = "<group>"; };
 		D66F4FF42AEB199200A2C4F4 /* NewBioEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBioEventView.swift; sourceTree = "<group>"; };
 		D66F4FF62AEB290B00A2C4F4 /* NewBioEventVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBioEventVM.swift; sourceTree = "<group>"; };
 		D66F4FFA2AEB387000A2C4F4 /* BioTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioTask.swift; sourceTree = "<group>"; };
@@ -330,6 +334,7 @@
 				D66F50112AEF558200A2C4F4 /* TaskServiceProtocol.swift */,
 				D66F50132AEF595A00A2C4F4 /* WillpowerService.swift */,
 				D666375E2AF2EFBE0084EDF5 /* PatienceService.swift */,
+				D66637622AF358E20084EDF5 /* CleanService.swift */,
 			);
 			path = BIO;
 			sourceTree = "<group>";
@@ -403,6 +408,7 @@
 				D66F500E2AEDA96800A2C4F4 /* BioTextRow.swift */,
 				D64266BB2AF1908A00A40A12 /* BioWillpoweRow.swift */,
 				D66637602AF339C80084EDF5 /* BioPatienceRow.swift */,
+				D66637642AF360C40084EDF5 /* BioCleanRow.swift */,
 			);
 			path = Rows;
 			sourceTree = "<group>";
@@ -581,6 +587,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D60281AD2AD7869800F47195 /* InputView.swift in Sources */,
+				D66637632AF358E20084EDF5 /* CleanService.swift in Sources */,
 				D66637612AF339C80084EDF5 /* BioPatienceRow.swift in Sources */,
 				D66F4FF72AEB290B00A2C4F4 /* NewBioEventVM.swift in Sources */,
 				D6D4BE312ADE16D70013A72A /* PatienceNavigationStack.swift in Sources */,
@@ -596,6 +603,7 @@
 				D66F500F2AEDA96800A2C4F4 /* BioTextRow.swift in Sources */,
 				D6C910252AE73B2B00447F04 /* LoginView.swift in Sources */,
 				D60281B22AD78FEE00F47195 /* TaskModel.swift in Sources */,
+				D66637652AF360C40084EDF5 /* BioCleanRow.swift in Sources */,
 				D6C9103B2AE8BBB500447F04 /* BioModel.swift in Sources */,
 				D6D2F0A62AEA12D500A4760D /* BioWillpower.swift in Sources */,
 				D6C910382AE8973600447F04 /* BioService.swift in Sources */,

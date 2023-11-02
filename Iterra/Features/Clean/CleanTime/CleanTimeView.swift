@@ -16,10 +16,9 @@ struct CleanTimeView: View {
     var body: some View {
         
         VStack {
-            if let dict = vm.getDict(array: taskStore.cleanTimeArray) {
+            if let dict = vm.getDict(array: taskStore.cleanTimeArray) as? [Date : [BioClean]] {
                 List {
-                    Text("222")
-//                    getSections(dict: dict)
+                    getSections(dict: dict)
                 }
 //                .animation(.smooth(), value: taskStore.cleanTimeArray.filter({$0.finished == false }).count)
                 .animation(.smooth(), value: taskStore.cleanTimeArray.count)
@@ -29,6 +28,19 @@ struct CleanTimeView: View {
             }
         }
 //        .animation(.smooth(), value: taskStore.cleanTimeArray.filter({$0.finished == false }).count)
+        .task {
+            guard taskStore.cleanTimeArray.isEmpty else {
+                return
+            }
+            
+            Task {
+                do {
+                    try await vm.fetch(taskArray: $taskStore.cleanTimeArray)
+                } catch let error {
+                    print("let error \(error)")
+                }
+            }
+        }
     }
     
     private func getSections(dict: [Date : [BioClean]]) -> some View {
@@ -50,15 +62,20 @@ struct CleanTimeView: View {
         }
         .onDelete { idx in
             if let row = idx.first, let taskModel = dict[key]?.sorted(by: {$0.date < $1.date})[row] {
-                withAnimation(.smooth()) {
-                    taskStore.cleanTimeArray.removeAll(where: {$0.id == taskModel.id})
+                Task {
+                    do {
+                       try await vm.delete(task: taskModel, taskArray: $taskStore.cleanTimeArray)
+                    } catch let error {
+                        print("error \(error.localizedDescription)")
+                    }
                 }
             }
         }
     }
     
     private func taskCell(taskModel: BioClean) -> some View {
-        CleanTimeRow(storeArray: $taskStore.cleanTimeArray, taskModel: taskModel)
+        CleanTimeRow(taskModel: taskModel)
+            .environmentObject(vm)
     }
 }
 

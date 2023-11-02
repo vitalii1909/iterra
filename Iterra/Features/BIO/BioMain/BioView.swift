@@ -110,6 +110,8 @@ private extension BioView {
             BioWillpoweRow(bioWillpower: bioWillpower)
         case let bioPatience as BioPatience:
             BioPatienceRow(bioPatience: bioPatience)
+        case let bioClean as BioClean:
+            BioCleanRow(bioClean: bioClean)
         case let bioText as BioText:
             BioTextRow(text: bioText.text)
         default:
