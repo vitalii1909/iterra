@@ -18,7 +18,7 @@ class StoreManager: ObservableObject {
     
     @Published var bioArray = [BioModel]()
     
-    private var tickets: [AnyCancellable] = []
+    private var cancelBag = CancelBag()
     
     init() {
 //        fetchTimers()
@@ -30,12 +30,12 @@ class StoreManager: ObservableObject {
                 print("get value \(value.count)")
                 self?.saveTimers(value: value)
             }
-            .store(in: &tickets)
+            .store(in: cancelBag)
         
         Timer.publish(every: 1, on: .main, in: .common)
             .autoconnect()
             .sink { [weak self] _ in self?.count() }
-            .store(in: &tickets)
+            .store(in: cancelBag)
     }
     
     private func count() {

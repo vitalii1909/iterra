@@ -31,7 +31,7 @@ class InputVM: ObservableObject {
             let task = BioPatience(id: UUID().uuidString, startDate: Date(), stopDate: selectedDate, date: selectedDate, text: text, waited: false)
             return task
         case .cleanTime:
-            let task = BioClean(id: UUID().uuidString, startDate: Date(), stopDate: selectedDate, date: selectedDate, text: text, failed: false)
+            let task = BioClean(id: UUID().uuidString, startDate: selectedDate, stopDate: selectedDate, date: selectedDate, text: text, failed: false)
             return task
         }
     }

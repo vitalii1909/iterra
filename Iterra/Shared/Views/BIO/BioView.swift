@@ -12,7 +12,6 @@ struct BioView: View {
     @ObservedObject var vm: BioVM
     
     @EnvironmentObject private var taskStore: StoreManager
-    @EnvironmentObject private var userService: UserService
     
     @State private var showNewEvent = false
     @State private var changeDateBio: BioModel?
@@ -184,6 +183,9 @@ private extension BioView {
 
 #Preview {
     let taskStore = StoreManager()
+    
+    taskStore.timersArray = [.mocData(), .mocData()]
+    
     //    taskStore.cleanTimeArray = TaskModel.mocArray(type: .cleanTime)
     //    taskStore.timersArray = TaskModel.mocArray(type: .willpower)
     //    taskStore.cleanTimeArray = TaskModel.mocArray(type: .cleanTime)
@@ -196,15 +198,10 @@ private extension BioView {
     //        i.accepted = true
     //        i.finished = true
     //    }
-    //    for i in taskStore.timersArray {
-    //        i.accepted = true
-    //        i.finished = true
-    //    }
-    
-    let userService = UserService()
-    publicUserId = User(id: "Y7pN9sZVpwgngcEnj0L9", email: "mikhey.work@gmail.com")
-    
+        for i in taskStore.timersArray {
+            i.done = true
+        }
+        
     return BioNavigationStack()
         .environmentObject(taskStore)
-        .environmentObject(userService)
 }

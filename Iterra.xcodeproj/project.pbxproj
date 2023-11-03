@@ -28,6 +28,7 @@
 		D66637612AF339C80084EDF5 /* BioPatienceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66637602AF339C80084EDF5 /* BioPatienceRow.swift */; };
 		D66637632AF358E20084EDF5 /* CleanService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66637622AF358E20084EDF5 /* CleanService.swift */; };
 		D66637652AF360C40084EDF5 /* BioCleanRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66637642AF360C40084EDF5 /* BioCleanRow.swift */; };
+		D66637742AF42AD90084EDF5 /* CancelBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66637732AF42AD90084EDF5 /* CancelBag.swift */; };
 		D66F4FF52AEB199200A2C4F4 /* NewBioEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66F4FF42AEB199200A2C4F4 /* NewBioEventView.swift */; };
 		D66F4FF72AEB290B00A2C4F4 /* NewBioEventVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66F4FF62AEB290B00A2C4F4 /* NewBioEventVM.swift */; };
 		D66F4FFB2AEB387000A2C4F4 /* BioTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66F4FFA2AEB387000A2C4F4 /* BioTask.swift */; };
@@ -41,7 +42,7 @@
 		D66F50142AEF595A00A2C4F4 /* WillpowerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66F50132AEF595A00A2C4F4 /* WillpowerService.swift */; };
 		D6C910222AE7340B00447F04 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C910212AE7340B00447F04 /* AppState.swift */; };
 		D6C910252AE73B2B00447F04 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C910242AE73B2B00447F04 /* LoginView.swift */; };
-		D6C910282AE776D100447F04 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C910272AE776D100447F04 /* UserService.swift */; };
+		D6C910282AE776D100447F04 /* UserFirebaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C910272AE776D100447F04 /* UserFirebaseRepository.swift */; };
 		D6C9102A2AE7780900447F04 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C910292AE7780900447F04 /* User.swift */; };
 		D6C910362AE8962300447F04 /* BioText.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C910352AE8962300447F04 /* BioText.swift */; };
 		D6C910382AE8973600447F04 /* BioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C910372AE8973600447F04 /* BioService.swift */; };
@@ -109,6 +110,7 @@
 		D66637602AF339C80084EDF5 /* BioPatienceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioPatienceRow.swift; sourceTree = "<group>"; };
 		D66637622AF358E20084EDF5 /* CleanService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanService.swift; sourceTree = "<group>"; };
 		D66637642AF360C40084EDF5 /* BioCleanRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioCleanRow.swift; sourceTree = "<group>"; };
+		D66637732AF42AD90084EDF5 /* CancelBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelBag.swift; sourceTree = "<group>"; };
 		D66F4FF42AEB199200A2C4F4 /* NewBioEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBioEventView.swift; sourceTree = "<group>"; };
 		D66F4FF62AEB290B00A2C4F4 /* NewBioEventVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBioEventVM.swift; sourceTree = "<group>"; };
 		D66F4FFA2AEB387000A2C4F4 /* BioTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioTask.swift; sourceTree = "<group>"; };
@@ -122,7 +124,7 @@
 		D66F50132AEF595A00A2C4F4 /* WillpowerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WillpowerService.swift; sourceTree = "<group>"; };
 		D6C910212AE7340B00447F04 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		D6C910242AE73B2B00447F04 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		D6C910272AE776D100447F04 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		D6C910272AE776D100447F04 /* UserFirebaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFirebaseRepository.swift; sourceTree = "<group>"; };
 		D6C910292AE7780900447F04 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D6C910352AE8962300447F04 /* BioText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioText.swift; sourceTree = "<group>"; };
 		D6C910372AE8973600447F04 /* BioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioService.swift; sourceTree = "<group>"; };
@@ -178,42 +180,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D601BF322ADCB22600256C6C /* BIO */ = {
-			isa = PBXGroup;
-			children = (
-				D601BF332ADCB25500256C6C /* BioNavigationStack.swift */,
-				D601BF372ADCB39F00256C6C /* BioMain */,
-			);
-			path = BIO;
-			sourceTree = "<group>";
-		};
-		D601BF372ADCB39F00256C6C /* BioMain */ = {
-			isa = PBXGroup;
-			children = (
-				D601BF352ADCB31D00256C6C /* BioView.swift */,
-				D6E55D212AE203C900816158 /* BioVM.swift */,
-				D66F50102AEDBD7C00A2C4F4 /* Rows */,
-				D66F4FF82AEB292000A2C4F4 /* NewBioEvent */,
-				D66F4FFE2AEB434A00A2C4F4 /* BioUpdateDate */,
-			);
-			path = BioMain;
-			sourceTree = "<group>";
-		};
 		D60281AA2AD7867400F47195 /* App */ = {
 			isa = PBXGroup;
 			children = (
 				D65128942AD785C100238E8B /* IterraApp.swift */,
 			);
 			path = App;
-			sourceTree = "<group>";
-		};
-		D60281AB2AD7867C00F47195 /* Input */ = {
-			isa = PBXGroup;
-			children = (
-				D60281AC2AD7869800F47195 /* InputView.swift */,
-				D60281AE2AD786B200F47195 /* InputVM.swift */,
-			);
-			path = Input;
 			sourceTree = "<group>";
 		};
 		D60281B02AD78FCB00F47195 /* Models */ = {
@@ -226,28 +198,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		D62CEF8A2AD8DBE30025D626 /* Features */ = {
-			isa = PBXGroup;
-			children = (
-				D6C910232AE73AFA00447F04 /* Login */,
-				D64DD2A52AD9ED4C00733FFC /* Willpower */,
-				D6D4BE2F2ADE16C00013A72A /* Patience */,
-				D62CEF8F2AD8DD000025D626 /* Clean */,
-				D601BF322ADCB22600256C6C /* BIO */,
-				D60281AB2AD7867C00F47195 /* Input */,
-			);
-			path = Features;
-			sourceTree = "<group>";
-		};
-		D62CEF8F2AD8DD000025D626 /* Clean */ = {
-			isa = PBXGroup;
-			children = (
-				D64DD2A72AD9F53000733FFC /* CleanTimeNavigationStack.swift */,
-				D64DD2A92AD9F5AA00733FFC /* CleanTime */,
-			);
-			path = Clean;
-			sourceTree = "<group>";
-		};
 		D64DD29E2AD8E57B00733FFC /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
@@ -256,35 +206,6 @@
 				D60281B32AD7B53700F47195 /* AppTabView.swift */,
 			);
 			path = Navigation;
-			sourceTree = "<group>";
-		};
-		D64DD2A52AD9ED4C00733FFC /* Willpower */ = {
-			isa = PBXGroup;
-			children = (
-				D62CEF902AD8DD160025D626 /* WillpowerNavigationStack.swift */,
-				D64DD2A62AD9ED5E00733FFC /* WillpowerView */,
-			);
-			path = Willpower;
-			sourceTree = "<group>";
-		};
-		D64DD2A62AD9ED5E00733FFC /* WillpowerView */ = {
-			isa = PBXGroup;
-			children = (
-				D62CEF922AD8DE160025D626 /* WillpowerView.swift */,
-				D62CEF952AD8DF620025D626 /* WillpowerVM.swift */,
-				D6E55D1D2AE1F94C00816158 /* WillpowerRow */,
-			);
-			path = WillpowerView;
-			sourceTree = "<group>";
-		};
-		D64DD2A92AD9F5AA00733FFC /* CleanTime */ = {
-			isa = PBXGroup;
-			children = (
-				D64DD2AA2AD9F5CE00733FFC /* CleanTimeView.swift */,
-				D64DD2AC2AD9F5D500733FFC /* CleanTimeVM.swift */,
-				D6E55D202AE1FD5100816158 /* CleanTimeRow */,
-			);
-			path = CleanTime;
 			sourceTree = "<group>";
 		};
 		D65128882AD785C100238E8B = {
@@ -308,8 +229,6 @@
 			children = (
 				D60281AA2AD7867400F47195 /* App */,
 				D66F500A2AEC9F9800A2C4F4 /* Shared */,
-				D62CEF8A2AD8DBE30025D626 /* Features */,
-				D6C910262AE7700900447F04 /* Services */,
 				D60281B02AD78FCB00F47195 /* Models */,
 				D66F50022AEC8AC600A2C4F4 /* Extensions */,
 				D64DD29E2AD8E57B00733FFC /* Navigation */,
@@ -327,45 +246,99 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		D666375D2AF2EF6B0084EDF5 /* BIO */ = {
+		D66637692AF411530084EDF5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D6C910372AE8973600447F04 /* BioService.swift */,
-				D66F50112AEF558200A2C4F4 /* TaskServiceProtocol.swift */,
-				D66F50132AEF595A00A2C4F4 /* WillpowerService.swift */,
-				D666375E2AF2EFBE0084EDF5 /* PatienceService.swift */,
-				D66637622AF358E20084EDF5 /* CleanService.swift */,
+				D6C910242AE73B2B00447F04 /* LoginView.swift */,
+				D666376B2AF411C00084EDF5 /* Willpower */,
+				D666376C2AF411E10084EDF5 /* Patience */,
+				D666376D2AF4120C0084EDF5 /* Clean */,
+				D66637712AF427EB0084EDF5 /* BIO */,
+				D60281AC2AD7869800F47195 /* InputView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D666376A2AF411970084EDF5 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D62CEF952AD8DF620025D626 /* WillpowerVM.swift */,
+				D6D4BE352ADE179F0013A72A /* PatienceVM.swift */,
+				D64DD2AC2AD9F5D500733FFC /* CleanTimeVM.swift */,
+				D66637762AF494940084EDF5 /* BIO */,
+				D60281AE2AD786B200F47195 /* InputVM.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D666376B2AF411C00084EDF5 /* Willpower */ = {
+			isa = PBXGroup;
+			children = (
+				D62CEF902AD8DD160025D626 /* WillpowerNavigationStack.swift */,
+				D62CEF922AD8DE160025D626 /* WillpowerView.swift */,
+				D6E55D1B2AE1F94700816158 /* WillpowerRow.swift */,
+			);
+			path = Willpower;
+			sourceTree = "<group>";
+		};
+		D666376C2AF411E10084EDF5 /* Patience */ = {
+			isa = PBXGroup;
+			children = (
+				D6D4BE302ADE16D70013A72A /* PatienceNavigationStack.swift */,
+				D6D4BE322ADE17350013A72A /* PatienceView.swift */,
+				D6E55D182AE1E9D400816158 /* PatienceRow.swift */,
+			);
+			path = Patience;
+			sourceTree = "<group>";
+		};
+		D666376D2AF4120C0084EDF5 /* Clean */ = {
+			isa = PBXGroup;
+			children = (
+				D64DD2A72AD9F53000733FFC /* CleanTimeNavigationStack.swift */,
+				D64DD2AA2AD9F5CE00733FFC /* CleanTimeView.swift */,
+				D6E55D1E2AE1FD4C00816158 /* CleanTimeRow.swift */,
+			);
+			path = Clean;
+			sourceTree = "<group>";
+		};
+		D66637712AF427EB0084EDF5 /* BIO */ = {
+			isa = PBXGroup;
+			children = (
+				D66F4FF42AEB199200A2C4F4 /* NewBioEventView.swift */,
+				D66F4FFC2AEB434600A2C4F4 /* BioUpdateDateView.swift */,
+				D601BF332ADCB25500256C6C /* BioNavigationStack.swift */,
+				D601BF352ADCB31D00256C6C /* BioView.swift */,
+				D66F500E2AEDA96800A2C4F4 /* BioTextRow.swift */,
+				D64266BB2AF1908A00A40A12 /* BioWillpoweRow.swift */,
+				D66637602AF339C80084EDF5 /* BioPatienceRow.swift */,
+				D66637642AF360C40084EDF5 /* BioCleanRow.swift */,
 			);
 			path = BIO;
 			sourceTree = "<group>";
 		};
-		D66F4FF82AEB292000A2C4F4 /* NewBioEvent */ = {
+		D66637722AF42AA20084EDF5 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				D66F4FF42AEB199200A2C4F4 /* NewBioEventView.swift */,
+				D66637732AF42AD90084EDF5 /* CancelBag.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		D66637752AF42F020084EDF5 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		D66637762AF494940084EDF5 /* BIO */ = {
+			isa = PBXGroup;
+			children = (
+				D6E55D212AE203C900816158 /* BioVM.swift */,
 				D66F4FF62AEB290B00A2C4F4 /* NewBioEventVM.swift */,
-			);
-			path = NewBioEvent;
-			sourceTree = "<group>";
-		};
-		D66F4FF92AEB385E00A2C4F4 /* BioTasks */ = {
-			isa = PBXGroup;
-			children = (
-				D66F4FFA2AEB387000A2C4F4 /* BioTask.swift */,
-				D6D2F0A52AEA12D500A4760D /* BioWillpower.swift */,
-				D6D2F0A72AEA130400A4760D /* BioPatience.swift */,
-				D6D2F0A92AEA133A00A4760D /* BioClean.swift */,
-			);
-			path = BioTasks;
-			sourceTree = "<group>";
-		};
-		D66F4FFE2AEB434A00A2C4F4 /* BioUpdateDate */ = {
-			isa = PBXGroup;
-			children = (
-				D66F4FFC2AEB434600A2C4F4 /* BioUpdateDateView.swift */,
 				D66F4FFF2AEB46F200A2C4F4 /* BioUpdateDateVM.swift */,
 			);
-			path = BioUpdateDate;
+			path = BIO;
 			sourceTree = "<group>";
 		};
 		D66F50022AEC8AC600A2C4F4 /* Extensions */ = {
@@ -389,7 +362,12 @@
 		D66F500A2AEC9F9800A2C4F4 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				D66637692AF411530084EDF5 /* Views */,
+				D666376A2AF411970084EDF5 /* ViewModels */,
+				D66637752AF42F020084EDF5 /* Managers */,
+				D6C910262AE7700900447F04 /* Repositories */,
 				D66F500B2AEC9FA200A2C4F4 /* UI */,
+				D66637722AF42AA20084EDF5 /* Utilities */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -402,32 +380,17 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
-		D66F50102AEDBD7C00A2C4F4 /* Rows */ = {
+		D6C910262AE7700900447F04 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				D66F500E2AEDA96800A2C4F4 /* BioTextRow.swift */,
-				D64266BB2AF1908A00A40A12 /* BioWillpoweRow.swift */,
-				D66637602AF339C80084EDF5 /* BioPatienceRow.swift */,
-				D66637642AF360C40084EDF5 /* BioCleanRow.swift */,
+				D6C910272AE776D100447F04 /* UserFirebaseRepository.swift */,
+				D66F50112AEF558200A2C4F4 /* TaskServiceProtocol.swift */,
+				D66F50132AEF595A00A2C4F4 /* WillpowerService.swift */,
+				D666375E2AF2EFBE0084EDF5 /* PatienceService.swift */,
+				D66637622AF358E20084EDF5 /* CleanService.swift */,
+				D6C910372AE8973600447F04 /* BioService.swift */,
 			);
-			path = Rows;
-			sourceTree = "<group>";
-		};
-		D6C910232AE73AFA00447F04 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				D6C910242AE73B2B00447F04 /* LoginView.swift */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
-		D6C910262AE7700900447F04 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				D6C910272AE776D100447F04 /* UserService.swift */,
-				D666375D2AF2EF6B0084EDF5 /* BIO */,
-			);
-			path = Services;
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		D6C910392AE8BBA800447F04 /* BIO */ = {
@@ -435,52 +398,12 @@
 			children = (
 				D6C9103A2AE8BBB500447F04 /* BioModel.swift */,
 				D6C910352AE8962300447F04 /* BioText.swift */,
-				D66F4FF92AEB385E00A2C4F4 /* BioTasks */,
+				D66F4FFA2AEB387000A2C4F4 /* BioTask.swift */,
+				D6D2F0A52AEA12D500A4760D /* BioWillpower.swift */,
+				D6D2F0A72AEA130400A4760D /* BioPatience.swift */,
+				D6D2F0A92AEA133A00A4760D /* BioClean.swift */,
 			);
 			path = BIO;
-			sourceTree = "<group>";
-		};
-		D6D4BE2F2ADE16C00013A72A /* Patience */ = {
-			isa = PBXGroup;
-			children = (
-				D6D4BE302ADE16D70013A72A /* PatienceNavigationStack.swift */,
-				D6D4BE342ADE173E0013A72A /* PatienceView */,
-			);
-			path = Patience;
-			sourceTree = "<group>";
-		};
-		D6D4BE342ADE173E0013A72A /* PatienceView */ = {
-			isa = PBXGroup;
-			children = (
-				D6D4BE322ADE17350013A72A /* PatienceView.swift */,
-				D6D4BE352ADE179F0013A72A /* PatienceVM.swift */,
-				D6E55D1A2AE1F66C00816158 /* Row */,
-			);
-			path = PatienceView;
-			sourceTree = "<group>";
-		};
-		D6E55D1A2AE1F66C00816158 /* Row */ = {
-			isa = PBXGroup;
-			children = (
-				D6E55D182AE1E9D400816158 /* PatienceRow.swift */,
-			);
-			path = Row;
-			sourceTree = "<group>";
-		};
-		D6E55D1D2AE1F94C00816158 /* WillpowerRow */ = {
-			isa = PBXGroup;
-			children = (
-				D6E55D1B2AE1F94700816158 /* WillpowerRow.swift */,
-			);
-			path = WillpowerRow;
-			sourceTree = "<group>";
-		};
-		D6E55D202AE1FD5100816158 /* CleanTimeRow */ = {
-			isa = PBXGroup;
-			children = (
-				D6E55D1E2AE1FD4C00816158 /* CleanTimeRow.swift */,
-			);
-			path = CleanTimeRow;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -612,7 +535,8 @@
 				D60281AF2AD786B200F47195 /* InputVM.swift in Sources */,
 				D66F50062AEC954900A2C4F4 /* Extension + Date.swift in Sources */,
 				D64DD2A82AD9F53000733FFC /* CleanTimeNavigationStack.swift in Sources */,
-				D6C910282AE776D100447F04 /* UserService.swift in Sources */,
+				D66637742AF42AD90084EDF5 /* CancelBag.swift in Sources */,
+				D6C910282AE776D100447F04 /* UserFirebaseRepository.swift in Sources */,
 				D601BF362ADCB31D00256C6C /* BioView.swift in Sources */,
 				D66F4FF52AEB199200A2C4F4 /* NewBioEventView.swift in Sources */,
 				D60281B42AD7B53700F47195 /* AppTabView.swift in Sources */,
@@ -764,7 +688,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_ASSET_PATHS = "\"Iterra/Preview Content\"";
 				DEVELOPMENT_TEAM = J8LWAAB2XC;
 				ENABLE_PREVIEWS = YES;
@@ -794,7 +718,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_ASSET_PATHS = "\"Iterra/Preview Content\"";
 				DEVELOPMENT_TEAM = J8LWAAB2XC;
 				ENABLE_PREVIEWS = YES;

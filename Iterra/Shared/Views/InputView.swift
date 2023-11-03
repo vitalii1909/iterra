@@ -12,7 +12,6 @@ struct InputView: View {
     @ObservedObject var vm: InputVM
     
     @EnvironmentObject private var taskStore: StoreManager
-    @EnvironmentObject private var userService: UserService
     @Environment(\.dismiss) var dismiss
     
     @State var tableView: UITableView?
@@ -27,9 +26,7 @@ struct InputView: View {
                 
                 closeBtn
                 
-                if vm.type != .cleanTime {
-                    dateSelector
-                }
+                dateSelector
                 
                 if vm.type == .cleanTime {
                     Spacer()
@@ -82,15 +79,21 @@ struct InputView: View {
                 Image(systemName: "xmark")
                     .resizable()
                     .frame(width: 20, height: 20)
-                    .padding(5)
+                    .padding()
             })
         })
     }
     
     var dateSelector: some View {
-        DatePicker("",selection: $vm.selectedDate, in: Date()...)
-            .datePickerStyle(.wheel)
-            .labelsHidden()
+        if vm.type == .cleanTime {
+            return DatePicker("",selection: $vm.selectedDate, in: ...Date())
+                 .datePickerStyle(.graphical)
+                 .labelsHidden()
+        } else {
+            return DatePicker("",selection: $vm.selectedDate, in: Date()...)
+                 .datePickerStyle(.graphical)
+                 .labelsHidden()
+        }
     }
     
     var textField: some View {
@@ -112,12 +115,12 @@ struct InputView: View {
             Task {
                 do {
                     switch vm.type {
-//                    case .willpower:
-//                        try await vm.addWillpower(array: $taskStore.timersArray)
-//                        dismiss()
-//                    case .patience:
-//                        try await vm.addPatience(array: $taskStore.patienceArray)
-//                        dismiss()
+                        //                    case .willpower:
+                        //                        try await vm.addWillpower(array: $taskStore.timersArray)
+                        //                        dismiss()
+                        //                    case .patience:
+                        //                        try await vm.addPatience(array: $taskStore.patienceArray)
+                        //                        dismiss()
                     case .cleanTime:
                         try await vm.addClean(array: $taskStore.cleanTimeArray)
                         dismiss()
@@ -234,9 +237,8 @@ struct InputView: View {
 }
 
 #Preview {
-    InputView(vm: InputVM(type: .willpower))
+    InputView(vm: InputVM(type: .cleanTime))
         .environmentObject(StoreManager())
-        .environmentObject(UserService())
 }
 
 import UIKit

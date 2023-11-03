@@ -36,6 +36,6 @@ class BioClean: BioTask {
 
 extension BioClean {
     static func mocData() -> BioClean {
-        return BioClean(id: UUID().uuidString, startDate: Date(), stopDate: Date(), date: Date(), text: "test text", failed: false)
+        return BioClean(id: UUID().uuidString, startDate: Date(), stopDate: Date(), date: Date.tomorrow, text: "test text", failed: false)
     }
 }

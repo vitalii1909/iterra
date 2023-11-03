@@ -10,7 +10,6 @@ import SwiftUI
 struct BioUpdateDateView: View {
     
     @Environment(\.dismiss) var dismiss
-    @EnvironmentObject var userService: UserService
     @StateObject var vm: BioUpdateDateVM
     
     init(array: Binding<[BioModel]>, currentBio: BioModel) {
@@ -66,5 +65,4 @@ struct BioUpdateDateView: View {
 
 #Preview {
     BioUpdateDateView(array: .constant([BioModel]()), currentBio: .init(id: UUID().uuidString, date: Date()))
-        .environmentObject(UserService())
 }

@@ -10,7 +10,6 @@ import SwiftUI
 struct WillpowerView: View {
     
     @EnvironmentObject private var taskStore: StoreManager
-    @EnvironmentObject private var userService: UserService
     @ObservedObject var vm: WillpowerVM
     
     var body: some View {

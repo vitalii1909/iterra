@@ -10,7 +10,7 @@ import SwiftUI
 struct LoginView: View {
     
     @EnvironmentObject var appStateManager: AppStateManager
-    @EnvironmentObject var userService: UserService
+    @EnvironmentObject var userService: UserFirebaseRepository
     
     @State var email = ""
     
@@ -39,14 +39,18 @@ struct LoginView: View {
             
             Task {
                 
-                var user: User?
-                user = await userService.fetchUser()
-                
-                if user == nil {
-                   user = await userService.signUpUser(email: email)
+                do {
+                    var user: User?
+                    user = try await userService.fetchUser()
+                    
+                    if user == nil {
+                        user = try await userService.signUpUser(email: email)
+                    }
+                    
+                    await appStateManager.configApp(user: user)
+                } catch let error {
+                    
                 }
-                
-                await appStateManager.configApp(user: user)
             }
         }, label: {
             Text("Sign in")
@@ -61,5 +65,5 @@ struct LoginView: View {
 #Preview {
     LoginView()
         .environmentObject(AppStateManager())
-        .environmentObject(UserService())
+        .environmentObject(UserFirebaseRepository())
 }

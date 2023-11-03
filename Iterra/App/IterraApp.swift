@@ -12,7 +12,7 @@ import FirebaseCore
 struct IterraApp: App {
     
     @StateObject var appStateManager: AppStateManager = .init()
-    @StateObject var userService: UserService = .init()
+    @StateObject var userService = UserFirebaseRepository()
     
     init() {
         FirebaseApp.configure()

@@ -10,7 +10,6 @@ import SwiftUI
 struct NewBioEventView: View {
     
     @Environment(\.dismiss) var dismiss
-    @EnvironmentObject var userService: UserService
     
     @StateObject var vm: NewBioEventVM = .init()
     
@@ -44,8 +43,7 @@ struct NewBioEventView: View {
                 
                 Task {
                     do {
-                        try await vm.addNewEvenet(bio: bioEvent, userId: publicUserId?.id)
-                        array.append(bioEvent)
+                        try await vm.addNewEvenet(array: $array, bio: bioEvent, userId: publicUserId?.id)
                         dismiss()
                     } catch let error {
                         print("error \(error)")         

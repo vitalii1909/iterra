@@ -19,7 +19,7 @@ class PatienceVM: TaskVM {
     func fetch(taskArray: Binding<[BioPatience]>) async throws {
         do {
             guard let array = try await service.fetch() as? [BioPatience] else {
-                return
+                throw TestError.dbError
             }
             taskArray.wrappedValue = array
         } catch let error {

@@ -36,6 +36,6 @@ class BioPatience: BioTask {
 
 extension BioPatience {
     static func mocData() -> BioPatience {
-        return BioPatience(id: UUID().uuidString, startDate: Date(), stopDate: Date(), date: Date(), text: "test text", waited: false)
+        return BioPatience(id: UUID().uuidString, startDate: Date(), stopDate: Date(), date: Date.tomorrow, text: "test text", waited: false)
     }
 }

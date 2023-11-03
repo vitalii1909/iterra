@@ -35,6 +35,9 @@ class BioVM: ObservableObject {
             throw TestError.userId
         }
         
+        let array = try await bioService.fetchBio(userId: userId)
+        
+        
         do {
             guard let array = try await bioService.fetchBio(userId: userId) else {
                 return
