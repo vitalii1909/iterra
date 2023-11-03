@@ -10,6 +10,8 @@ import SwiftUI
 @MainActor
 class BioVM: ObservableObject {
     
+    @State var eventText = ""
+    
     var bioService: BioServiceProtocol
     
     init(bioService: BioServiceProtocol = BioService()) {

@@ -10,7 +10,9 @@ import SwiftUI
 struct LoginView: View {
     
     @EnvironmentObject var appStateManager: AppStateManager
-    @EnvironmentObject var userService: UserFirebaseRepository
+    @EnvironmentObject var userService: UserFirebaseManager
+    
+    @State var loginAnimation = false
     
     @State var email = ""
     
@@ -40,6 +42,7 @@ struct LoginView: View {
             Task {
                 
                 do {
+                    //TODO: add normal registration with apple / google / email
                     var user: User?
                     user = try await userService.fetchUser()
                     
@@ -49,7 +52,7 @@ struct LoginView: View {
                     
                     await appStateManager.configApp(user: user)
                 } catch let error {
-                    
+                    print("error \(error)")
                 }
             }
         }, label: {
@@ -65,5 +68,5 @@ struct LoginView: View {
 #Preview {
     LoginView()
         .environmentObject(AppStateManager())
-        .environmentObject(UserFirebaseRepository())
+        .environmentObject(UserFirebaseManager())
 }

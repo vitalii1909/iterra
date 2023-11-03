@@ -32,7 +32,6 @@ extension AppScreen {
         }
     }
     
-    
     @ViewBuilder
     var destination: some View {
         switch self {

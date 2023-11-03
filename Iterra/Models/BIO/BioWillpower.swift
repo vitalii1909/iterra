@@ -35,8 +35,8 @@ class BioWillpower: BioTask {
 }
 
 extension BioWillpower {
-    static func mocData() -> BioWillpower {
-        BioWillpower(id: UUID().uuidString, startDate: Date(), date: Date.tomorrow, text: "test text", done: false)
+    static func mocData(done: Bool = false) -> BioWillpower {
+        BioWillpower(id: UUID().uuidString, startDate: Date(), date: Date.tomorrow, text: "test text", done: done)
     }
     
     static func mocArray() -> [BioWillpower] {

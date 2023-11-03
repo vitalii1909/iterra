@@ -27,7 +27,6 @@ class StoreManager: ObservableObject {
         
         $timersArray
             .sink { [weak self] value in
-                print("get value \(value.count)")
                 self?.saveTimers(value: value)
             }
             .store(in: cancelBag)

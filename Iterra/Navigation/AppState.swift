@@ -13,11 +13,11 @@ enum AppState {
     case registration
 }
 
+@MainActor
 class AppStateManager: ObservableObject {
     
     @Published var appState: AppState = .loading
     
-    @MainActor
     func configApp(user: User?) async {
         if let _ = user {
             appState = .main

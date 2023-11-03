@@ -11,9 +11,7 @@ import SwiftUI
 class InputVM: ObservableObject {
     
     @Published var text = ""
-    
     @Published var selectedDate = Date()
-    
     @Published var localArray = [BioTask]()
     
     let type: TaskType

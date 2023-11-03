@@ -29,6 +29,8 @@
 		D66637632AF358E20084EDF5 /* CleanService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66637622AF358E20084EDF5 /* CleanService.swift */; };
 		D66637652AF360C40084EDF5 /* BioCleanRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66637642AF360C40084EDF5 /* BioCleanRow.swift */; };
 		D66637742AF42AD90084EDF5 /* CancelBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66637732AF42AD90084EDF5 /* CancelBag.swift */; };
+		D66637782AF4AC350084EDF5 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66637772AF4AC350084EDF5 /* UserRepository.swift */; };
+		D666377A2AF55F300084EDF5 /* BioEventLeftShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66637792AF55F300084EDF5 /* BioEventLeftShape.swift */; };
 		D66F4FF52AEB199200A2C4F4 /* NewBioEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66F4FF42AEB199200A2C4F4 /* NewBioEventView.swift */; };
 		D66F4FF72AEB290B00A2C4F4 /* NewBioEventVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66F4FF62AEB290B00A2C4F4 /* NewBioEventVM.swift */; };
 		D66F4FFB2AEB387000A2C4F4 /* BioTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66F4FFA2AEB387000A2C4F4 /* BioTask.swift */; };
@@ -42,7 +44,7 @@
 		D66F50142AEF595A00A2C4F4 /* WillpowerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66F50132AEF595A00A2C4F4 /* WillpowerService.swift */; };
 		D6C910222AE7340B00447F04 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C910212AE7340B00447F04 /* AppState.swift */; };
 		D6C910252AE73B2B00447F04 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C910242AE73B2B00447F04 /* LoginView.swift */; };
-		D6C910282AE776D100447F04 /* UserFirebaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C910272AE776D100447F04 /* UserFirebaseRepository.swift */; };
+		D6C910282AE776D100447F04 /* UserFirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C910272AE776D100447F04 /* UserFirebaseManager.swift */; };
 		D6C9102A2AE7780900447F04 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C910292AE7780900447F04 /* User.swift */; };
 		D6C910362AE8962300447F04 /* BioText.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C910352AE8962300447F04 /* BioText.swift */; };
 		D6C910382AE8973600447F04 /* BioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C910372AE8973600447F04 /* BioService.swift */; };
@@ -111,6 +113,8 @@
 		D66637622AF358E20084EDF5 /* CleanService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanService.swift; sourceTree = "<group>"; };
 		D66637642AF360C40084EDF5 /* BioCleanRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioCleanRow.swift; sourceTree = "<group>"; };
 		D66637732AF42AD90084EDF5 /* CancelBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelBag.swift; sourceTree = "<group>"; };
+		D66637772AF4AC350084EDF5 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		D66637792AF55F300084EDF5 /* BioEventLeftShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioEventLeftShape.swift; sourceTree = "<group>"; };
 		D66F4FF42AEB199200A2C4F4 /* NewBioEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBioEventView.swift; sourceTree = "<group>"; };
 		D66F4FF62AEB290B00A2C4F4 /* NewBioEventVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBioEventVM.swift; sourceTree = "<group>"; };
 		D66F4FFA2AEB387000A2C4F4 /* BioTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioTask.swift; sourceTree = "<group>"; };
@@ -124,7 +128,7 @@
 		D66F50132AEF595A00A2C4F4 /* WillpowerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WillpowerService.swift; sourceTree = "<group>"; };
 		D6C910212AE7340B00447F04 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		D6C910242AE73B2B00447F04 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		D6C910272AE776D100447F04 /* UserFirebaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFirebaseRepository.swift; sourceTree = "<group>"; };
+		D6C910272AE776D100447F04 /* UserFirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFirebaseManager.swift; sourceTree = "<group>"; };
 		D6C910292AE7780900447F04 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D6C910352AE8962300447F04 /* BioText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioText.swift; sourceTree = "<group>"; };
 		D6C910372AE8973600447F04 /* BioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioService.swift; sourceTree = "<group>"; };
@@ -229,7 +233,13 @@
 			children = (
 				D60281AA2AD7867400F47195 /* App */,
 				D66F500A2AEC9F9800A2C4F4 /* Shared */,
+				D66637692AF411530084EDF5 /* Views */,
+				D666376A2AF411970084EDF5 /* ViewModels */,
 				D60281B02AD78FCB00F47195 /* Models */,
+				D66637752AF42F020084EDF5 /* Managers */,
+				D6C910262AE7700900447F04 /* Repositories */,
+				D66F500B2AEC9FA200A2C4F4 /* UI */,
+				D66637722AF42AA20084EDF5 /* Utilities */,
 				D66F50022AEC8AC600A2C4F4 /* Extensions */,
 				D64DD29E2AD8E57B00733FFC /* Navigation */,
 				D66F50092AEC9F3E00A2C4F4 /* Resources */,
@@ -327,6 +337,7 @@
 		D66637752AF42F020084EDF5 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				D6C910272AE776D100447F04 /* UserFirebaseManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -362,12 +373,6 @@
 		D66F500A2AEC9F9800A2C4F4 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				D66637692AF411530084EDF5 /* Views */,
-				D666376A2AF411970084EDF5 /* ViewModels */,
-				D66637752AF42F020084EDF5 /* Managers */,
-				D6C910262AE7700900447F04 /* Repositories */,
-				D66F500B2AEC9FA200A2C4F4 /* UI */,
-				D66637722AF42AA20084EDF5 /* Utilities */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -376,6 +381,7 @@
 			isa = PBXGroup;
 			children = (
 				D66F500C2AEC9FB500A2C4F4 /* SelectButton.swift */,
+				D66637792AF55F300084EDF5 /* BioEventLeftShape.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -383,12 +389,12 @@
 		D6C910262AE7700900447F04 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				D6C910272AE776D100447F04 /* UserFirebaseRepository.swift */,
 				D66F50112AEF558200A2C4F4 /* TaskServiceProtocol.swift */,
 				D66F50132AEF595A00A2C4F4 /* WillpowerService.swift */,
 				D666375E2AF2EFBE0084EDF5 /* PatienceService.swift */,
 				D66637622AF358E20084EDF5 /* CleanService.swift */,
 				D6C910372AE8973600447F04 /* BioService.swift */,
+				D66637772AF4AC350084EDF5 /* UserRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -527,6 +533,7 @@
 				D6C910252AE73B2B00447F04 /* LoginView.swift in Sources */,
 				D60281B22AD78FEE00F47195 /* TaskModel.swift in Sources */,
 				D66637652AF360C40084EDF5 /* BioCleanRow.swift in Sources */,
+				D666377A2AF55F300084EDF5 /* BioEventLeftShape.swift in Sources */,
 				D6C9103B2AE8BBB500447F04 /* BioModel.swift in Sources */,
 				D6D2F0A62AEA12D500A4760D /* BioWillpower.swift in Sources */,
 				D6C910382AE8973600447F04 /* BioService.swift in Sources */,
@@ -536,10 +543,11 @@
 				D66F50062AEC954900A2C4F4 /* Extension + Date.swift in Sources */,
 				D64DD2A82AD9F53000733FFC /* CleanTimeNavigationStack.swift in Sources */,
 				D66637742AF42AD90084EDF5 /* CancelBag.swift in Sources */,
-				D6C910282AE776D100447F04 /* UserFirebaseRepository.swift in Sources */,
+				D6C910282AE776D100447F04 /* UserFirebaseManager.swift in Sources */,
 				D601BF362ADCB31D00256C6C /* BioView.swift in Sources */,
 				D66F4FF52AEB199200A2C4F4 /* NewBioEventView.swift in Sources */,
 				D60281B42AD7B53700F47195 /* AppTabView.swift in Sources */,
+				D66637782AF4AC350084EDF5 /* UserRepository.swift in Sources */,
 				D64DD2AB2AD9F5CE00733FFC /* CleanTimeView.swift in Sources */,
 				D62CEF962AD8DF620025D626 /* WillpowerVM.swift in Sources */,
 				D601BF342ADCB25500256C6C /* BioNavigationStack.swift in Sources */,

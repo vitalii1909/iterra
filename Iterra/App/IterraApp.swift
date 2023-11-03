@@ -12,7 +12,7 @@ import FirebaseCore
 struct IterraApp: App {
     
     @StateObject var appStateManager: AppStateManager = .init()
-    @StateObject var userService = UserFirebaseRepository()
+    @StateObject var userService = UserFirebaseManager()
     
     init() {
         FirebaseApp.configure()
@@ -23,8 +23,12 @@ struct IterraApp: App {
             appContent
                 .task {
                     Task() {
-                        let user = await userService.fetchUser()
-                        await appStateManager.configApp(user: user)
+                        do {
+                            let user = try await userService.fetchUser()
+                            await appStateManager.configApp(user: user)
+                        } catch let error {
+                            print("error \(error)")
+                        }
                     }
                 }
         }
