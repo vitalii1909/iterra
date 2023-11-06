@@ -14,12 +14,10 @@ class BioUpdateDateVM: ObservableObject {
     
     let bioService: BioService
     
-    @Binding var array: [BioModel]
     var currentBio: BioModel
     
-    init(bioService: BioService = BioService(), array: Binding<[BioModel]>, currentBio: BioModel) {
+    init(bioService: BioService = BioService(), currentBio: BioModel) {
         self.bioService = bioService
-        self._array = array
         self.currentBio = currentBio
     }
     
@@ -31,15 +29,6 @@ class BioUpdateDateVM: ObservableObject {
         }
         
         try await bioService.updateDate(userId: userID, documentId: docId, newDate: newDate)
-        
-        guard let index = array.firstIndex(where: {$0.id == docId}) else {
-            return
-        }
-        
-        let bio = currentBio
-        bio.date = newDate
-        
-        array[index] = bio
     }
 }
     

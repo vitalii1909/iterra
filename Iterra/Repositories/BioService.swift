@@ -10,7 +10,7 @@ import FirebaseFirestore
 
 protocol BioServiceProtocol {
     func fetchBio(userId: String?) async throws -> [BioModel]?
-    func addBio(event: BioModel, userId: String?) async throws -> DocumentReference
+    func addBio(event: BioModel, userId: String?) async throws
     func updateDate(userId: String?, documentId: String, newDate: Date) async throws
 }
 
@@ -50,13 +50,13 @@ class BioService: ObservableObject, BioServiceProtocol {
         return bioArray
     }
     
-    func addBio(event: BioModel, userId: String?) async throws -> DocumentReference {
+    func addBio(event: BioModel, userId: String?) async throws {
         
         guard let userId = userId else {
             throw TestError.userId
         }
         
-        return try Firestore.firestore().collection("users").document(userId).collection("bio").addDocument(from: event)
+        try Firestore.firestore().collection("users").document(userId).collection("bio").addDocument(from: event)
     }
     
     func updateDate(userId: String?, documentId: String, newDate: Date) async throws {

@@ -23,6 +23,7 @@ class UserFirebaseManager: ObservableObject {
     }
     
     func fetchUser() async throws -> User? {
+        #if Relese
         //FIXME: add throw errors
         guard let email = UserDefaults.standard.string(forKey: "currentUserEmail") else {
             return nil
@@ -41,6 +42,11 @@ class UserFirebaseManager: ObservableObject {
         publicUserId = user
         
         return user
+        #elseif !Relese
+        let user = User.mocUser()
+        publicUserId = user
+        return user
+        #endif
     }
     
     func signUpUser(email: String) async throws -> User? {

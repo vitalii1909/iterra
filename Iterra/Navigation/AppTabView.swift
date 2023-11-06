@@ -16,8 +16,6 @@ class StoreManager: ObservableObject {
     @Published var patienceArray = [BioPatience]()
     @Published var cleanTimeArray = [BioClean]()
     
-    @Published var bioArray = [BioModel]()
-    
     private var cancelBag = CancelBag()
     
     init() {
@@ -49,7 +47,6 @@ class StoreManager: ObservableObject {
                             try await service.moveToBio(task: i, accepted: true)
                             withAnimation(.smooth) {
                                 patienceArray.remove(at: index)
-                                bioArray.append(i)
                             }
                         } catch let error {
                             print("error \(error)")
@@ -70,10 +67,6 @@ class StoreManager: ObservableObject {
     //clear test
     private func updateTimers() {
         
-        guard let userId = publicUserId?.id else {
-            return
-        }
-        
         let service = WillpowerService()
         
         let expiredArray = timersArray.filter({$0.date < Date()})
@@ -85,7 +78,6 @@ class StoreManager: ObservableObject {
                         do {
                             try await service.moveToBio(task: i, accepted: false)
                             timersArray.remove(at: index)
-                            bioArray.append(i)
                         } catch let error {
                             print("error \(error)")
                         }
@@ -176,7 +168,8 @@ struct AppTabView: View {
 }
 
 #Preview {
-    AppTabView()
+    publicUserId = .mocUser()
+    return AppTabView()
         .environmentObject(StoreManager())
 }
 

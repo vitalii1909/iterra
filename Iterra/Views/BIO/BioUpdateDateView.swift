@@ -12,8 +12,8 @@ struct BioUpdateDateView: View {
     @Environment(\.dismiss) var dismiss
     @StateObject var vm: BioUpdateDateVM
     
-    init(array: Binding<[BioModel]>, currentBio: BioModel) {
-        let vm = BioUpdateDateVM(array: array, currentBio: currentBio)
+    init(currentBio: BioModel) {
+        let vm = BioUpdateDateVM(currentBio: currentBio)
         vm.date = currentBio.date
         self._vm = StateObject(wrappedValue: vm)
     }
@@ -64,5 +64,5 @@ struct BioUpdateDateView: View {
 }
 
 #Preview {
-    BioUpdateDateView(array: .constant([BioModel]()), currentBio: .init(id: UUID().uuidString, date: Date()))
+    BioUpdateDateView(currentBio: .init(id: UUID().uuidString, date: Date()))
 }

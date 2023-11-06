@@ -16,15 +16,8 @@ class NewBioEventVM: ObservableObject {
         self.service = service
     }
     
-    func addNewEvenet(array: Binding<[BioModel]>, bio: BioModel, userId: String?) async throws {
-       let docRef = try await service.addBio(event: bio, userId: userId)
-        
-        guard let task = bio as? BioText else {
-            throw TestError.dbError
-        }
-        
-        task.id = docRef.documentID
-        array.wrappedValue.append(task)
+    func addNewEvenet(bio: BioModel, userId: String?) async throws {
+       try await service.addBio(event: bio, userId: userId)
     }
     
 }

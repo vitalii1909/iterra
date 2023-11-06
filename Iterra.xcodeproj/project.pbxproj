@@ -31,6 +31,9 @@
 		D66637742AF42AD90084EDF5 /* CancelBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66637732AF42AD90084EDF5 /* CancelBag.swift */; };
 		D66637782AF4AC350084EDF5 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66637772AF4AC350084EDF5 /* UserRepository.swift */; };
 		D666377A2AF55F300084EDF5 /* BioEventLeftShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66637792AF55F300084EDF5 /* BioEventLeftShape.swift */; };
+		D666377C2AF583560084EDF5 /* Extension + Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = D666377B2AF583560084EDF5 /* Extension + Font.swift */; };
+		D666377E2AF587710084EDF5 /* Extension + View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D666377D2AF587710084EDF5 /* Extension + View.swift */; };
+		D66637802AF731300084EDF5 /* HUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D666377F2AF731300084EDF5 /* HUDView.swift */; };
 		D66F4FF52AEB199200A2C4F4 /* NewBioEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66F4FF42AEB199200A2C4F4 /* NewBioEventView.swift */; };
 		D66F4FF72AEB290B00A2C4F4 /* NewBioEventVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66F4FF62AEB290B00A2C4F4 /* NewBioEventVM.swift */; };
 		D66F4FFB2AEB387000A2C4F4 /* BioTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66F4FFA2AEB387000A2C4F4 /* BioTask.swift */; };
@@ -115,6 +118,9 @@
 		D66637732AF42AD90084EDF5 /* CancelBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelBag.swift; sourceTree = "<group>"; };
 		D66637772AF4AC350084EDF5 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		D66637792AF55F300084EDF5 /* BioEventLeftShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioEventLeftShape.swift; sourceTree = "<group>"; };
+		D666377B2AF583560084EDF5 /* Extension + Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + Font.swift"; sourceTree = "<group>"; };
+		D666377D2AF587710084EDF5 /* Extension + View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + View.swift"; sourceTree = "<group>"; };
+		D666377F2AF731300084EDF5 /* HUDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDView.swift; sourceTree = "<group>"; };
 		D66F4FF42AEB199200A2C4F4 /* NewBioEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBioEventView.swift; sourceTree = "<group>"; };
 		D66F4FF62AEB290B00A2C4F4 /* NewBioEventVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBioEventVM.swift; sourceTree = "<group>"; };
 		D66F4FFA2AEB387000A2C4F4 /* BioTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioTask.swift; sourceTree = "<group>"; };
@@ -314,14 +320,15 @@
 		D66637712AF427EB0084EDF5 /* BIO */ = {
 			isa = PBXGroup;
 			children = (
-				D66F4FF42AEB199200A2C4F4 /* NewBioEventView.swift */,
-				D66F4FFC2AEB434600A2C4F4 /* BioUpdateDateView.swift */,
 				D601BF332ADCB25500256C6C /* BioNavigationStack.swift */,
 				D601BF352ADCB31D00256C6C /* BioView.swift */,
 				D66F500E2AEDA96800A2C4F4 /* BioTextRow.swift */,
 				D64266BB2AF1908A00A40A12 /* BioWillpoweRow.swift */,
 				D66637602AF339C80084EDF5 /* BioPatienceRow.swift */,
 				D66637642AF360C40084EDF5 /* BioCleanRow.swift */,
+				D66F4FF42AEB199200A2C4F4 /* NewBioEventView.swift */,
+				D66F4FFC2AEB434600A2C4F4 /* BioUpdateDateView.swift */,
+				D666377F2AF731300084EDF5 /* HUDView.swift */,
 			);
 			path = BIO;
 			sourceTree = "<group>";
@@ -356,7 +363,9 @@
 			isa = PBXGroup;
 			children = (
 				D66F50052AEC954900A2C4F4 /* Extension + Date.swift */,
+				D666377B2AF583560084EDF5 /* Extension + Font.swift */,
 				D66F50072AEC972200A2C4F4 /* Extension + Array.swift */,
+				D666377D2AF587710084EDF5 /* Extension + View.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -552,6 +561,7 @@
 				D62CEF962AD8DF620025D626 /* WillpowerVM.swift in Sources */,
 				D601BF342ADCB25500256C6C /* BioNavigationStack.swift in Sources */,
 				D64DD2AD2AD9F5D500733FFC /* CleanTimeVM.swift in Sources */,
+				D666377C2AF583560084EDF5 /* Extension + Font.swift in Sources */,
 				D66F50082AEC972200A2C4F4 /* Extension + Array.swift in Sources */,
 				D62CEF912AD8DD160025D626 /* WillpowerNavigationStack.swift in Sources */,
 				D66F50142AEF595A00A2C4F4 /* WillpowerService.swift in Sources */,
@@ -562,6 +572,8 @@
 				D6E55D192AE1E9D400816158 /* PatienceRow.swift in Sources */,
 				D66F4FFB2AEB387000A2C4F4 /* BioTask.swift in Sources */,
 				D6D2F0A82AEA130400A4760D /* BioPatience.swift in Sources */,
+				D666377E2AF587710084EDF5 /* Extension + View.swift in Sources */,
+				D66637802AF731300084EDF5 /* HUDView.swift in Sources */,
 				D62CEF8C2AD8DC850025D626 /* AppScreen.swift in Sources */,
 				D6D2F0AA2AEA133A00A4760D /* BioClean.swift in Sources */,
 				D6E55D1F2AE1FD4C00816158 /* CleanTimeRow.swift in Sources */,

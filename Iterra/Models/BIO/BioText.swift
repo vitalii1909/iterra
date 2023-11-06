@@ -12,7 +12,7 @@ class BioText: BioModel {
     
     var text: String
     
-    init(id: String? = nil, date: Date, finished: Bool, text: String) {
+    init(id: String? = nil, date: Date, text: String) {
         self.text = text
         super.init(id: id, date: date)
     }
@@ -34,3 +34,8 @@ class BioText: BioModel {
     }
 }
 
+extension BioText {
+    static func mocDate() -> BioText {
+        BioText(id: UUID().uuidString, date: Date(), text: "test text")
+    }
+}

@@ -15,7 +15,7 @@ struct PatienceRow: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10, content: {
-            Text("text")
+            Text(taskModel.text)
                 .lineLimit(1)
                 .frame(maxWidth: .infinity, alignment: .leading)
             

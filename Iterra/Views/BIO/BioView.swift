@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct BioView: View {
+struct BioView: View, KeyboardReadable {
     
     @ObservedObject var vm: BioVM
     
@@ -27,7 +27,7 @@ struct BioView: View {
             .task {
                 Task {
                     do {
-                        try await vm.fetchBio(bioArray: $taskStore.bioArray, userId: publicUserId?.id)
+                        try await vm.fetchBio()
                     } catch let error {
                         print("let error \(error)")
                     }
@@ -41,50 +41,85 @@ struct BioView: View {
                 })
             }
             .sheet(isPresented: $showNewEvent, content: {
-                NewBioEventView(array: $taskStore.bioArray)
+                NewBioEventView()
             })
             .sheet(item: $changeDateBio) { bioModel in
-                BioUpdateDateView(array: $taskStore.bioArray, currentBio: bioModel)
+                BioUpdateDateView(currentBio: bioModel)
             }
     }
     
     private var bodyContet: some View {
         ScrollViewReader(content: { proxy in
             VStack(content: {
-                if let dict = vm.getDict(array: taskStore.bioArray), !dict.isEmpty {
-                    List {
-                        getSections(dict: dict)
-                    }
-                    .padding(.horizontal, 20)
-                    .animation(.smooth(), value: taskStore.cleanTimeArray.count)
-                    .listStyle(.plain)
-                    .listRowSpacing(14)
-                    .background(Color.white)
-                    .onAppear {
-                        scrollToCurrent(proxy: proxy)
-                    }
+                if !vm.dict.isEmpty {
+                    bioList(dict: vm.dict, proxy: proxy)
                 } else {
                     Spacer()
                     Text("No events")
                 }
-                
                 Spacer()
-                //FIXME: new HUD
-                TextField("", text: $vm.eventText)
-                    .textFieldStyle(.roundedBorder)
-                    .padding()
+                textHud
             })
         })
     }
     
+    private func bioList(dict: [Date: [BioModel]], proxy: ScrollViewProxy) -> some View {
+        ScrollView {
+            LazyVStack(spacing: 12, content: {
+                getSections(dict: dict)
+            })
+            .padding(.horizontal, 20)
+        }
+        .animation(.smooth(), value: vm.dict.values.count)
+        .listStyle(.plain)
+        .listRowSpacing(14)
+        .background(Color.clear)
+        .onAppear {
+            scrollToCurrent(proxy: proxy)
+        }
+        .onChange(of: vm.dict.values.count) { newValue in
+            scrollToCurrentMessage(proxy: proxy)
+        }
+        .onReceive(keyboardPublisher) { newIsKeyboardVisible in
+                        print("Is keyboard visible? ", newIsKeyboardVisible)
+            scrollToCurrentMessage(proxy: proxy)
+                    }
+    }
+    
+    private var textHud: some View {
+        HUDView(vm: .init())
+    }
+    
     private func scrollToCurrent(proxy: ScrollViewProxy) {
-        //        if let closestDate = dict?.keys.sorted(by: {$0 < $1}).first(where: {$0.compareDay(with: Date())}) { // "Feb 15, 2018, 12:00 PM"
-        //            print(closestDate.description(with: .current)) // Thursday, February 15, 2018 at 12:00:00 PM Brasilia Summer Time
-        //            proxy.scrollTo(closestDate, anchor: .top)
-        //        } else {
-        //
-        //        }
-        //    }
+        if let closestDate = vm.dict.keys.sorted(by: {$0 < $1}).first(where: {$0.compareDay(with: Date())}) { // "Feb 15, 2018, 12:00 PM"
+            print(closestDate.description(with: .current)) // Thursday, February 15, 2018 at 12:00:00 PM Brasilia Summer Time
+            
+            DispatchQueue.main.asyncAfter(wallDeadline: .now() + 0.0) {
+                withAnimation(.easeOut) {
+                    proxy.scrollTo(closestDate, anchor: .top)
+                }
+            }
+        } else {
+            
+        }
+    }
+    
+    private func scrollToCurrentMessage(proxy: ScrollViewProxy) {
+        if let closestDate = vm.dict.keys.sorted(by: {$0 < $1}).first(where: {$0.compareDay(with: Date())}) { // "Feb 15, 2018, 12:00 PM"
+            print(closestDate.description(with: .current)) // Thursday, February 15, 2018 at 12:00:00 PM Brasilia Summer Time
+            
+            if let id = vm.dict[closestDate]?.sorted(by: {$0.date < $1.date}).last?.id {
+                DispatchQueue.main.asyncAfter(wallDeadline: .now() + 0.0) {
+                    withAnimation(.easeOut) {
+                        proxy.scrollTo(id, anchor: .bottom)
+                    }
+                }
+            }
+            
+            
+        } else {
+            
+        }
     }
 }
 
@@ -94,6 +129,7 @@ private extension BioView {
         ForEach(dict.map({$0.key}).sorted(by: {$0 < $1}), id: \.timeIntervalSince1970) { key in
             Section() {
                 getRows(key: key, dict: dict)
+                    .frame(maxWidth: .infinity, alignment: .trailing)
             } header: {
                 Text(" \(key.get(.day))/\(key.get(.month))")
                     .font(.subheadline.bold())
@@ -109,16 +145,14 @@ private extension BioView {
         ForEach(array.sorted(by: {$0.date < $1.date}), id: \.id) { taskModel in
             taskCell(taskModel: taskModel)
                 .id(taskModel.id)
-                .listRowSeparator(.hidden)
-                .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-                .listRowBackground(Color.clear)
                 .contextMenu(menuItems: {
-                    Button {
+                    Button(action: {
                         changeDateBio = taskModel
-                    } label: {
+                    }, label: {
                         Text("change date")
-                    }
+                    })
                 })
+            
         }
     }
     
@@ -127,12 +161,16 @@ private extension BioView {
         switch taskModel {
         case let bioWillpower as BioWillpower:
             BioWillpoweRow(bioWillpower: bioWillpower)
+                .contentShape(.contextMenuPreview, RoundedRectangle(cornerRadius: 14))
         case let bioPatience as BioPatience:
             BioPatienceRow(bioPatience: bioPatience)
+                .contentShape(.contextMenuPreview, RoundedRectangle(cornerRadius: 14))
         case let bioClean as BioClean:
             BioCleanRow(bioClean: bioClean)
+                .contentShape(.contextMenuPreview, RoundedRectangle(cornerRadius: 14))
         case let bioText as BioText:
-            BioTextRow(text: bioText.text)
+            BioTextRow(bioText: bioText)
+                .contentShape(ContentShapeKinds.contextMenuPreview, ChatBubbleShape(direction: .right))
         default:
             Text("Error type")
         }
@@ -141,10 +179,35 @@ private extension BioView {
 
 
 #Preview {
+    publicUserId = User.mocUser()
     let taskStore = StoreManager()
-    
-    taskStore.bioArray = [BioWillpower.mocData(done: true), BioWillpower.mocData(done: false)]
+    //
+    //    taskStore.bioArray = [BioWillpower.mocData(done: true), BioWillpower.mocData(done: false), BioPatience.mocData(waited: true),
+    //        BioPatience.mocData(waited: false),
+    //                          BioText.mocDate()
+    //    ]
     
     return BioNavigationStack()
         .environmentObject(taskStore)
+}
+
+import Combine
+
+protocol KeyboardReadable {
+    var keyboardPublisher: AnyPublisher<Bool, Never> { get }
+}
+
+extension KeyboardReadable {
+    var keyboardPublisher: AnyPublisher<Bool, Never> {
+        Publishers.Merge(
+            NotificationCenter.default
+                .publisher(for: UIResponder.keyboardWillShowNotification)
+                .map { _ in true },
+            
+            NotificationCenter.default
+                .publisher(for: UIResponder.keyboardWillHideNotification)
+                .map { _ in false }
+        )
+        .eraseToAnyPublisher()
+    }
 }

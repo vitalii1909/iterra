@@ -20,11 +20,7 @@ struct BioNavigationStack: View {
     let taskStore = StoreManager()
 //    taskStore.timersArray = TaskModel.mocArray(type: .willpower)
 //    taskStore.cleanTimeArray = TaskModel.mocArray(type: .patience)
-    
-    let userService = UserFirebaseManager()
-    publicUserId = .mocUser()
-    
     return BioNavigationStack()
         .environmentObject(taskStore)
-        .environmentObject(userService)
+        .environmentObject(UserFirebaseManager())
 }

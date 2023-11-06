@@ -13,7 +13,6 @@ struct NewBioEventView: View {
     
     @StateObject var vm: NewBioEventVM = .init()
     
-    @Binding var array: [BioModel]
     @State var text = ""
     
     var body: some View {
@@ -39,11 +38,11 @@ struct NewBioEventView: View {
             
             
             Button(action: {
-                let bioEvent = BioText(id: UUID().uuidString, date: Date(), finished: true, text: text)
+                let bioEvent = BioText(id: UUID().uuidString, date: Date(), text: text)
                 
                 Task {
                     do {
-                        try await vm.addNewEvenet(array: $array, bio: bioEvent, userId: publicUserId?.id)
+                        try await vm.addNewEvenet(bio: bioEvent, userId: publicUserId?.id)
                         dismiss()
                     } catch let error {
                         print("error \(error)")         
@@ -64,5 +63,5 @@ struct NewBioEventView: View {
 }
 
 #Preview {
-    NewBioEventView(array: .constant([BioModel]()))
+    NewBioEventView()
 }
