@@ -52,7 +52,6 @@ struct CleanTimeRow: View {
 #Preview {
     @State var array = [BioClean]()
     return List {
-//        CleanTimeRow(storeArray: $array, taskModel: array.first ?? <#default value#>)
-        Text("FIX")
+        CleanTimeRow(taskModel: .mocData())
     }
 }

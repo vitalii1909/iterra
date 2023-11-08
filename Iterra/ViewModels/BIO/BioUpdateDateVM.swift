@@ -12,11 +12,11 @@ class BioUpdateDateVM: ObservableObject {
     
     @Published var date = Date()
     
-    let bioService: BioService
+    let bioService: BioRepository
     
     var currentBio: BioModel
     
-    init(bioService: BioService = BioService(), currentBio: BioModel) {
+    init(bioService: BioRepository = BioRepository(), currentBio: BioModel) {
         self.bioService = bioService
         self.currentBio = currentBio
     }

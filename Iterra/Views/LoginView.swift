@@ -29,6 +29,7 @@ struct LoginView: View {
             Spacer()
             
             loginBtn
+                .padding(.bottom, 20)
         })
     }
     

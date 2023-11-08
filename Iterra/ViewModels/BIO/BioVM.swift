@@ -7,6 +7,8 @@
 
 import SwiftUI
 import FirebaseFirestore
+import FirebaseFirestoreCombineSwift
+import Combine
 
 @MainActor
 class BioVM: ObservableObject {
@@ -18,15 +20,15 @@ class BioVM: ObservableObject {
     
     struct SubscriptionID: Hashable {}
     
-    var bioService: BioServiceProtocol
+    var bioService: BioRepositoryProtocol
     
-    init(bioService: BioServiceProtocol = BioService()) {
+    var cancellables = [AnyCancellable]()
+    
+    init(bioService: BioRepositoryProtocol = BioRepository()) {
         self.bioService = bioService
     }
     
-    func getDict(array: [BioModel]) -> [Date : [BioModel]]? {
-//        let array = array.filter({$0.finished == true}).sorted(by: {$0.date > $1.date})
-//        let grouped = array.sliced(by: [.year, .month, .day], for: \.date)
+   private func getDict(array: [BioModel]) -> [Date : [BioModel]]? {
         let array = array.sorted(by: {$0.date > $1.date})
         let grouped = array.sliced(by: [.year, .month, .day], for: \.date)
         

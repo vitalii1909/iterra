@@ -10,9 +10,9 @@ import SwiftUI
 @MainActor
 class NewBioEventVM: ObservableObject {
     
-    let service: BioServiceProtocol
+    let service: BioRepositoryProtocol
     
-    init(service: BioServiceProtocol = BioService()) {
+    init(service: BioRepositoryProtocol = BioRepository()) {
         self.service = service
     }
     

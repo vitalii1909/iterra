@@ -17,6 +17,13 @@
 		D62CEF912AD8DD160025D626 /* WillpowerNavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62CEF902AD8DD160025D626 /* WillpowerNavigationStack.swift */; };
 		D62CEF932AD8DE160025D626 /* WillpowerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62CEF922AD8DE160025D626 /* WillpowerView.swift */; };
 		D62CEF962AD8DF620025D626 /* WillpowerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62CEF952AD8DF620025D626 /* WillpowerVM.swift */; };
+		D638BEED2AF9D16300BD71DF /* CleanDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D638BEEC2AF9D16300BD71DF /* CleanDetailsView.swift */; };
+		D638BEF02AFA999400BD71DF /* HUDVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D638BEEF2AFA999400BD71DF /* HUDVM.swift */; };
+		D638BEF22AFA99C600BD71DF /* HUDBioVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D638BEF12AFA99C600BD71DF /* HUDBioVM.swift */; };
+		D638BEF42AFA9A1700BD71DF /* HUDCleanHistoryVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D638BEF32AFA9A1700BD71DF /* HUDCleanHistoryVM.swift */; };
+		D638BEF62AFA9B9E00BD71DF /* CleanHistoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D638BEF52AFA9B9E00BD71DF /* CleanHistoryRepository.swift */; };
+		D638BEF82AFA9DAB00BD71DF /* CleanHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D638BEF72AFA9DAB00BD71DF /* CleanHistory.swift */; };
+		D638BEFA2AFAE14300BD71DF /* CleanTimeDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D638BEF92AFAE14300BD71DF /* CleanTimeDetailsVM.swift */; };
 		D64266BC2AF1908A00A40A12 /* BioWillpoweRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64266BB2AF1908A00A40A12 /* BioWillpoweRow.swift */; };
 		D64DD2A82AD9F53000733FFC /* CleanTimeNavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64DD2A72AD9F53000733FFC /* CleanTimeNavigationStack.swift */; };
 		D64DD2AB2AD9F5CE00733FFC /* CleanTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64DD2AA2AD9F5CE00733FFC /* CleanTimeView.swift */; };
@@ -50,7 +57,7 @@
 		D6C910282AE776D100447F04 /* UserFirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C910272AE776D100447F04 /* UserFirebaseManager.swift */; };
 		D6C9102A2AE7780900447F04 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C910292AE7780900447F04 /* User.swift */; };
 		D6C910362AE8962300447F04 /* BioText.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C910352AE8962300447F04 /* BioText.swift */; };
-		D6C910382AE8973600447F04 /* BioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C910372AE8973600447F04 /* BioService.swift */; };
+		D6C910382AE8973600447F04 /* BioRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C910372AE8973600447F04 /* BioRepository.swift */; };
 		D6C9103B2AE8BBB500447F04 /* BioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C9103A2AE8BBB500447F04 /* BioModel.swift */; };
 		D6D2F0A62AEA12D500A4760D /* BioWillpower.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D2F0A52AEA12D500A4760D /* BioWillpower.swift */; };
 		D6D2F0A82AEA130400A4760D /* BioPatience.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D2F0A72AEA130400A4760D /* BioPatience.swift */; };
@@ -103,6 +110,13 @@
 		D62CEF902AD8DD160025D626 /* WillpowerNavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WillpowerNavigationStack.swift; sourceTree = "<group>"; };
 		D62CEF922AD8DE160025D626 /* WillpowerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WillpowerView.swift; sourceTree = "<group>"; };
 		D62CEF952AD8DF620025D626 /* WillpowerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WillpowerVM.swift; sourceTree = "<group>"; };
+		D638BEEC2AF9D16300BD71DF /* CleanDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanDetailsView.swift; sourceTree = "<group>"; };
+		D638BEEF2AFA999400BD71DF /* HUDVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDVM.swift; sourceTree = "<group>"; };
+		D638BEF12AFA99C600BD71DF /* HUDBioVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDBioVM.swift; sourceTree = "<group>"; };
+		D638BEF32AFA9A1700BD71DF /* HUDCleanHistoryVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDCleanHistoryVM.swift; sourceTree = "<group>"; };
+		D638BEF52AFA9B9E00BD71DF /* CleanHistoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanHistoryRepository.swift; sourceTree = "<group>"; };
+		D638BEF72AFA9DAB00BD71DF /* CleanHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanHistory.swift; sourceTree = "<group>"; };
+		D638BEF92AFAE14300BD71DF /* CleanTimeDetailsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanTimeDetailsVM.swift; sourceTree = "<group>"; };
 		D64266BB2AF1908A00A40A12 /* BioWillpoweRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioWillpoweRow.swift; sourceTree = "<group>"; };
 		D64DD2A72AD9F53000733FFC /* CleanTimeNavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanTimeNavigationStack.swift; sourceTree = "<group>"; };
 		D64DD2AA2AD9F5CE00733FFC /* CleanTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanTimeView.swift; sourceTree = "<group>"; };
@@ -137,7 +151,7 @@
 		D6C910272AE776D100447F04 /* UserFirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFirebaseManager.swift; sourceTree = "<group>"; };
 		D6C910292AE7780900447F04 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D6C910352AE8962300447F04 /* BioText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioText.swift; sourceTree = "<group>"; };
-		D6C910372AE8973600447F04 /* BioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioService.swift; sourceTree = "<group>"; };
+		D6C910372AE8973600447F04 /* BioRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioRepository.swift; sourceTree = "<group>"; };
 		D6C9103A2AE8BBB500447F04 /* BioModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioModel.swift; sourceTree = "<group>"; };
 		D6D2F0A52AEA12D500A4760D /* BioWillpower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioWillpower.swift; sourceTree = "<group>"; };
 		D6D2F0A72AEA130400A4760D /* BioPatience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioPatience.swift; sourceTree = "<group>"; };
@@ -204,8 +218,19 @@
 				D6C910292AE7780900447F04 /* User.swift */,
 				D6C910392AE8BBA800447F04 /* BIO */,
 				D60281B12AD78FEE00F47195 /* TaskModel.swift */,
+				D638BEF72AFA9DAB00BD71DF /* CleanHistory.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		D638BEEE2AFA996800BD71DF /* HUD */ = {
+			isa = PBXGroup;
+			children = (
+				D638BEEF2AFA999400BD71DF /* HUDVM.swift */,
+				D638BEF12AFA99C600BD71DF /* HUDBioVM.swift */,
+				D638BEF32AFA9A1700BD71DF /* HUDCleanHistoryVM.swift */,
+			);
+			path = HUD;
 			sourceTree = "<group>";
 		};
 		D64DD29E2AD8E57B00733FFC /* Navigation */ = {
@@ -271,6 +296,7 @@
 				D666376D2AF4120C0084EDF5 /* Clean */,
 				D66637712AF427EB0084EDF5 /* BIO */,
 				D60281AC2AD7869800F47195 /* InputView.swift */,
+				D666377F2AF731300084EDF5 /* HUDView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -281,7 +307,9 @@
 				D62CEF952AD8DF620025D626 /* WillpowerVM.swift */,
 				D6D4BE352ADE179F0013A72A /* PatienceVM.swift */,
 				D64DD2AC2AD9F5D500733FFC /* CleanTimeVM.swift */,
+				D638BEF92AFAE14300BD71DF /* CleanTimeDetailsVM.swift */,
 				D66637762AF494940084EDF5 /* BIO */,
+				D638BEEE2AFA996800BD71DF /* HUD */,
 				D60281AE2AD786B200F47195 /* InputVM.swift */,
 			);
 			path = ViewModels;
@@ -313,6 +341,7 @@
 				D64DD2A72AD9F53000733FFC /* CleanTimeNavigationStack.swift */,
 				D64DD2AA2AD9F5CE00733FFC /* CleanTimeView.swift */,
 				D6E55D1E2AE1FD4C00816158 /* CleanTimeRow.swift */,
+				D638BEEC2AF9D16300BD71DF /* CleanDetailsView.swift */,
 			);
 			path = Clean;
 			sourceTree = "<group>";
@@ -328,7 +357,6 @@
 				D66637642AF360C40084EDF5 /* BioCleanRow.swift */,
 				D66F4FF42AEB199200A2C4F4 /* NewBioEventView.swift */,
 				D66F4FFC2AEB434600A2C4F4 /* BioUpdateDateView.swift */,
-				D666377F2AF731300084EDF5 /* HUDView.swift */,
 			);
 			path = BIO;
 			sourceTree = "<group>";
@@ -398,12 +426,13 @@
 		D6C910262AE7700900447F04 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				D66637772AF4AC350084EDF5 /* UserRepository.swift */,
 				D66F50112AEF558200A2C4F4 /* TaskServiceProtocol.swift */,
 				D66F50132AEF595A00A2C4F4 /* WillpowerService.swift */,
 				D666375E2AF2EFBE0084EDF5 /* PatienceService.swift */,
 				D66637622AF358E20084EDF5 /* CleanService.swift */,
-				D6C910372AE8973600447F04 /* BioService.swift */,
-				D66637772AF4AC350084EDF5 /* UserRepository.swift */,
+				D6C910372AE8973600447F04 /* BioRepository.swift */,
+				D638BEF52AFA9B9E00BD71DF /* CleanHistoryRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -543,9 +572,10 @@
 				D60281B22AD78FEE00F47195 /* TaskModel.swift in Sources */,
 				D66637652AF360C40084EDF5 /* BioCleanRow.swift in Sources */,
 				D666377A2AF55F300084EDF5 /* BioEventLeftShape.swift in Sources */,
+				D638BEF42AFA9A1700BD71DF /* HUDCleanHistoryVM.swift in Sources */,
 				D6C9103B2AE8BBB500447F04 /* BioModel.swift in Sources */,
 				D6D2F0A62AEA12D500A4760D /* BioWillpower.swift in Sources */,
-				D6C910382AE8973600447F04 /* BioService.swift in Sources */,
+				D6C910382AE8973600447F04 /* BioRepository.swift in Sources */,
 				D6D4BE362ADE179F0013A72A /* PatienceVM.swift in Sources */,
 				D6D4BE332ADE17350013A72A /* PatienceView.swift in Sources */,
 				D60281AF2AD786B200F47195 /* InputVM.swift in Sources */,
@@ -555,13 +585,18 @@
 				D6C910282AE776D100447F04 /* UserFirebaseManager.swift in Sources */,
 				D601BF362ADCB31D00256C6C /* BioView.swift in Sources */,
 				D66F4FF52AEB199200A2C4F4 /* NewBioEventView.swift in Sources */,
+				D638BEF62AFA9B9E00BD71DF /* CleanHistoryRepository.swift in Sources */,
 				D60281B42AD7B53700F47195 /* AppTabView.swift in Sources */,
 				D66637782AF4AC350084EDF5 /* UserRepository.swift in Sources */,
 				D64DD2AB2AD9F5CE00733FFC /* CleanTimeView.swift in Sources */,
 				D62CEF962AD8DF620025D626 /* WillpowerVM.swift in Sources */,
+				D638BEF82AFA9DAB00BD71DF /* CleanHistory.swift in Sources */,
+				D638BEFA2AFAE14300BD71DF /* CleanTimeDetailsVM.swift in Sources */,
 				D601BF342ADCB25500256C6C /* BioNavigationStack.swift in Sources */,
 				D64DD2AD2AD9F5D500733FFC /* CleanTimeVM.swift in Sources */,
+				D638BEED2AF9D16300BD71DF /* CleanDetailsView.swift in Sources */,
 				D666377C2AF583560084EDF5 /* Extension + Font.swift in Sources */,
+				D638BEF22AFA99C600BD71DF /* HUDBioVM.swift in Sources */,
 				D66F50082AEC972200A2C4F4 /* Extension + Array.swift in Sources */,
 				D62CEF912AD8DD160025D626 /* WillpowerNavigationStack.swift in Sources */,
 				D66F50142AEF595A00A2C4F4 /* WillpowerService.swift in Sources */,
@@ -577,6 +612,7 @@
 				D62CEF8C2AD8DC850025D626 /* AppScreen.swift in Sources */,
 				D6D2F0AA2AEA133A00A4760D /* BioClean.swift in Sources */,
 				D6E55D1F2AE1FD4C00816158 /* CleanTimeRow.swift in Sources */,
+				D638BEF02AFA999400BD71DF /* HUDVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -708,7 +744,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_ASSET_PATHS = "\"Iterra/Preview Content\"";
 				DEVELOPMENT_TEAM = J8LWAAB2XC;
 				ENABLE_PREVIEWS = YES;
@@ -716,8 +752,9 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -738,7 +775,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_ASSET_PATHS = "\"Iterra/Preview Content\"";
 				DEVELOPMENT_TEAM = J8LWAAB2XC;
 				ENABLE_PREVIEWS = YES;
@@ -746,8 +783,9 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

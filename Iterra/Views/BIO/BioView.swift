@@ -81,26 +81,20 @@ struct BioView: View, KeyboardReadable {
             scrollToCurrentMessage(proxy: proxy)
         }
         .onReceive(keyboardPublisher) { newIsKeyboardVisible in
-                        print("Is keyboard visible? ", newIsKeyboardVisible)
             scrollToCurrentMessage(proxy: proxy)
-                    }
+        }
     }
     
     private var textHud: some View {
-        HUDView(vm: .init())
+        HUDView(vm: HUDBioVM())
     }
     
     private func scrollToCurrent(proxy: ScrollViewProxy) {
-        if let closestDate = vm.dict.keys.sorted(by: {$0 < $1}).first(where: {$0.compareDay(with: Date())}) { // "Feb 15, 2018, 12:00 PM"
-            print(closestDate.description(with: .current)) // Thursday, February 15, 2018 at 12:00:00 PM Brasilia Summer Time
+        if let closestDate = vm.dict.keys.sorted(by: {$0 < $1}).first(where: {$0.compareDay(with: Date())}) {
             
             DispatchQueue.main.asyncAfter(wallDeadline: .now() + 0.0) {
-                withAnimation(.easeOut) {
-                    proxy.scrollTo(closestDate, anchor: .top)
-                }
+                proxy.scrollTo(closestDate, anchor: .top)
             }
-        } else {
-            
         }
     }
     
@@ -115,10 +109,6 @@ struct BioView: View, KeyboardReadable {
                     }
                 }
             }
-            
-            
-        } else {
-            
         }
     }
 }

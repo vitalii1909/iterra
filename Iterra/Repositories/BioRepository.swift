@@ -1,5 +1,5 @@
 //
-//  BioService.swift
+//  BioRepository.swift
 //  Iterra
 //
 //  Created by mikhey on 2023-10-24.
@@ -8,13 +8,13 @@
 import Foundation
 import FirebaseFirestore
 
-protocol BioServiceProtocol {
+protocol BioRepositoryProtocol {
     func fetchBio(userId: String?) async throws -> [BioModel]?
     func addBio(event: BioModel, userId: String?) async throws
     func updateDate(userId: String?, documentId: String, newDate: Date) async throws
 }
 
-class BioService: ObservableObject, BioServiceProtocol {
+class BioRepository: ObservableObject, BioRepositoryProtocol {
     
     func fetchBio(userId: String?) async throws -> [BioModel]? {
         
@@ -56,7 +56,7 @@ class BioService: ObservableObject, BioServiceProtocol {
             throw TestError.userId
         }
         
-        try Firestore.firestore().collection("users").document(userId).collection("bio").addDocument(from: event)
+      _ = Firestore.firestore().collection("users").document(userId).collection("bio").addDocument(from: event)
     }
     
     func updateDate(userId: String?, documentId: String, newDate: Date) async throws {
