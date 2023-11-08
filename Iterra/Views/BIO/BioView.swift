@@ -86,7 +86,8 @@ struct BioView: View, KeyboardReadable {
     }
     
     private var textHud: some View {
-        HUDView(vm: HUDBioVM())
+//        HUDView(vm: HUDBioVM())
+        Text("w")
     }
     
     private func scrollToCurrent(proxy: ScrollViewProxy) {
@@ -159,7 +160,7 @@ private extension BioView {
             BioCleanRow(bioClean: bioClean)
                 .contentShape(.contextMenuPreview, RoundedRectangle(cornerRadius: 14))
         case let bioText as BioText:
-            BioTextRow(bioText: bioText)
+            ChatBubbleView(text: bioText.text, date: bioText.date)
                 .contentShape(ContentShapeKinds.contextMenuPreview, ChatBubbleShape(direction: .right))
         default:
             Text("Error type")

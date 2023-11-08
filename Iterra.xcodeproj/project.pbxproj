@@ -19,8 +19,6 @@
 		D62CEF962AD8DF620025D626 /* WillpowerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62CEF952AD8DF620025D626 /* WillpowerVM.swift */; };
 		D638BEED2AF9D16300BD71DF /* CleanDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D638BEEC2AF9D16300BD71DF /* CleanDetailsView.swift */; };
 		D638BEF02AFA999400BD71DF /* HUDVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D638BEEF2AFA999400BD71DF /* HUDVM.swift */; };
-		D638BEF22AFA99C600BD71DF /* HUDBioVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D638BEF12AFA99C600BD71DF /* HUDBioVM.swift */; };
-		D638BEF42AFA9A1700BD71DF /* HUDCleanHistoryVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D638BEF32AFA9A1700BD71DF /* HUDCleanHistoryVM.swift */; };
 		D638BEF62AFA9B9E00BD71DF /* CleanHistoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D638BEF52AFA9B9E00BD71DF /* CleanHistoryRepository.swift */; };
 		D638BEF82AFA9DAB00BD71DF /* CleanHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D638BEF72AFA9DAB00BD71DF /* CleanHistory.swift */; };
 		D638BEFA2AFAE14300BD71DF /* CleanTimeDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D638BEF92AFAE14300BD71DF /* CleanTimeDetailsVM.swift */; };
@@ -31,6 +29,7 @@
 		D65128952AD785C100238E8B /* IterraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65128942AD785C100238E8B /* IterraApp.swift */; };
 		D651289B2AD785C300238E8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D651289A2AD785C300238E8B /* Assets.xcassets */; };
 		D651289E2AD785C300238E8B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D651289D2AD785C300238E8B /* Preview Assets.xcassets */; };
+		D664BD612AFC2DD100B6398A /* ChatBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D664BD602AFC2DD100B6398A /* ChatBubbleView.swift */; };
 		D666375F2AF2EFBE0084EDF5 /* PatienceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D666375E2AF2EFBE0084EDF5 /* PatienceService.swift */; };
 		D66637612AF339C80084EDF5 /* BioPatienceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66637602AF339C80084EDF5 /* BioPatienceRow.swift */; };
 		D66637632AF358E20084EDF5 /* CleanService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66637622AF358E20084EDF5 /* CleanService.swift */; };
@@ -49,7 +48,6 @@
 		D66F50062AEC954900A2C4F4 /* Extension + Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66F50052AEC954900A2C4F4 /* Extension + Date.swift */; };
 		D66F50082AEC972200A2C4F4 /* Extension + Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66F50072AEC972200A2C4F4 /* Extension + Array.swift */; };
 		D66F500D2AEC9FB500A2C4F4 /* SelectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66F500C2AEC9FB500A2C4F4 /* SelectButton.swift */; };
-		D66F500F2AEDA96800A2C4F4 /* BioTextRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66F500E2AEDA96800A2C4F4 /* BioTextRow.swift */; };
 		D66F50122AEF558200A2C4F4 /* TaskServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66F50112AEF558200A2C4F4 /* TaskServiceProtocol.swift */; };
 		D66F50142AEF595A00A2C4F4 /* WillpowerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66F50132AEF595A00A2C4F4 /* WillpowerService.swift */; };
 		D6C910222AE7340B00447F04 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C910212AE7340B00447F04 /* AppState.swift */; };
@@ -112,8 +110,6 @@
 		D62CEF952AD8DF620025D626 /* WillpowerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WillpowerVM.swift; sourceTree = "<group>"; };
 		D638BEEC2AF9D16300BD71DF /* CleanDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanDetailsView.swift; sourceTree = "<group>"; };
 		D638BEEF2AFA999400BD71DF /* HUDVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDVM.swift; sourceTree = "<group>"; };
-		D638BEF12AFA99C600BD71DF /* HUDBioVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDBioVM.swift; sourceTree = "<group>"; };
-		D638BEF32AFA9A1700BD71DF /* HUDCleanHistoryVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDCleanHistoryVM.swift; sourceTree = "<group>"; };
 		D638BEF52AFA9B9E00BD71DF /* CleanHistoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanHistoryRepository.swift; sourceTree = "<group>"; };
 		D638BEF72AFA9DAB00BD71DF /* CleanHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanHistory.swift; sourceTree = "<group>"; };
 		D638BEF92AFAE14300BD71DF /* CleanTimeDetailsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanTimeDetailsVM.swift; sourceTree = "<group>"; };
@@ -125,6 +121,7 @@
 		D65128942AD785C100238E8B /* IterraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IterraApp.swift; sourceTree = "<group>"; };
 		D651289A2AD785C300238E8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D651289D2AD785C300238E8B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D664BD602AFC2DD100B6398A /* ChatBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubbleView.swift; sourceTree = "<group>"; };
 		D666375E2AF2EFBE0084EDF5 /* PatienceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatienceService.swift; sourceTree = "<group>"; };
 		D66637602AF339C80084EDF5 /* BioPatienceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioPatienceRow.swift; sourceTree = "<group>"; };
 		D66637622AF358E20084EDF5 /* CleanService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanService.swift; sourceTree = "<group>"; };
@@ -143,7 +140,6 @@
 		D66F50052AEC954900A2C4F4 /* Extension + Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + Date.swift"; sourceTree = "<group>"; };
 		D66F50072AEC972200A2C4F4 /* Extension + Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + Array.swift"; sourceTree = "<group>"; };
 		D66F500C2AEC9FB500A2C4F4 /* SelectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectButton.swift; sourceTree = "<group>"; };
-		D66F500E2AEDA96800A2C4F4 /* BioTextRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioTextRow.swift; sourceTree = "<group>"; };
 		D66F50112AEF558200A2C4F4 /* TaskServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskServiceProtocol.swift; sourceTree = "<group>"; };
 		D66F50132AEF595A00A2C4F4 /* WillpowerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WillpowerService.swift; sourceTree = "<group>"; };
 		D6C910212AE7340B00447F04 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
@@ -223,16 +219,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		D638BEEE2AFA996800BD71DF /* HUD */ = {
-			isa = PBXGroup;
-			children = (
-				D638BEEF2AFA999400BD71DF /* HUDVM.swift */,
-				D638BEF12AFA99C600BD71DF /* HUDBioVM.swift */,
-				D638BEF32AFA9A1700BD71DF /* HUDCleanHistoryVM.swift */,
-			);
-			path = HUD;
-			sourceTree = "<group>";
-		};
 		D64DD29E2AD8E57B00733FFC /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
@@ -297,6 +283,7 @@
 				D66637712AF427EB0084EDF5 /* BIO */,
 				D60281AC2AD7869800F47195 /* InputView.swift */,
 				D666377F2AF731300084EDF5 /* HUDView.swift */,
+				D664BD602AFC2DD100B6398A /* ChatBubbleView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -309,7 +296,7 @@
 				D64DD2AC2AD9F5D500733FFC /* CleanTimeVM.swift */,
 				D638BEF92AFAE14300BD71DF /* CleanTimeDetailsVM.swift */,
 				D66637762AF494940084EDF5 /* BIO */,
-				D638BEEE2AFA996800BD71DF /* HUD */,
+				D638BEEF2AFA999400BD71DF /* HUDVM.swift */,
 				D60281AE2AD786B200F47195 /* InputVM.swift */,
 			);
 			path = ViewModels;
@@ -351,7 +338,6 @@
 			children = (
 				D601BF332ADCB25500256C6C /* BioNavigationStack.swift */,
 				D601BF352ADCB31D00256C6C /* BioView.swift */,
-				D66F500E2AEDA96800A2C4F4 /* BioTextRow.swift */,
 				D64266BB2AF1908A00A40A12 /* BioWillpoweRow.swift */,
 				D66637602AF339C80084EDF5 /* BioPatienceRow.swift */,
 				D66637642AF360C40084EDF5 /* BioCleanRow.swift */,
@@ -567,12 +553,11 @@
 				D6C910362AE8962300447F04 /* BioText.swift in Sources */,
 				D666375F2AF2EFBE0084EDF5 /* PatienceService.swift in Sources */,
 				D66F500D2AEC9FB500A2C4F4 /* SelectButton.swift in Sources */,
-				D66F500F2AEDA96800A2C4F4 /* BioTextRow.swift in Sources */,
 				D6C910252AE73B2B00447F04 /* LoginView.swift in Sources */,
 				D60281B22AD78FEE00F47195 /* TaskModel.swift in Sources */,
+				D664BD612AFC2DD100B6398A /* ChatBubbleView.swift in Sources */,
 				D66637652AF360C40084EDF5 /* BioCleanRow.swift in Sources */,
 				D666377A2AF55F300084EDF5 /* BioEventLeftShape.swift in Sources */,
-				D638BEF42AFA9A1700BD71DF /* HUDCleanHistoryVM.swift in Sources */,
 				D6C9103B2AE8BBB500447F04 /* BioModel.swift in Sources */,
 				D6D2F0A62AEA12D500A4760D /* BioWillpower.swift in Sources */,
 				D6C910382AE8973600447F04 /* BioRepository.swift in Sources */,
@@ -596,7 +581,6 @@
 				D64DD2AD2AD9F5D500733FFC /* CleanTimeVM.swift in Sources */,
 				D638BEED2AF9D16300BD71DF /* CleanDetailsView.swift in Sources */,
 				D666377C2AF583560084EDF5 /* Extension + Font.swift in Sources */,
-				D638BEF22AFA99C600BD71DF /* HUDBioVM.swift in Sources */,
 				D66F50082AEC972200A2C4F4 /* Extension + Array.swift in Sources */,
 				D62CEF912AD8DD160025D626 /* WillpowerNavigationStack.swift in Sources */,
 				D66F50142AEF595A00A2C4F4 /* WillpowerService.swift in Sources */,

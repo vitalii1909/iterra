@@ -16,27 +16,7 @@ struct CleanDetailsView: View {
     }
     
     var body: some View {
-        VStack(content: {
-            
-            ScrollView {
-                LazyVStack(content: {
-                    ForEach(vm.historyArray.keys.sorted(by: {$0 < $1}), id: \.self) { date in
-                        if let array = vm.historyArray[date] {
-                            Section {
-                                ForEach(array, id: \.id) { historyModel in
-                                    Text("\(historyModel.text)")
-                                }
-                            } header: {
-                                Text(date, format: .dateTime)
-                            }
-                        }
-                    }
-                })
-            }
-            
-            Spacer()
-            HUDView(vm: HUDCleanHistoryVM(currentClean: vm.currentClean))
-        })
+        bodyContent
         .task {
             do {
               try await vm.fetch()
@@ -45,8 +25,64 @@ struct CleanDetailsView: View {
             }
         }
     }
+    
+    private var bodyContent: some View {
+        VStack(content: {
+            if !vm.historyArray.isEmpty {
+                list(dict: vm.historyArray)
+            } else {
+                Text("no history")
+                    .frame(maxHeight: .infinity)
+            }
+            
+            Spacer()
+            hud
+        })
+        .animation(.smooth(), value: vm.historyArray.isEmpty)
+    }
+    
+    private func list(dict: [Date : [CleanHistory]]) -> some View {
+        ScrollView {
+            LazyVStack(spacing: 12, content: {
+                getSections(dict: vm.historyArray)
+            })
+            .padding(.horizontal, 20)
+            .animation(.smooth(), value: vm.historyArray.values.count)
+        }
+    }
+    
+    private var hud: some View {
+        HUDView<CleanTimeDetailsVM>()
+            .environmentObject(vm)
+    }
+}
+
+extension CleanDetailsView {
+    private func getSections(dict: [Date : [CleanHistory]]) -> some View {
+        ForEach(dict.keys.sorted(by: {$0 < $1}), id: \.self) { date in
+            Section {
+                if let array = vm.historyArray[date] {
+                    getRows(array: array)
+                        .frame(maxWidth: .infinity, alignment: .trailing)
+                } else {
+                    
+                }
+            } header: {
+                Text(" \(date.get(.day))/\(date.get(.month))")
+                    .font(.subheadline.bold())
+                    .frame(maxWidth: .infinity)
+            }
+        }
+    }
+    
+    private func getRows(array: [CleanHistory]) -> some View {
+        ForEach(array, id: \.id) { historyModel in
+            ChatBubbleView(text: historyModel.text, date: historyModel.date)
+        }
+    }
 }
 
 #Preview {
-    CleanDetailsView(vm: .init(currentClean: .mocData()))
+    publicUserId = .mocUser()
+    return CleanDetailsView(vm: .init(currentClean: .mocData()))
 }

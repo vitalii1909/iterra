@@ -1,27 +1,28 @@
 //
-//  BioTextRow.swift
+//  ChatBubbleView.swift
 //  Iterra
 //
-//  Created by mikhey on 2023-10-28.
+//  Created by mikhey on 2023-11-08.
 //
 
 import SwiftUI
 
-struct BioTextRow: View {
+struct ChatBubbleView: View {
     
-    var bioText: BioText
+    var text: String
+    var date: Date
     
     private var bioDateString: String {
-        bioText.date.getMonthDay()
+        date.getMonthDay()
     }
     
     private var bioTimeString: String {
-        bioText.date.getHourMisute()
+        date.getHourMisute()
     }
     
     var body: some View {
         VStack(alignment: .trailing, spacing: 5, content: {
-            Text(bioText.text)
+            Text(text)
                 .font(.calloutRegular)
                 .foregroundStyle(Color.appBlack)
                 .multilineTextAlignment(.leading)
@@ -49,7 +50,7 @@ struct BioTextRow: View {
 }
 
 #Preview {
-    BioTextRow(bioText: BioText.mocDate())
+    ChatBubbleView(text: "test text", date: Date())
 }
 
 //FIXME: make new shape with designer

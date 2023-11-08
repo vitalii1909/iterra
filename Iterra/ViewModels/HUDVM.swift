@@ -8,16 +8,7 @@
 import SwiftUI
 
 protocol HUDProtocol: ObservableObject {
-    var loading: Bool { get set }
+    var hudLoading: Bool { get set }
     var text: String { get set }
     func addNew() async throws
-}
-
-class HUDVM: HUDProtocol {
-    @Published var text = ""
-    @Published var loading = false
-    
-    
-    @MainActor
-    func addNew() async throws {}
 }

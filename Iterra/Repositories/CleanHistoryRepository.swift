@@ -7,10 +7,11 @@
 
 import Foundation
 import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 protocol CleanHistoryRepositoryProtocol {
     func fetchHistory(cleanId: String, userId: String?) async throws -> [CleanHistory]
-    func add(clean: CleanHistory, cleanId: String, userId: String?) async throws
+    func add(clean: CleanHistory, cleanId: String, userId: String?) async throws -> CleanHistory
 //    func updateDate(userId: String?, documentId: String, newDate: Date) async throws
 }
 
@@ -37,21 +38,15 @@ class CleanHistoryRepository: ObservableObject, CleanHistoryRepositoryProtocol {
         return cleanHistoryArray
     }
     
-    func add(clean: CleanHistory, cleanId: String, userId: String?) async throws {
+    func add(clean: CleanHistory, cleanId: String, userId: String?) async throws -> CleanHistory {
         
         guard let userId = userId else {
             throw TestError.userId
         }
         
-        try Firestore.firestore().collection("users").document(userId).collection("clean").document(cleanId).collection("history").addDocument(from: clean)
+        let docRef = try Firestore.firestore().collection("users").document(userId).collection("clean").document(cleanId).collection("history").addDocument(from: clean) { error in
+            
+        }
+        return CleanHistory(id: docRef.documentID, date: clean.date, text: clean.text)
     }
-    
-//    func updateDate(userId: String?, documentId: String, newDate: Date) async throws {
-//        
-//        guard let userId = userId else {
-//            throw TestError.userId
-//        }
-//        
-//        try await Firestore.firestore().collection("users").document(userId).collection("bio").document(documentId).setData(["date" : newDate], merge: true)
-//    }
 }

@@ -8,17 +8,16 @@
 import SwiftUI
     
 //FIXME: make env obj for dif vm
-struct HUDView<VM>: View where VM: HUDVM {
+struct HUDView<Provider>: View where Provider: HUDProtocol {
     
     @EnvironmentObject var storeManager: StoreManager
-    
-    @ObservedObject var vm: VM
+    @EnvironmentObject var vm: Provider
     
     var body: some View {
         HStack(spacing: 8, content: {
             textField
             
-            if vm.loading {
+            if vm.hudLoading {
                 ProgressView()
                     .progressViewStyle(.circular)
             } else {
@@ -47,9 +46,11 @@ struct HUDView<VM>: View where VM: HUDVM {
                 }
             }
         }, label: {
-            Image(systemName: "checkmark.circle.fill")
-                .resizable()
-                .frame(width: 21, height: 21)
+            Image(systemName: "arrow.up")
+                .foregroundColor(.appWhite)
+                .padding(5)
+                .background(Color.blue)
+                .clipShape(Circle())
         })
     }
 }
@@ -57,7 +58,8 @@ struct HUDView<VM>: View where VM: HUDVM {
 #Preview {
     VStack(content: {
         Spacer()
-        HUDView(vm: HUDCleanHistoryVM(currentClean: .mocData()))
+        HUDView<CleanTimeDetailsVM>()
+            .environmentObject(CleanTimeDetailsVM(currentClean: .mocData()))
     })
     .environmentObject(StoreManager())
 }
