@@ -23,21 +23,18 @@ class UserFirebaseManager: ObservableObject {
     }
     
     func fetchUser() async throws -> User? {
-        //FIXME: add throw errors
         guard let email = UserDefaults.standard.string(forKey: "currentUserEmail") else {
-            return nil
+            throw TestError.userId
         }
         
         guard let document = try? await Firestore.firestore().collection("users").whereField("email", isEqualTo: email).getDocuments().documents.first else {
-            
-            return nil
+            throw TestError.userId
         }
         
         guard let user = try? document.data(as: User.self) else {
-            return nil
+            throw TestError.userId
         }
         
-        //FIXME: delete after signUp
         publicUserId = user
         
         return user

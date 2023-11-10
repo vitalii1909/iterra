@@ -49,7 +49,6 @@ struct BioUpdateDateView: View {
                 Text("Update")
             })
             .buttonStyle(BlueButton())
-            //FIXME: compare date and hour only
             .disabled(vm.date.compareMinutes(with: vm.currentBio.date))
             .animation(.smooth, value: vm.date.compareMinutes(with: vm.currentBio.date))
         })

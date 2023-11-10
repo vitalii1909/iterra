@@ -65,12 +65,20 @@ class CleanTimeDetailsVM: HUDProtocol {
         
         let newClean = try await service.add(clean: CleanHistory(date: Date(), text: text), cleanId: cleanId, userId: userId)
         
+        var array = historyArray.values.flatMap({$0})
+        array.append(newClean)
         
-        if let key = historyArray.keys.filter({$0.compareDay(with: newClean.date)}).first {
-            historyArray[key] = (historyArray[key] ?? [CleanHistory]()) +  [newClean]
-        } else {
-            historyArray[newClean.date] = [newClean]
+        if let dict = getDict(array: array) {
+            withAnimation {
+                historyArray = dict
+            }
         }
+        
+//        if let key = historyArray.keys.filter({$0.compareDay(with: newClean.date)}).first {
+//            historyArray[key] = (historyArray[key] ?? [CleanHistory]()) +  [newClean]
+//        } else {
+//            historyArray[newClean.date] = [newClean]
+//        }
 
         text = ""
         

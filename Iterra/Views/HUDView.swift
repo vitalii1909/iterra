@@ -7,7 +7,6 @@
 
 import SwiftUI
     
-//FIXME: make env obj for dif vm
 struct HUDView<Provider>: View where Provider: HUDProtocol {
     
     @EnvironmentObject var storeManager: StoreManager
@@ -57,9 +56,9 @@ struct HUDView<Provider>: View where Provider: HUDProtocol {
 
 #Preview {
     VStack(content: {
-        Spacer()
         HUDView<CleanTimeDetailsVM>()
             .environmentObject(CleanTimeDetailsVM(currentClean: .mocData()))
     })
+    .frame(maxHeight: .infinity, alignment: .bottom)
     .environmentObject(StoreManager())
 }

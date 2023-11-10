@@ -71,9 +71,6 @@ struct BioView: View, KeyboardReadable {
             .padding(.horizontal, 20)
         }
         .animation(.smooth(), value: vm.dict.values.count)
-        .listStyle(.plain)
-        .listRowSpacing(14)
-        .background(Color.clear)
         .onAppear {
             scrollToCurrent(proxy: proxy)
         }
@@ -86,7 +83,7 @@ struct BioView: View, KeyboardReadable {
     }
     
     private var textHud: some View {
-//        HUDView(vm: HUDBioVM())
+        //        HUDView(vm: HUDBioVM())
         Text("w")
     }
     
@@ -160,7 +157,7 @@ private extension BioView {
             BioCleanRow(bioClean: bioClean)
                 .contentShape(.contextMenuPreview, RoundedRectangle(cornerRadius: 14))
         case let bioText as BioText:
-            ChatBubbleView(text: bioText.text, date: bioText.date)
+            ChatBubbleRow(text: bioText.text, date: bioText.date)
                 .contentShape(ContentShapeKinds.contextMenuPreview, ChatBubbleShape(direction: .right))
         default:
             Text("Error type")
@@ -180,25 +177,4 @@ private extension BioView {
     
     return BioNavigationStack()
         .environmentObject(taskStore)
-}
-
-import Combine
-
-protocol KeyboardReadable {
-    var keyboardPublisher: AnyPublisher<Bool, Never> { get }
-}
-
-extension KeyboardReadable {
-    var keyboardPublisher: AnyPublisher<Bool, Never> {
-        Publishers.Merge(
-            NotificationCenter.default
-                .publisher(for: UIResponder.keyboardWillShowNotification)
-                .map { _ in true },
-            
-            NotificationCenter.default
-                .publisher(for: UIResponder.keyboardWillHideNotification)
-                .map { _ in false }
-        )
-        .eraseToAnyPublisher()
-    }
 }

@@ -27,18 +27,27 @@ struct CleanDetailsView: View {
     }
     
     private var bodyContent: some View {
-        VStack(content: {
-            if !vm.historyArray.isEmpty {
-                list(dict: vm.historyArray)
-            } else {
-                Text("no history")
-                    .frame(maxHeight: .infinity)
-            }
-            
-            Spacer()
-            hud
+        ScrollViewReader(content: { proxy in
+            VStack(content: {
+                if !vm.loading {
+                    if !vm.historyArray.isEmpty {
+                        list(dict: vm.historyArray)
+                    } else {
+                        Text("no history")
+                            .frame(maxHeight: .infinity)
+                    }
+                } else {
+                    ProgressView()
+                        .progressViewStyle(.circular)
+                        .frame(maxHeight: .infinity)
+                }
+                
+                Spacer()
+                hud
+            })
+            //        .animation(.smooth(), value: vm.historyArray.isEmpty)
+            //        .animation(.smooth(), value: vm.loading)
         })
-        .animation(.smooth(), value: vm.historyArray.isEmpty)
     }
     
     private func list(dict: [Date : [CleanHistory]]) -> some View {
@@ -47,8 +56,8 @@ struct CleanDetailsView: View {
                 getSections(dict: vm.historyArray)
             })
             .padding(.horizontal, 20)
-            .animation(.smooth(), value: vm.historyArray.values.count)
         }
+        .animation(.smooth(), value: vm.historyArray.values.count )
     }
     
     private var hud: some View {
@@ -77,7 +86,7 @@ extension CleanDetailsView {
     
     private func getRows(array: [CleanHistory]) -> some View {
         ForEach(array, id: \.id) { historyModel in
-            ChatBubbleView(text: historyModel.text, date: historyModel.date)
+            ChatBubbleRow(text: historyModel.text, date: historyModel.date)
         }
     }
 }
